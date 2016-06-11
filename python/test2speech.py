@@ -1,4 +1,7 @@
 # coding=utf8
+
+""" This is for testing"""
+
 import sys
 from naoqi import ALProxy
 
