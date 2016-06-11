@@ -6,13 +6,10 @@
 textToSpeech::textToSpeech(std::string ip, int port)
     :tts(new AL::ALTextToSpeechProxy(ip, port))
 {
+    tts->setLanguage("Chinese");
 }
 
 textToSpeech::~textToSpeech()
-{
-}
-
-void textToSpeech::init()
 {
 }
 
