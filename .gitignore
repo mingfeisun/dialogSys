@@ -1,3 +1,5 @@
+build-sys-linux-x86_64
+*/.qi/
 *~
 *.swp
 *.zip
