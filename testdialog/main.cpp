@@ -1,12 +1,14 @@
-/*
- * Copyright (c) 2012-2015 Aldebaran Robotics. All rights reserved.
- * Use of this source code is governed by a BSD-style license that can be
- * found in the COPYING file.
- */
 #include <iostream>
+#include <string>
+#include "texttospeech.h"
+using std::string;
 
 int main()
 {
-  std::cout << "Hello, world" << std::endl;
+  string ip = "192.168.1.102";
+  int port = 9559;
+  string testStr="我是中国人";
+  textToSpeech tts(ip, port);
+  tts.say(testStr);
   return 0;
 }

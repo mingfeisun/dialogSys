@@ -3,9 +3,9 @@ project(test_dialog)
 
 find_package(qibuild)
 
-# Create a executable named test_dialog
-# with the source file: main.cpp
-qi_create_bin(test_dialog "main.cpp")
+qi_create_lib(textToSpeech texttospeech.h texttospeech.cpp)
+qi_stage_lib(textToSpeech)
 
-# Add a simple test:
-qi_create_test(test_test_dialog "test.cpp")
+qi_create_bin(test_dialog main.cpp)
+qi_use_lib(test_dialog ALCOMMON ALPROXIES textToSpeech)
+
