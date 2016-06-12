@@ -6,3 +6,4 @@ build-sys-linux-x86_64
 *.swp
 *.zip
 *.user
+*.wav
