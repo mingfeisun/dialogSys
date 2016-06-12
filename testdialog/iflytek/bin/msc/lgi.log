@@ -1,0 +1,3026 @@
+============================================================
+Time  2016/06/12 20:30:56 824 
+============================================================
+[2016/06/12 20:30:56 824] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 20:30:56 826] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(ec014970) 
+[2016/06/12 20:30:56 826] lgi        297  LGI_MSG_INIT  
+[2016/06/12 20:30:56 826] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 20:30:56 826] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 20:30:56 827] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 20:30:56 827] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 20:30:56 837] lgi        467  ns_enable=  0  
+[2016/06/12 20:30:56 837] lgi        479  prot_ver=1  
+[2016/06/12 20:30:56 837] lgi        490  prot_type=tcp  
+[2016/06/12 20:30:56 837] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 20:31:00 071] lgi        524  LGI_MSG_START, caller =  cloud_cisr1P1HHBHyy-NdH6y-Taaw1aau25JBP50  
+[2016/06/12 20:31:00 071] lgi        530  lgistat =   0  
+[2016/06/12 20:31:00 071] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:31:00 072] transport  603  paramkvsport is   0  
+[2016/06/12 20:31:00 072] transport  611  ns_enable=  0  
+[2016/06/12 20:31:00 072] transport  655  url.full=  nil  
+[2016/06/12 20:31:00 072] transport  831  switch 80  
+[2016/06/12 20:31:00 072] transport  838  net type:  standard  
+[2016/06/12 20:31:00 072] transport  839  net operator:  def  
+[2016/06/12 20:31:00 072] transport  840  use proxy:  false  
+[2016/06/12 20:31:00 072] lgi        276  [session] send lgi request  
+[2016/06/12 20:31:00 073] transport  1071 ns_enable =  0  
+[2016/06/12 20:31:00 073] lgi        243  lver:  nil  
+[2016/06/12 20:31:00 073] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:31:00 962] transport  155  [dns] [0] response 59.107.24.11  
+[2016/06/12 20:31:00 962] transport  163  59  107  24  11  
+[2016/06/12 20:31:00 963] transport  192  iplist not avail  
+[2016/06/12 20:31:00 963] transport  251  no iplist now  
+[2016/06/12 20:31:00 963] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 20:31:00 965] transport  1138 [soc] connect   59.107.24.11  80  
+[2016/06/12 20:31:00 966] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:31:00 986] transport  461  [soc] [0] connected  
+[2016/06/12 20:31:00 986] transport  1191 build http request.  
+[2016/06/12 20:31:00 987] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 356
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 20:31:01 013] transport  483  [soc] [0] send ok  531  
+[2016/06/12 20:31:03 263] transport  495  [soc] [0] readable  
+[2016/06/12 20:31:03 264] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 12:31:02 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 20:31:02 638
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 20:31:02 729
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bIfX3I0Qscgx1EZGhn1JPxYXNyelK^naMdLX^ZUG105G^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 20:31:03 264] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 20:31:03 264] transport  1419 is_update  false  
+[2016/06/12 20:31:03 264] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 20:31:03 265] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 20:31:03 266] transport  914  cached ip is confirmed  
+[2016/06/12 20:31:03 266] transport  1170 [soc] disconnect   
+[2016/06/12 20:31:03 266] lgi        139  lgi resp!  
+[2016/06/12 20:31:03 266] lgi        146  lgi ok!  
+[2016/06/12 20:31:03 266] lgi        155  unkown  d4651504697  
+[2016/06/12 20:31:18 266] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 20:32:41 606 
+============================================================
+[2016/06/12 20:32:41 606] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 20:32:41 608] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(64014970) 
+[2016/06/12 20:32:41 609] lgi        297  LGI_MSG_INIT  
+[2016/06/12 20:32:41 609] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 20:32:41 609] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 20:32:41 609] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 20:32:41 609] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 20:32:41 609] lgi        467  ns_enable=  0  
+[2016/06/12 20:32:41 609] lgi        479  prot_ver=1  
+[2016/06/12 20:32:41 609] lgi        490  prot_type=tcp  
+[2016/06/12 20:32:41 610] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 20:32:43 547] lgi        524  LGI_MSG_START, caller =  legacyuup_1ff0996  
+[2016/06/12 20:32:43 547] lgi        530  lgistat =   0  
+[2016/06/12 20:32:43 547] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:32:43 548] transport  603  paramkvsport is   0  
+[2016/06/12 20:32:43 548] transport  611  ns_enable=  0  
+[2016/06/12 20:32:43 548] transport  655  url.full=  nil  
+[2016/06/12 20:32:43 548] transport  838  net type:  standard  
+[2016/06/12 20:32:43 548] transport  839  net operator:  def  
+[2016/06/12 20:32:43 548] transport  840  use proxy:  false  
+[2016/06/12 20:32:43 548] lgi        276  [session] send lgi request  
+[2016/06/12 20:32:43 549] transport  1071 ns_enable =  0  
+[2016/06/12 20:32:43 549] lgi        243  lver:  nil  
+[2016/06/12 20:32:43 549] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:32:43 596] transport  155  [dns] [0] response 59.107.24.5  
+[2016/06/12 20:32:43 596] transport  163  59  107  24  5  
+[2016/06/12 20:32:43 596] transport  192  iplist not avail  
+[2016/06/12 20:32:43 597] transport  251  no iplist now  
+[2016/06/12 20:32:43 597] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.5  
+[2016/06/12 20:32:43 598] transport  1138 [soc] connect   59.107.24.5  80  
+[2016/06/12 20:32:43 598] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:32:43 601] transport  461  [soc] [0] connected  
+[2016/06/12 20:32:43 601] transport  1191 build http request.  
+[2016/06/12 20:32:43 602] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 20:32:43 604] transport  483  [soc] [0] send ok  547  
+[2016/06/12 20:32:48 038] transport  495  [soc] [0] readable  
+[2016/06/12 20:32:48 039] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 12:32:48 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 20:32:48 627
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 20:32:48 663
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bgZ8CgT8sPo5IbaxZxcvgL4TGSuoCk2cRCJ5cAZ/DV/W^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 20:32:48 039] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 20:32:48 039] transport  1419 is_update  false  
+[2016/06/12 20:32:48 039] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 20:32:48 040] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.5  
+[2016/06/12 20:32:48 041] transport  914  cached ip is confirmed  
+[2016/06/12 20:32:48 041] transport  1170 [soc] disconnect   
+[2016/06/12 20:32:48 041] lgi        139  lgi resp!  
+[2016/06/12 20:32:48 041] lgi        146  lgi ok!  
+[2016/06/12 20:32:48 041] lgi        155  unkown  d4651504697  
+[2016/06/12 20:32:48 302] lgi        524  LGI_MSG_START, caller =  cloud_cisr1P1HHBHyy-eiH63ixaawtElDABzI5WZ  
+[2016/06/12 20:32:48 302] lgi        530  lgistat =   2  
+[2016/06/12 20:33:03 730] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 20:33:24 038 
+============================================================
+[2016/06/12 20:33:24 038] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 20:33:24 040] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(80014890) 
+[2016/06/12 20:33:24 041] lgi        297  LGI_MSG_INIT  
+[2016/06/12 20:33:24 041] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 20:33:24 041] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 20:33:24 041] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 20:33:24 041] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 20:33:24 042] lgi        467  ns_enable=  0  
+[2016/06/12 20:33:24 042] lgi        479  prot_ver=1  
+[2016/06/12 20:33:24 042] lgi        490  prot_type=tcp  
+[2016/06/12 20:33:24 043] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 20:33:25 703] lgi        524  LGI_MSG_START, caller =  cloud_cisr1P1HHBHyy-X-H6zL8aaW5vtHXtb91kr  
+[2016/06/12 20:33:25 703] lgi        530  lgistat =   0  
+[2016/06/12 20:33:25 703] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:33:25 703] transport  603  paramkvsport is   0  
+[2016/06/12 20:33:25 703] transport  611  ns_enable=  0  
+[2016/06/12 20:33:25 703] transport  655  url.full=  nil  
+[2016/06/12 20:33:25 704] transport  831  switch 80  
+[2016/06/12 20:33:25 704] transport  838  net type:  standard  
+[2016/06/12 20:33:25 704] transport  839  net operator:  def  
+[2016/06/12 20:33:25 704] transport  840  use proxy:  false  
+[2016/06/12 20:33:25 704] lgi        276  [session] send lgi request  
+[2016/06/12 20:33:25 704] transport  1071 ns_enable =  0  
+[2016/06/12 20:33:25 705] lgi        243  lver:  nil  
+[2016/06/12 20:33:25 705] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:33:25 758] transport  155  [dns] [0] response 117.121.21.148  
+[2016/06/12 20:33:25 758] transport  163  117  121  21  148  
+[2016/06/12 20:33:25 758] transport  192  iplist not avail  
+[2016/06/12 20:33:25 759] transport  251  no iplist now  
+[2016/06/12 20:33:25 759] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.148  
+[2016/06/12 20:33:25 762] transport  1138 [soc] connect   117.121.21.148  80  
+[2016/06/12 20:33:25 762] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:33:25 774] transport  461  [soc] [0] connected  
+[2016/06/12 20:33:25 774] transport  1191 build http request.  
+[2016/06/12 20:33:25 775] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 20:33:25 798] transport  483  [soc] [0] send ok  547  
+[2016/06/12 20:33:25 967] transport  495  [soc] [0] readable  
+[2016/06/12 20:33:25 967] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 12:33:26 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 20:33:26 562
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 20:33:26 590
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0b8tnjmurXY^4gjlS/JFl0IQpfGPVJEomQ4fAs^qL2E0y^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 20:33:25 967] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 20:33:25 967] transport  1419 is_update  false  
+[2016/06/12 20:33:25 967] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 20:33:25 969] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.148  
+[2016/06/12 20:33:25 969] transport  914  cached ip is confirmed  
+[2016/06/12 20:33:25 969] transport  1170 [soc] disconnect   
+[2016/06/12 20:33:25 969] lgi        139  lgi resp!  
+[2016/06/12 20:33:25 970] lgi        146  lgi ok!  
+[2016/06/12 20:33:25 970] lgi        155  unkown  d4651504697  
+[2016/06/12 20:33:27 433] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 20:33:34 155 
+============================================================
+[2016/06/12 20:33:34 155] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 20:33:34 157] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(90014970) 
+[2016/06/12 20:33:34 157] lgi        297  LGI_MSG_INIT  
+[2016/06/12 20:33:34 157] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 20:33:34 158] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 20:33:34 158] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 20:33:34 158] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 20:33:34 158] lgi        467  ns_enable=  0  
+[2016/06/12 20:33:34 158] lgi        479  prot_ver=1  
+[2016/06/12 20:33:34 158] lgi        490  prot_type=tcp  
+[2016/06/12 20:33:34 159] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 20:33:35 424] lgi        524  LGI_MSG_START, caller =  cloud_cisr1P1HHBHyy-XZH6hEQaaknm5cZHH9uJs  
+[2016/06/12 20:33:35 424] lgi        530  lgistat =   0  
+[2016/06/12 20:33:35 424] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:33:35 424] transport  603  paramkvsport is   0  
+[2016/06/12 20:33:35 424] transport  611  ns_enable=  0  
+[2016/06/12 20:33:35 424] transport  655  url.full=  nil  
+[2016/06/12 20:33:35 425] transport  831  switch 80  
+[2016/06/12 20:33:35 425] transport  838  net type:  standard  
+[2016/06/12 20:33:35 425] transport  839  net operator:  def  
+[2016/06/12 20:33:35 426] transport  840  use proxy:  false  
+[2016/06/12 20:33:35 426] lgi        276  [session] send lgi request  
+[2016/06/12 20:33:35 426] transport  1071 ns_enable =  0  
+[2016/06/12 20:33:35 427] lgi        243  lver:  nil  
+[2016/06/12 20:33:35 427] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:33:35 439] transport  155  [dns] [0] response 117.121.21.148  
+[2016/06/12 20:33:35 440] transport  163  117  121  21  148  
+[2016/06/12 20:33:35 440] transport  192  iplist not avail  
+[2016/06/12 20:33:35 440] transport  251  no iplist now  
+[2016/06/12 20:33:35 441] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.148  
+[2016/06/12 20:33:35 442] transport  1138 [soc] connect   117.121.21.148  80  
+[2016/06/12 20:33:35 444] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:33:35 449] transport  461  [soc] [0] connected  
+[2016/06/12 20:33:35 449] transport  1191 build http request.  
+[2016/06/12 20:33:35 449] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 20:33:35 451] transport  483  [soc] [0] send ok  547  
+[2016/06/12 20:33:35 752] transport  495  [soc] [0] readable  
+[2016/06/12 20:33:35 752] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 12:33:36 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 20:33:36 231
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 20:33:36 327
+X-Cache: MISS from ustlnx16.ust.hk
+X-Cache-Lookup: MISS from ustlnx16.ust.hk:8080
+Via: 1.0 ustlnx16.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bPvBHplp9cnufSafpMVWgPxV/joKwVTDjLjCF/R4ueia^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 20:33:35 753] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 20:33:35 753] transport  1419 is_update  false  
+[2016/06/12 20:33:35 753] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 20:33:35 754] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.148  
+[2016/06/12 20:33:35 754] transport  914  cached ip is confirmed  
+[2016/06/12 20:33:35 754] transport  1170 [soc] disconnect   
+[2016/06/12 20:33:35 755] lgi        139  lgi resp!  
+[2016/06/12 20:33:35 755] lgi        146  lgi ok!  
+[2016/06/12 20:33:35 755] lgi        155  unkown  d4651504697  
+[2016/06/12 20:33:40 316] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 20:36:14 303 
+============================================================
+[2016/06/12 20:36:14 303] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 20:36:14 304] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(14014970) 
+[2016/06/12 20:36:14 305] lgi        297  LGI_MSG_INIT  
+[2016/06/12 20:36:14 305] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 20:36:14 305] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 20:36:14 305] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 20:36:14 305] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 20:36:14 305] lgi        467  ns_enable=  0  
+[2016/06/12 20:36:14 305] lgi        479  prot_ver=1  
+[2016/06/12 20:36:14 305] lgi        490  prot_type=tcp  
+[2016/06/12 20:36:14 306] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 20:36:14 328] lgi        524  LGI_MSG_START, caller =  cloud_cisr1P1HHBHyy-TRamvw2aalFr5wqmg8tfJ  
+[2016/06/12 20:36:14 328] lgi        530  lgistat =   0  
+[2016/06/12 20:36:14 328] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:36:14 328] transport  603  paramkvsport is   0  
+[2016/06/12 20:36:14 328] transport  611  ns_enable=  0  
+[2016/06/12 20:36:14 329] transport  655  url.full=  nil  
+[2016/06/12 20:36:14 329] transport  831  switch 80  
+[2016/06/12 20:36:14 329] transport  838  net type:  standard  
+[2016/06/12 20:36:14 329] transport  839  net operator:  def  
+[2016/06/12 20:36:14 329] transport  840  use proxy:  false  
+[2016/06/12 20:36:14 329] lgi        276  [session] send lgi request  
+[2016/06/12 20:36:14 329] transport  1071 ns_enable =  0  
+[2016/06/12 20:36:14 329] lgi        243  lver:  nil  
+[2016/06/12 20:36:14 330] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:36:14 379] transport  155  [dns] [0] response 59.107.24.5  
+[2016/06/12 20:36:14 379] transport  163  59  107  24  5  
+[2016/06/12 20:36:14 379] transport  192  iplist not avail  
+[2016/06/12 20:36:14 379] transport  251  no iplist now  
+[2016/06/12 20:36:14 379] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.5  
+[2016/06/12 20:36:14 380] transport  1138 [soc] connect   59.107.24.5  80  
+[2016/06/12 20:36:14 380] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:36:14 388] transport  461  [soc] [0] connected  
+[2016/06/12 20:36:14 388] transport  1191 build http request.  
+[2016/06/12 20:36:14 389] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 20:36:14 389] transport  483  [soc] [0] send ok  547  
+[2016/06/12 20:36:15 400] transport  495  [soc] [0] readable  
+[2016/06/12 20:36:15 401] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 12:36:15 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 20:36:15 987
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 20:36:16 24
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bWwoWNefFOwPxHqWLHqO3g0putJlq8XH1HpBeynpSxfS^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 20:36:15 401] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 20:36:15 401] transport  1419 is_update  false  
+[2016/06/12 20:36:15 401] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 20:36:15 402] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.5  
+[2016/06/12 20:36:15 402] transport  905  iplist not avail  
+[2016/06/12 20:36:15 403] transport  1170 [soc] disconnect   
+[2016/06/12 20:36:15 403] lgi        139  lgi resp!  
+[2016/06/12 20:36:15 403] lgi        146  lgi ok!  
+[2016/06/12 20:36:15 403] lgi        155  unkown  d4651504697  
+[2016/06/12 20:36:22 114] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 20:41:59 852 
+============================================================
+[2016/06/12 20:41:59 852] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 20:41:59 854] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(a8014890) 
+[2016/06/12 20:41:59 854] lgi        297  LGI_MSG_INIT  
+[2016/06/12 20:41:59 854] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 20:41:59 854] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 20:41:59 854] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 20:41:59 854] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 20:41:59 854] lgi        467  ns_enable=  0  
+[2016/06/12 20:41:59 854] lgi        479  prot_ver=1  
+[2016/06/12 20:41:59 854] lgi        490  prot_type=tcp  
+[2016/06/12 20:41:59 855] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 20:41:59 869] lgi        524  LGI_MSG_START, caller =  cloud_cisr1P1HHBHyy-4yaHLX8aaC+cP9fPoTt8e  
+[2016/06/12 20:41:59 869] lgi        530  lgistat =   0  
+[2016/06/12 20:41:59 869] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:41:59 869] transport  603  paramkvsport is   0  
+[2016/06/12 20:41:59 869] transport  611  ns_enable=  0  
+[2016/06/12 20:41:59 869] transport  655  url.full=  nil  
+[2016/06/12 20:41:59 870] transport  831  switch 80  
+[2016/06/12 20:41:59 870] transport  838  net type:  standard  
+[2016/06/12 20:41:59 870] transport  839  net operator:  def  
+[2016/06/12 20:41:59 870] transport  840  use proxy:  false  
+[2016/06/12 20:41:59 870] lgi        276  [session] send lgi request  
+[2016/06/12 20:41:59 870] transport  1071 ns_enable =  0  
+[2016/06/12 20:41:59 870] lgi        243  lver:  nil  
+[2016/06/12 20:41:59 870] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:42:00 020] transport  155  [dns] [0] response 59.107.24.11  
+[2016/06/12 20:42:00 020] transport  163  59  107  24  11  
+[2016/06/12 20:42:00 020] transport  192  iplist not avail  
+[2016/06/12 20:42:00 021] transport  251  no iplist now  
+[2016/06/12 20:42:00 021] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 20:42:00 022] transport  1138 [soc] connect   59.107.24.11  80  
+[2016/06/12 20:42:00 022] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:42:00 031] transport  461  [soc] [0] connected  
+[2016/06/12 20:42:00 031] transport  1191 build http request.  
+[2016/06/12 20:42:00 031] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 20:42:00 058] transport  483  [soc] [0] send ok  547  
+[2016/06/12 20:42:00 258] transport  495  [soc] [0] readable  
+[2016/06/12 20:42:00 258] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 12:42:00 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 20:42:00 862
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 20:42:00 894
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bnu8K87gM8bUas/IcLr9nY7NzQ1/qWe66o0ixlnUPz2i^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 20:42:00 258] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 20:42:00 258] transport  1419 is_update  false  
+[2016/06/12 20:42:00 259] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 20:42:00 260] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 20:42:00 260] transport  914  cached ip is confirmed  
+[2016/06/12 20:42:00 260] transport  1170 [soc] disconnect   
+[2016/06/12 20:42:00 260] lgi        139  lgi resp!  
+[2016/06/12 20:42:00 260] lgi        146  lgi ok!  
+[2016/06/12 20:42:00 261] lgi        155  unkown  d4651504697  
+[2016/06/12 20:42:15 993] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 20:43:07 885 
+============================================================
+[2016/06/12 20:43:07 885] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 20:43:07 887] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(c014920) 
+[2016/06/12 20:43:07 887] lgi        297  LGI_MSG_INIT  
+[2016/06/12 20:43:07 887] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 20:43:07 888] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 20:43:07 888] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 20:43:07 888] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 20:43:07 888] lgi        467  ns_enable=  0  
+[2016/06/12 20:43:07 888] lgi        479  prot_ver=1  
+[2016/06/12 20:43:07 888] lgi        490  prot_type=tcp  
+[2016/06/12 20:43:07 889] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 20:43:07 906] lgi        524  LGI_MSG_START, caller =  cloud_cisr1P1HHBHyy-ocaaWHzaal+PPup0JMwqL  
+[2016/06/12 20:43:07 906] lgi        530  lgistat =   0  
+[2016/06/12 20:43:07 906] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:43:07 907] transport  603  paramkvsport is   0  
+[2016/06/12 20:43:07 907] transport  611  ns_enable=  0  
+[2016/06/12 20:43:07 907] transport  655  url.full=  nil  
+[2016/06/12 20:43:07 907] transport  831  switch 80  
+[2016/06/12 20:43:07 907] transport  838  net type:  standard  
+[2016/06/12 20:43:07 907] transport  839  net operator:  def  
+[2016/06/12 20:43:07 907] transport  840  use proxy:  false  
+[2016/06/12 20:43:07 907] lgi        276  [session] send lgi request  
+[2016/06/12 20:43:07 907] transport  1071 ns_enable =  0  
+[2016/06/12 20:43:07 907] lgi        243  lver:  nil  
+[2016/06/12 20:43:07 907] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:43:07 952] transport  155  [dns] [0] response 117.121.56.8  
+[2016/06/12 20:43:07 952] transport  163  117  121  56  8  
+[2016/06/12 20:43:07 952] transport  192  iplist not avail  
+[2016/06/12 20:43:07 954] transport  251  no iplist now  
+[2016/06/12 20:43:07 954] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.56.8  
+[2016/06/12 20:43:07 955] transport  1138 [soc] connect   117.121.56.8  80  
+[2016/06/12 20:43:07 955] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:43:07 965] transport  461  [soc] [0] connected  
+[2016/06/12 20:43:07 965] transport  1191 build http request.  
+[2016/06/12 20:43:07 965] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 20:43:07 965] transport  483  [soc] [0] send ok  547  
+[2016/06/12 20:43:09 033] transport  495  [soc] [0] readable  
+[2016/06/12 20:43:09 034] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 12:43:08 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 20:43:08 802
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 20:43:08 901
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bXZ6zJEdMScXnuyPuvsedLi2IzAGNAopJ9daNJ^Op6D^^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 20:43:09 034] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 20:43:09 034] transport  1419 is_update  false  
+[2016/06/12 20:43:09 034] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 20:43:09 035] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.56.8  
+[2016/06/12 20:43:09 035] transport  914  cached ip is confirmed  
+[2016/06/12 20:43:09 035] transport  1170 [soc] disconnect   
+[2016/06/12 20:43:09 036] lgi        139  lgi resp!  
+[2016/06/12 20:43:09 036] lgi        146  lgi ok!  
+[2016/06/12 20:43:09 036] lgi        155  unkown  d4651504697  
+[2016/06/12 20:43:24 037] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 20:45:30 150 
+============================================================
+[2016/06/12 20:45:30 151] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 20:45:30 153] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(14970) 
+[2016/06/12 20:45:30 153] lgi        297  LGI_MSG_INIT  
+[2016/06/12 20:45:30 153] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 20:45:30 153] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 20:45:30 154] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 20:45:30 154] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 20:45:30 154] lgi        467  ns_enable=  0  
+[2016/06/12 20:45:30 154] lgi        479  prot_ver=1  
+[2016/06/12 20:45:30 154] lgi        490  prot_type=tcp  
+[2016/06/12 20:45:30 155] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 20:45:30 170] lgi        524  LGI_MSG_START, caller =  cloud_cisr1P1HHBHyy-I2aaFi7aa5iNWS1WNKdAI  
+[2016/06/12 20:45:30 170] lgi        530  lgistat =   0  
+[2016/06/12 20:45:30 170] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:45:30 170] transport  603  paramkvsport is   0  
+[2016/06/12 20:45:30 170] transport  611  ns_enable=  0  
+[2016/06/12 20:45:30 170] transport  655  url.full=  nil  
+[2016/06/12 20:45:30 170] transport  831  switch 80  
+[2016/06/12 20:45:30 170] transport  838  net type:  standard  
+[2016/06/12 20:45:30 170] transport  839  net operator:  def  
+[2016/06/12 20:45:30 170] transport  840  use proxy:  false  
+[2016/06/12 20:45:30 170] lgi        276  [session] send lgi request  
+[2016/06/12 20:45:30 171] transport  1071 ns_enable =  0  
+[2016/06/12 20:45:30 171] lgi        243  lver:  nil  
+[2016/06/12 20:45:30 171] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:45:30 299] transport  155  [dns] [0] response 117.121.21.147  
+[2016/06/12 20:45:30 299] transport  163  117  121  21  147  
+[2016/06/12 20:45:30 299] transport  192  iplist not avail  
+[2016/06/12 20:45:30 300] transport  251  no iplist now  
+[2016/06/12 20:45:30 300] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 20:45:30 302] transport  1138 [soc] connect   117.121.21.147  80  
+[2016/06/12 20:45:30 302] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:45:30 357] transport  461  [soc] [0] connected  
+[2016/06/12 20:45:30 357] transport  1191 build http request.  
+[2016/06/12 20:45:30 357] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 20:45:30 359] transport  483  [soc] [0] send ok  547  
+[2016/06/12 20:45:30 485] transport  495  [soc] [0] readable  
+[2016/06/12 20:45:30 485] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 20:45:31 5
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 20:45:31 82
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bd/wovhDTz2^szGYLTnO9POh6sgDADZ73qoyQB5wtxoG^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 20:45:30 485] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 20:45:30 485] transport  1419 is_update  false  
+[2016/06/12 20:45:30 485] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 20:45:30 487] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 20:45:30 487] transport  914  cached ip is confirmed  
+[2016/06/12 20:45:30 487] transport  1170 [soc] disconnect   
+[2016/06/12 20:45:30 487] lgi        139  lgi resp!  
+[2016/06/12 20:45:30 487] lgi        146  lgi ok!  
+[2016/06/12 20:45:30 487] lgi        155  unkown  d4651504697  
+[2016/06/12 20:45:38 879] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 20:45:53 145 
+============================================================
+[2016/06/12 20:45:53 145] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 20:45:53 147] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(f4014970) 
+[2016/06/12 20:45:53 147] lgi        297  LGI_MSG_INIT  
+[2016/06/12 20:45:53 147] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 20:45:53 147] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 20:45:53 147] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 20:45:53 147] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 20:45:53 148] lgi        467  ns_enable=  0  
+[2016/06/12 20:45:53 148] lgi        479  prot_ver=1  
+[2016/06/12 20:45:53 148] lgi        490  prot_type=tcp  
+[2016/06/12 20:45:53 149] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 20:45:53 166] lgi        524  LGI_MSG_START, caller =  cloud_cisr1P1HHBHyy-sHaa3kZaamiBBsS5+alTC  
+[2016/06/12 20:45:53 166] lgi        530  lgistat =   0  
+[2016/06/12 20:45:53 167] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:45:53 167] transport  603  paramkvsport is   0  
+[2016/06/12 20:45:53 167] transport  611  ns_enable=  0  
+[2016/06/12 20:45:53 167] transport  655  url.full=  nil  
+[2016/06/12 20:45:53 167] transport  831  switch 80  
+[2016/06/12 20:45:53 167] transport  838  net type:  standard  
+[2016/06/12 20:45:53 167] transport  839  net operator:  def  
+[2016/06/12 20:45:53 168] transport  840  use proxy:  false  
+[2016/06/12 20:45:53 168] lgi        276  [session] send lgi request  
+[2016/06/12 20:45:53 168] transport  1071 ns_enable =  0  
+[2016/06/12 20:45:53 169] lgi        243  lver:  nil  
+[2016/06/12 20:45:53 169] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:45:56 168] transport  306  [dns] [0] timeout!   
+[2016/06/12 20:45:56 168] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  nil  
+[2016/06/12 20:45:56 169] network    84   ipfromenv ,  ipcfg  dev.voicecloud.cn  def  nil  
+[2016/06/12 20:45:56 169] transport  1138 [soc] connect   116.213.69.195  80  
+[2016/06/12 20:45:56 169] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:46:01 169] transport  319  soc_conn_failed  
+[2016/06/12 20:46:01 169] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  nil  
+[2016/06/12 20:46:01 170] transport  388  switch 80  
+[2016/06/12 20:46:01 170] transport  407  MSC:[soc] [0] conn timeout!  
+[2016/06/12 20:46:01 170] transport  1170 [soc] disconnect   
+[2016/06/12 20:46:01 170] transport  410  soc_conn_timeout, try2conn_times =  2  
+[2016/06/12 20:46:01 170] transport  1071 ns_enable =  0  
+[2016/06/12 20:46:04 172] transport  306  [dns] [0] timeout!   
+[2016/06/12 20:46:04 173] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  nil  
+[2016/06/12 20:46:04 174] network    84   ipfromenv ,  ipcfg  dev.voicecloud.cn  def  nil  
+[2016/06/12 20:46:04 174] transport  1138 [soc] connect   116.213.69.195  80  
+[2016/06/12 20:46:04 174] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:46:08 169] lgi        206  lgi timeout!  lgi_resp  
+[2016/06/12 20:46:09 175] transport  319  soc_conn_failed  
+[2016/06/12 20:46:09 175] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  nil  
+[2016/06/12 20:46:09 176] transport  388  switch 80  
+[2016/06/12 20:46:09 176] transport  407  MSC:[soc] [0] conn timeout!  
+[2016/06/12 20:46:09 176] transport  1170 [soc] disconnect   
+[2016/06/12 20:46:09 176] transport  410  soc_conn_timeout, try2conn_times =  1  
+[2016/06/12 20:46:09 176] transport  1071 ns_enable =  0  
+[2016/06/12 20:46:12 176] transport  306  [dns] [0] timeout!   
+[2016/06/12 20:46:12 177] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  nil  
+[2016/06/12 20:46:12 178] network    84   ipfromenv ,  ipcfg  dev.voicecloud.cn  def  nil  
+[2016/06/12 20:46:12 178] transport  1138 [soc] connect   116.213.69.195  80  
+[2016/06/12 20:46:12 178] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:46:12 785] lgi        524  LGI_MSG_START, caller =  cloud_cisr1P1HHBHyy-sraa9HwaamiBBsS5+alTC  
+[2016/06/12 20:46:12 785] lgi        530  lgistat =   3  
+[2016/06/12 20:46:12 785] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:46:12 785] transport  603  paramkvsport is   0  
+[2016/06/12 20:46:12 785] transport  611  ns_enable=  0  
+[2016/06/12 20:46:12 786] transport  655  url.full=  nil  
+[2016/06/12 20:46:12 786] transport  838  net type:  standard  
+[2016/06/12 20:46:12 786] transport  839  net operator:  def  
+[2016/06/12 20:46:12 786] transport  840  use proxy:  false  
+[2016/06/12 20:46:12 786] lgi        276  [session] send lgi request  
+[2016/06/12 20:46:12 786] transport  1071 ns_enable =  0  
+[2016/06/12 20:46:12 787] lgi        243  lver:  nil  
+[2016/06/12 20:46:12 787] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:46:15 787] transport  306  [dns] [0] timeout!   
+[2016/06/12 20:46:15 788] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  nil  
+[2016/06/12 20:46:15 788] network    84   ipfromenv ,  ipcfg  dev.voicecloud.cn  def  nil  
+[2016/06/12 20:46:15 788] transport  1138 [soc] connect   116.213.69.195  80  
+[2016/06/12 20:46:15 788] transport  1155 mspsoc.open,prot_type=  tcp  
+============================================================
+Time  2016/06/12 20:54:22 782 
+============================================================
+[2016/06/12 20:54:22 782] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 20:54:22 809] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(14890) 
+[2016/06/12 20:54:22 809] lgi        297  LGI_MSG_INIT  
+[2016/06/12 20:54:22 809] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 20:54:22 809] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 20:54:22 809] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 20:54:22 809] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 20:54:22 816] lgi        467  ns_enable=  0  
+[2016/06/12 20:54:22 817] lgi        479  prot_ver=1  
+[2016/06/12 20:54:22 817] lgi        490  prot_type=tcp  
+[2016/06/12 20:54:22 817] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 20:54:22 915] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PwHHBHyy-VRg4eaadyikeq0JU0n3  
+[2016/06/12 20:54:22 915] lgi        530  lgistat =   0  
+[2016/06/12 20:54:22 915] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:54:22 916] transport  603  paramkvsport is   0  
+[2016/06/12 20:54:22 916] transport  611  ns_enable=  0  
+[2016/06/12 20:54:22 916] transport  655  url.full=  nil  
+[2016/06/12 20:54:22 916] transport  831  switch 80  
+[2016/06/12 20:54:22 916] transport  838  net type:  standard  
+[2016/06/12 20:54:22 917] transport  839  net operator:  def  
+[2016/06/12 20:54:22 917] transport  840  use proxy:  false  
+[2016/06/12 20:54:22 917] lgi        276  [session] send lgi request  
+[2016/06/12 20:54:22 917] transport  1071 ns_enable =  0  
+[2016/06/12 20:54:22 918] lgi        243  lver:  nil  
+[2016/06/12 20:54:22 918] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:54:23 123] transport  155  [dns] [0] response 117.121.21.148  
+[2016/06/12 20:54:23 123] transport  163  117  121  21  148  
+[2016/06/12 20:54:23 123] transport  192  iplist not avail  
+[2016/06/12 20:54:23 124] transport  251  no iplist now  
+[2016/06/12 20:54:23 124] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.148  
+[2016/06/12 20:54:23 125] transport  1138 [soc] connect   117.121.21.148  80  
+[2016/06/12 20:54:23 125] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:54:23 191] transport  461  [soc] [0] connected  
+[2016/06/12 20:54:23 191] transport  1191 build http request.  
+[2016/06/12 20:54:23 191] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 20:54:23 192] transport  483  [soc] [0] send ok  547  
+[2016/06/12 20:54:24 555] transport  495  [soc] [0] readable  
+[2016/06/12 20:54:24 556] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 12:54:24 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 20:54:24 499
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 20:54:24 565
+X-Cache: MISS from ustlnx16.ust.hk
+X-Cache-Lookup: MISS from ustlnx16.ust.hk:8080
+Via: 1.0 ustlnx16.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bcddmK3jN2VBOx3VVC3asIIOVkeP6YW2P9RAwzYzdVFS^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 20:54:24 556] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 20:54:24 556] transport  1419 is_update  false  
+[2016/06/12 20:54:24 556] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 20:54:24 557] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.148  
+[2016/06/12 20:54:24 557] transport  914  cached ip is confirmed  
+[2016/06/12 20:54:24 557] transport  1170 [soc] disconnect   
+[2016/06/12 20:54:25 117] lgi        139  lgi resp!  
+[2016/06/12 20:54:25 117] lgi        146  lgi ok!  
+[2016/06/12 20:54:25 117] lgi        155  unkown  d4651504697  
+[2016/06/12 20:54:40 117] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 20:55:33 584 
+============================================================
+[2016/06/12 20:55:33 584] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 20:55:33 586] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(90014970) 
+[2016/06/12 20:55:33 586] lgi        297  LGI_MSG_INIT  
+[2016/06/12 20:55:33 586] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 20:55:33 587] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 20:55:33 587] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 20:55:33 587] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 20:55:33 587] lgi        467  ns_enable=  0  
+[2016/06/12 20:55:33 587] lgi        479  prot_ver=1  
+[2016/06/12 20:55:33 587] lgi        490  prot_type=tcp  
+[2016/06/12 20:55:33 588] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 20:55:33 607] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-Q1H0f+aawBTBvQlWe1TC  
+[2016/06/12 20:55:33 607] lgi        530  lgistat =   0  
+[2016/06/12 20:55:33 607] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 20:55:33 607] transport  603  paramkvsport is   0  
+[2016/06/12 20:55:33 607] transport  611  ns_enable=  0  
+[2016/06/12 20:55:33 608] transport  655  url.full=  nil  
+[2016/06/12 20:55:33 608] transport  831  switch 80  
+[2016/06/12 20:55:33 608] transport  838  net type:  standard  
+[2016/06/12 20:55:33 608] transport  839  net operator:  def  
+[2016/06/12 20:55:33 608] transport  840  use proxy:  false  
+[2016/06/12 20:55:33 608] lgi        276  [session] send lgi request  
+[2016/06/12 20:55:33 609] transport  1071 ns_enable =  0  
+[2016/06/12 20:55:33 609] lgi        243  lver:  nil  
+[2016/06/12 20:55:33 609] lgi        248  cfg_ver:  nil  
+[2016/06/12 20:55:33 656] transport  155  [dns] [0] response 59.107.24.11  
+[2016/06/12 20:55:33 656] transport  163  59  107  24  11  
+[2016/06/12 20:55:33 656] transport  192  iplist not avail  
+[2016/06/12 20:55:33 657] transport  251  no iplist now  
+[2016/06/12 20:55:33 657] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 20:55:33 657] transport  1138 [soc] connect   59.107.24.11  80  
+[2016/06/12 20:55:33 657] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 20:55:33 664] transport  461  [soc] [0] connected  
+[2016/06/12 20:55:33 664] transport  1191 build http request.  
+[2016/06/12 20:55:33 665] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 20:55:33 692] transport  483  [soc] [0] send ok  547  
+[2016/06/12 20:55:34 737] transport  495  [soc] [0] readable  
+[2016/06/12 20:55:34 737] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 12:55:34 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 20:55:34 660
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 20:55:34 701
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bSDK9uzctizzH/kNnAsv5A6IogN0VG2PQvXK75RDtrvO^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 20:55:34 737] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 20:55:34 737] transport  1419 is_update  false  
+[2016/06/12 20:55:34 737] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 20:55:34 739] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 20:55:34 739] transport  905  iplist not avail  
+[2016/06/12 20:55:34 739] transport  1170 [soc] disconnect   
+[2016/06/12 20:55:34 739] lgi        139  lgi resp!  
+[2016/06/12 20:55:34 739] lgi        146  lgi ok!  
+[2016/06/12 20:55:34 740] lgi        155  unkown  d4651504697  
+[2016/06/12 20:55:51 808] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:02:57 416 
+============================================================
+[2016/06/12 21:02:57 416] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:02:57 418] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(d0014890) 
+[2016/06/12 21:02:57 418] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:02:57 418] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:02:57 418] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:02:57 418] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:02:57 418] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:02:57 418] lgi        467  ns_enable=  0  
+[2016/06/12 21:02:57 418] lgi        479  prot_ver=1  
+[2016/06/12 21:02:57 418] lgi        490  prot_type=tcp  
+[2016/06/12 21:02:57 418] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:02:57 432] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-9Ha80oaaWgMWRPu59aGW  
+[2016/06/12 21:02:57 432] lgi        530  lgistat =   0  
+[2016/06/12 21:02:57 432] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:02:57 432] transport  603  paramkvsport is   0  
+[2016/06/12 21:02:57 432] transport  611  ns_enable=  0  
+[2016/06/12 21:02:57 433] transport  655  url.full=  nil  
+[2016/06/12 21:02:57 433] transport  831  switch 80  
+[2016/06/12 21:02:57 433] transport  838  net type:  standard  
+[2016/06/12 21:02:57 433] transport  839  net operator:  def  
+[2016/06/12 21:02:57 433] transport  840  use proxy:  false  
+[2016/06/12 21:02:57 433] lgi        276  [session] send lgi request  
+[2016/06/12 21:02:57 433] transport  1071 ns_enable =  0  
+[2016/06/12 21:02:57 433] lgi        243  lver:  nil  
+[2016/06/12 21:02:57 433] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:02:57 642] transport  155  [dns] [0] response 59.107.24.3  
+[2016/06/12 21:02:57 642] transport  163  59  107  24  3  
+[2016/06/12 21:02:57 642] transport  192  iplist not avail  
+[2016/06/12 21:02:57 643] transport  251  no iplist now  
+[2016/06/12 21:02:57 643] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.3  
+[2016/06/12 21:02:57 645] transport  1138 [soc] connect   59.107.24.3  80  
+[2016/06/12 21:02:57 645] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:02:57 656] transport  461  [soc] [0] connected  
+[2016/06/12 21:02:57 656] transport  1191 build http request.  
+[2016/06/12 21:02:57 656] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:02:57 682] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:02:59 501] transport  495  [soc] [0] readable  
+[2016/06/12 21:02:59 501] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 13:02:59 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:02:59 178
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:02:59 259
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bmCh22te/6QKhAuFTxhakonAZSReOrOui9mjE7AIpEpO^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:02:59 501] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:02:59 501] transport  1419 is_update  false  
+[2016/06/12 21:02:59 501] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:02:59 502] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.3  
+[2016/06/12 21:02:59 503] transport  914  cached ip is confirmed  
+[2016/06/12 21:02:59 503] transport  1170 [soc] disconnect   
+[2016/06/12 21:02:59 503] lgi        139  lgi resp!  
+[2016/06/12 21:02:59 503] lgi        146  lgi ok!  
+[2016/06/12 21:02:59 503] lgi        155  unkown  d4651504697  
+[2016/06/12 21:03:05 788] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:05:41 222 
+============================================================
+[2016/06/12 21:05:41 222] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:05:41 223] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(3c014970) 
+[2016/06/12 21:05:41 224] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:05:41 224] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:05:41 224] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:05:41 224] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:05:41 224] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:05:41 224] lgi        467  ns_enable=  0  
+[2016/06/12 21:05:41 225] lgi        479  prot_ver=1  
+[2016/06/12 21:05:41 225] lgi        490  prot_type=tcp  
+[2016/06/12 21:05:41 225] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:05:41 249] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-LIwZ0waamjvkUruo7m-y  
+[2016/06/12 21:05:41 249] lgi        530  lgistat =   0  
+[2016/06/12 21:05:41 249] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:05:41 249] transport  603  paramkvsport is   0  
+[2016/06/12 21:05:41 249] transport  611  ns_enable=  0  
+[2016/06/12 21:05:41 249] transport  655  url.full=  nil  
+[2016/06/12 21:05:41 249] transport  831  switch 80  
+[2016/06/12 21:05:41 250] transport  838  net type:  standard  
+[2016/06/12 21:05:41 250] transport  839  net operator:  def  
+[2016/06/12 21:05:41 250] transport  840  use proxy:  false  
+[2016/06/12 21:05:41 250] lgi        276  [session] send lgi request  
+[2016/06/12 21:05:41 250] transport  1071 ns_enable =  0  
+[2016/06/12 21:05:41 251] lgi        243  lver:  nil  
+[2016/06/12 21:05:41 251] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:05:41 300] transport  155  [dns] [0] response 59.107.24.7  
+[2016/06/12 21:05:41 300] transport  163  59  107  24  7  
+[2016/06/12 21:05:41 300] transport  192  iplist not avail  
+[2016/06/12 21:05:41 301] transport  251  no iplist now  
+[2016/06/12 21:05:41 301] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.7  
+[2016/06/12 21:05:41 302] transport  1138 [soc] connect   59.107.24.7  80  
+[2016/06/12 21:05:41 302] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:05:41 313] transport  461  [soc] [0] connected  
+[2016/06/12 21:05:41 313] transport  1191 build http request.  
+[2016/06/12 21:05:41 314] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:05:41 336] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:05:41 999] transport  495  [soc] [0] readable  
+[2016/06/12 21:05:42 000] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 13:05:41 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:05:41 813
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:05:41 852
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bUmCszGMrcZvdx3fqHydPTiammqQ4YkqG/Z7HEPgjKdW^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:05:42 000] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:05:42 000] transport  1419 is_update  false  
+[2016/06/12 21:05:42 000] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:05:42 001] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.7  
+[2016/06/12 21:05:42 001] transport  914  cached ip is confirmed  
+[2016/06/12 21:05:42 001] transport  1170 [soc] disconnect   
+[2016/06/12 21:05:42 002] lgi        139  lgi resp!  
+[2016/06/12 21:05:42 002] lgi        146  lgi ok!  
+[2016/06/12 21:05:42 002] lgi        155  unkown  d4651504697  
+[2016/06/12 21:05:44 445] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:09:47 404 
+============================================================
+[2016/06/12 21:09:47 404] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:09:47 406] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(98014970) 
+[2016/06/12 21:09:47 407] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:09:47 407] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:09:47 407] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:09:47 407] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:09:47 407] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:09:47 408] lgi        467  ns_enable=  0  
+[2016/06/12 21:09:47 408] lgi        479  prot_ver=1  
+[2016/06/12 21:09:47 408] lgi        490  prot_type=tcp  
+[2016/06/12 21:09:47 408] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:09:47 426] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-GcdcEKaaPuM0PeBeMH7f  
+[2016/06/12 21:09:47 426] lgi        530  lgistat =   0  
+[2016/06/12 21:09:47 426] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:09:47 426] transport  603  paramkvsport is   0  
+[2016/06/12 21:09:47 426] transport  611  ns_enable=  0  
+[2016/06/12 21:09:47 426] transport  655  url.full=  nil  
+[2016/06/12 21:09:47 426] transport  831  switch 80  
+[2016/06/12 21:09:47 426] transport  838  net type:  standard  
+[2016/06/12 21:09:47 427] transport  839  net operator:  def  
+[2016/06/12 21:09:47 427] transport  840  use proxy:  false  
+[2016/06/12 21:09:47 427] lgi        276  [session] send lgi request  
+[2016/06/12 21:09:47 427] transport  1071 ns_enable =  0  
+[2016/06/12 21:09:47 427] lgi        243  lver:  nil  
+[2016/06/12 21:09:47 427] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:09:47 478] transport  155  [dns] [0] response 116.213.69.200  
+[2016/06/12 21:09:47 478] transport  163  116  213  69  200  
+[2016/06/12 21:09:47 478] transport  192  iplist not avail  
+[2016/06/12 21:09:47 478] transport  251  no iplist now  
+[2016/06/12 21:09:47 478] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  116.213.69.200  
+[2016/06/12 21:09:47 479] transport  1138 [soc] connect   116.213.69.200  80  
+[2016/06/12 21:09:47 479] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:09:47 485] transport  461  [soc] [0] connected  
+[2016/06/12 21:09:47 485] transport  1191 build http request.  
+[2016/06/12 21:09:47 485] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:09:47 512] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:09:48 994] transport  495  [soc] [0] readable  
+[2016/06/12 21:09:48 994] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 13:09:48 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:09:48 911
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:09:48 941
+X-Cache: MISS from ustlnx17b.ust.hk
+X-Cache-Lookup: MISS from ustlnx17b.ust.hk:8081
+Via: 1.0 ustlnx17b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bJkF79A6Q0XrQUwyhRg/4dTNHj0jl2mK3eDgtU/vGn3m^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:09:48 994] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:09:48 994] transport  1419 is_update  false  
+[2016/06/12 21:09:48 994] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:09:48 996] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  116.213.69.200  
+[2016/06/12 21:09:48 996] transport  905  iplist not avail  
+[2016/06/12 21:09:48 996] transport  1170 [soc] disconnect   
+[2016/06/12 21:09:48 996] lgi        139  lgi resp!  
+[2016/06/12 21:09:48 997] lgi        146  lgi ok!  
+[2016/06/12 21:09:48 997] lgi        155  unkown  d4651504697  
+[2016/06/12 21:10:00 507] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:10:01 239 
+============================================================
+[2016/06/12 21:10:01 239] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:10:01 242] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(60014970) 
+[2016/06/12 21:10:01 242] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:10:01 242] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:10:01 242] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:10:01 243] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:10:01 243] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:10:01 243] lgi        467  ns_enable=  0  
+[2016/06/12 21:10:01 243] lgi        479  prot_ver=1  
+[2016/06/12 21:10:01 243] lgi        490  prot_type=tcp  
+[2016/06/12 21:10:01 244] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:10:01 259] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-GKdxYUaaCj6CqCmT1dWm  
+[2016/06/12 21:10:01 259] lgi        530  lgistat =   0  
+[2016/06/12 21:10:01 260] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:10:01 260] transport  603  paramkvsport is   0  
+[2016/06/12 21:10:01 260] transport  611  ns_enable=  0  
+[2016/06/12 21:10:01 260] transport  655  url.full=  nil  
+[2016/06/12 21:10:01 260] transport  831  switch 80  
+[2016/06/12 21:10:01 260] transport  838  net type:  standard  
+[2016/06/12 21:10:01 260] transport  839  net operator:  def  
+[2016/06/12 21:10:01 260] transport  840  use proxy:  false  
+[2016/06/12 21:10:01 260] lgi        276  [session] send lgi request  
+[2016/06/12 21:10:01 260] transport  1071 ns_enable =  0  
+[2016/06/12 21:10:01 260] lgi        243  lver:  nil  
+[2016/06/12 21:10:01 260] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:10:01 263] transport  155  [dns] [0] response 116.213.69.200  
+[2016/06/12 21:10:01 263] transport  163  116  213  69  200  
+[2016/06/12 21:10:01 263] transport  192  iplist not avail  
+[2016/06/12 21:10:01 263] transport  251  no iplist now  
+[2016/06/12 21:10:01 263] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  116.213.69.200  
+[2016/06/12 21:10:01 264] transport  1138 [soc] connect   116.213.69.200  80  
+[2016/06/12 21:10:01 264] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:10:01 267] transport  461  [soc] [0] connected  
+[2016/06/12 21:10:01 268] transport  1191 build http request.  
+[2016/06/12 21:10:01 268] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:10:01 268] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:10:01 522] transport  495  [soc] [0] readable  
+[2016/06/12 21:10:01 522] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 13:10:01 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:10:01 463
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:10:01 503
+X-Cache: MISS from ustlnx17.ust.hk
+X-Cache-Lookup: MISS from ustlnx17.ust.hk:8080
+Via: 1.0 ustlnx17.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bDVGzUzLy8bExl^5w4yYRqjmdnkabS4uN33PClV4cb8W^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:10:01 522] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:10:01 522] transport  1419 is_update  false  
+[2016/06/12 21:10:01 522] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:10:01 523] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  116.213.69.200  
+[2016/06/12 21:10:01 523] transport  914  cached ip is confirmed  
+[2016/06/12 21:10:01 523] transport  1170 [soc] disconnect   
+[2016/06/12 21:10:01 523] lgi        139  lgi resp!  
+[2016/06/12 21:10:01 523] lgi        146  lgi ok!  
+[2016/06/12 21:10:01 523] lgi        155  unkown  d4651504697  
+[2016/06/12 21:10:09 676] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:10:28 049 
+============================================================
+[2016/06/12 21:10:28 050] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:10:28 052] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(14970) 
+[2016/06/12 21:10:28 052] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:10:28 052] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:10:28 052] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:10:28 052] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:10:28 053] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:10:28 053] lgi        467  ns_enable=  0  
+[2016/06/12 21:10:28 053] lgi        479  prot_ver=1  
+[2016/06/12 21:10:28 053] lgi        490  prot_type=tcp  
+[2016/06/12 21:10:28 054] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:10:28 065] lgi        524  LGI_MSG_START, caller =  legacyuup_1252ed  
+[2016/06/12 21:10:28 065] lgi        530  lgistat =   0  
+[2016/06/12 21:10:28 065] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:10:28 065] transport  603  paramkvsport is   0  
+[2016/06/12 21:10:28 065] transport  611  ns_enable=  0  
+[2016/06/12 21:10:28 065] transport  655  url.full=  nil  
+[2016/06/12 21:10:28 065] transport  838  net type:  standard  
+[2016/06/12 21:10:28 065] transport  839  net operator:  def  
+[2016/06/12 21:10:28 065] transport  840  use proxy:  false  
+[2016/06/12 21:10:28 065] lgi        276  [session] send lgi request  
+[2016/06/12 21:10:28 065] transport  1071 ns_enable =  0  
+[2016/06/12 21:10:28 066] lgi        243  lver:  nil  
+[2016/06/12 21:10:28 066] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:10:28 115] transport  155  [dns] [0] response 117.121.21.147  
+[2016/06/12 21:10:28 115] transport  163  117  121  21  147  
+[2016/06/12 21:10:28 115] transport  192  iplist not avail  
+[2016/06/12 21:10:28 116] transport  251  no iplist now  
+[2016/06/12 21:10:28 116] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:10:28 117] transport  1138 [soc] connect   117.121.21.147  80  
+[2016/06/12 21:10:28 117] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:10:28 119] transport  461  [soc] [0] connected  
+[2016/06/12 21:10:28 119] transport  1191 build http request.  
+[2016/06/12 21:10:28 119] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:10:28 120] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:10:28 405] transport  495  [soc] [0] readable  
+[2016/06/12 21:10:28 406] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 13:10:28 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:10:28 332
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:10:28 387
+X-Cache: MISS from ustlnx16.ust.hk
+X-Cache-Lookup: MISS from ustlnx16.ust.hk:8080
+Via: 1.0 ustlnx16.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bCZel7ge^sCWuy5AQAovl7VuioYyfJdzmOZR6BFpKVuS^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:10:28 406] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:10:28 406] transport  1419 is_update  false  
+[2016/06/12 21:10:28 406] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:10:28 408] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:10:28 408] transport  914  cached ip is confirmed  
+[2016/06/12 21:10:28 408] transport  1170 [soc] disconnect   
+[2016/06/12 21:10:28 408] lgi        139  lgi resp!  
+[2016/06/12 21:10:28 408] lgi        146  lgi ok!  
+[2016/06/12 21:10:28 408] lgi        155  unkown  d4651504697  
+[2016/06/12 21:10:28 671] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-hddI-maal5nP7GBzqm+K  
+[2016/06/12 21:10:28 671] lgi        530  lgistat =   2  
+[2016/06/12 21:10:43 483] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:10:44 486 
+============================================================
+[2016/06/12 21:10:44 486] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:10:44 489] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(c8014970) 
+[2016/06/12 21:10:44 489] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:10:44 489] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:10:44 489] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:10:44 489] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:10:44 490] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:10:44 490] lgi        467  ns_enable=  0  
+[2016/06/12 21:10:44 490] lgi        479  prot_ver=1  
+[2016/06/12 21:10:44 490] lgi        490  prot_type=tcp  
+[2016/06/12 21:10:44 491] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:10:44 504] lgi        524  LGI_MSG_START, caller =  legacyuup_129322  
+[2016/06/12 21:10:44 504] lgi        530  lgistat =   0  
+[2016/06/12 21:10:44 504] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:10:44 504] transport  603  paramkvsport is   0  
+[2016/06/12 21:10:44 504] transport  611  ns_enable=  0  
+[2016/06/12 21:10:44 504] transport  655  url.full=  nil  
+[2016/06/12 21:10:44 504] transport  838  net type:  standard  
+[2016/06/12 21:10:44 504] transport  839  net operator:  def  
+[2016/06/12 21:10:44 505] transport  840  use proxy:  false  
+[2016/06/12 21:10:44 505] lgi        276  [session] send lgi request  
+[2016/06/12 21:10:44 505] transport  1071 ns_enable =  0  
+[2016/06/12 21:10:44 505] lgi        243  lver:  nil  
+[2016/06/12 21:10:44 505] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:10:44 508] transport  155  [dns] [0] response 117.121.21.147  
+[2016/06/12 21:10:44 508] transport  163  117  121  21  147  
+[2016/06/12 21:10:44 508] transport  192  iplist not avail  
+[2016/06/12 21:10:44 509] transport  251  no iplist now  
+[2016/06/12 21:10:44 509] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:10:44 511] transport  1138 [soc] connect   117.121.21.147  80  
+[2016/06/12 21:10:44 511] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:10:44 513] transport  461  [soc] [0] connected  
+[2016/06/12 21:10:44 514] transport  1191 build http request.  
+[2016/06/12 21:10:44 515] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:10:44 516] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:10:44 723] transport  495  [soc] [0] readable  
+[2016/06/12 21:10:44 724] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 13:10:44 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:10:44 680
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:10:44 704
+X-Cache: MISS from ustlnx16.ust.hk
+X-Cache-Lookup: MISS from ustlnx16.ust.hk:8080
+Via: 1.0 ustlnx16.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bc31wj5hLtzihVgKGe1ho1WlFkw^LW8q98SRFEqy86Da^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:10:44 724] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:10:44 724] transport  1419 is_update  false  
+[2016/06/12 21:10:44 724] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:10:44 725] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:10:44 725] transport  914  cached ip is confirmed  
+[2016/06/12 21:10:44 725] transport  1170 [soc] disconnect   
+[2016/06/12 21:10:44 725] lgi        139  lgi resp!  
+[2016/06/12 21:10:44 726] lgi        146  lgi ok!  
+[2016/06/12 21:10:44 726] lgi        155  unkown  d4651504697  
+[2016/06/12 21:10:44 895] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-hrdKnoaaCfO5nh1WPa1i4  
+[2016/06/12 21:10:44 895] lgi        530  lgistat =   2  
+[2016/06/12 21:10:51 819] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:10:52 650 
+============================================================
+[2016/06/12 21:10:52 650] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:10:52 652] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(a0014970) 
+[2016/06/12 21:10:52 653] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:10:52 653] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:10:52 653] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:10:52 653] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:10:52 653] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:10:52 653] lgi        467  ns_enable=  0  
+[2016/06/12 21:10:52 653] lgi        479  prot_ver=1  
+[2016/06/12 21:10:52 653] lgi        490  prot_type=tcp  
+[2016/06/12 21:10:52 654] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:10:52 663] lgi        524  LGI_MSG_START, caller =  legacyuup_12b306  
+[2016/06/12 21:10:52 663] lgi        530  lgistat =   0  
+[2016/06/12 21:10:52 663] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:10:52 663] transport  603  paramkvsport is   0  
+[2016/06/12 21:10:52 663] transport  611  ns_enable=  0  
+[2016/06/12 21:10:52 663] transport  655  url.full=  nil  
+[2016/06/12 21:10:52 663] transport  838  net type:  standard  
+[2016/06/12 21:10:52 663] transport  839  net operator:  def  
+[2016/06/12 21:10:52 663] transport  840  use proxy:  false  
+[2016/06/12 21:10:52 663] lgi        276  [session] send lgi request  
+[2016/06/12 21:10:52 663] transport  1071 ns_enable =  0  
+[2016/06/12 21:10:52 664] lgi        243  lver:  nil  
+[2016/06/12 21:10:52 664] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:10:52 667] transport  155  [dns] [0] response 117.121.21.147  
+[2016/06/12 21:10:52 667] transport  163  117  121  21  147  
+[2016/06/12 21:10:52 667] transport  192  iplist not avail  
+[2016/06/12 21:10:52 668] transport  251  no iplist now  
+[2016/06/12 21:10:52 668] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:10:52 668] transport  1138 [soc] connect   117.121.21.147  80  
+[2016/06/12 21:10:52 669] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:10:52 671] transport  461  [soc] [0] connected  
+[2016/06/12 21:10:52 671] transport  1191 build http request.  
+[2016/06/12 21:10:52 671] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:10:52 672] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:10:52 847] transport  495  [soc] [0] readable  
+[2016/06/12 21:10:52 848] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 13:10:52 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:10:52 820
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:10:52 877
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bpMrw8t3HeGgcpalm3rRXKuHr0IS/3P2Cdwkuot3Ewk^^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:10:52 848] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:10:52 848] transport  1419 is_update  false  
+[2016/06/12 21:10:52 848] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:10:52 849] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:10:52 849] transport  914  cached ip is confirmed  
+[2016/06/12 21:10:52 849] transport  1170 [soc] disconnect   
+[2016/06/12 21:10:52 849] lgi        139  lgi resp!  
+[2016/06/12 21:10:52 849] lgi        146  lgi ok!  
+[2016/06/12 21:10:52 850] lgi        155  unkown  d4651504697  
+[2016/06/12 21:10:53 018] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-hjdFpoaalb9tkTm-o0WD4  
+[2016/06/12 21:10:53 018] lgi        530  lgistat =   2  
+[2016/06/12 21:11:07 942] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:11:22 637 
+============================================================
+[2016/06/12 21:11:22 637] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:11:22 638] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(1c014970) 
+[2016/06/12 21:11:22 638] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:11:22 639] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:11:22 639] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:11:22 639] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:11:22 639] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:11:22 639] lgi        467  ns_enable=  0  
+[2016/06/12 21:11:22 639] lgi        479  prot_ver=1  
+[2016/06/12 21:11:22 639] lgi        490  prot_type=tcp  
+[2016/06/12 21:11:22 639] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:11:22 650] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-hzdqAYaaBEP50J0G95uo  
+[2016/06/12 21:11:22 650] lgi        530  lgistat =   0  
+[2016/06/12 21:11:22 650] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:11:22 650] transport  603  paramkvsport is   0  
+[2016/06/12 21:11:22 650] transport  611  ns_enable=  0  
+[2016/06/12 21:11:22 650] transport  655  url.full=  nil  
+[2016/06/12 21:11:22 650] transport  831  switch 80  
+[2016/06/12 21:11:22 651] transport  838  net type:  standard  
+[2016/06/12 21:11:22 651] transport  839  net operator:  def  
+[2016/06/12 21:11:22 651] transport  840  use proxy:  false  
+[2016/06/12 21:11:22 651] lgi        276  [session] send lgi request  
+[2016/06/12 21:11:22 651] transport  1071 ns_enable =  0  
+[2016/06/12 21:11:22 651] lgi        243  lver:  nil  
+[2016/06/12 21:11:22 651] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:11:22 653] transport  155  [dns] [0] response 117.121.21.147  
+[2016/06/12 21:11:22 654] transport  163  117  121  21  147  
+[2016/06/12 21:11:22 654] transport  192  iplist not avail  
+[2016/06/12 21:11:22 654] transport  251  no iplist now  
+[2016/06/12 21:11:22 654] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:11:22 655] transport  1138 [soc] connect   117.121.21.147  80  
+[2016/06/12 21:11:22 655] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:11:22 663] transport  461  [soc] [0] connected  
+[2016/06/12 21:11:22 663] transport  1191 build http request.  
+[2016/06/12 21:11:22 663] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:11:22 687] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:11:27 878] transport  495  [soc] [0] readable  
+[2016/06/12 21:11:27 878] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 13:11:26 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:11:26 88
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:11:26 275
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0btrfunCshWT/UnRKnCYiB5Sjrv3NUA0Q0lENNaYl^Of6^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:11:27 879] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:11:27 879] transport  1419 is_update  false  
+[2016/06/12 21:11:27 879] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:11:27 880] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:11:27 880] transport  905  iplist not avail  
+[2016/06/12 21:11:27 880] transport  1170 [soc] disconnect   
+[2016/06/12 21:11:27 880] lgi        139  lgi resp!  
+[2016/06/12 21:11:27 880] lgi        146  lgi ok!  
+[2016/06/12 21:11:27 881] lgi        155  unkown  d4651504697  
+[2016/06/12 21:11:42 882] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:11:58 115 
+============================================================
+[2016/06/12 21:11:58 115] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:11:58 116] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(f8014890) 
+[2016/06/12 21:11:58 116] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:11:58 116] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:11:58 116] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:11:58 116] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:11:58 116] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:11:58 116] lgi        467  ns_enable=  0  
+[2016/06/12 21:11:58 116] lgi        479  prot_ver=1  
+[2016/06/12 21:11:58 117] lgi        490  prot_type=tcp  
+[2016/06/12 21:11:58 117] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:11:58 129] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-RxdS0haakAo1MimU9PVZ  
+[2016/06/12 21:11:58 130] lgi        530  lgistat =   0  
+[2016/06/12 21:11:58 130] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:11:58 130] transport  603  paramkvsport is   0  
+[2016/06/12 21:11:58 130] transport  611  ns_enable=  0  
+[2016/06/12 21:11:58 130] transport  655  url.full=  nil  
+[2016/06/12 21:11:58 130] transport  831  switch 80  
+[2016/06/12 21:11:58 130] transport  838  net type:  standard  
+[2016/06/12 21:11:58 130] transport  839  net operator:  def  
+[2016/06/12 21:11:58 130] transport  840  use proxy:  false  
+[2016/06/12 21:11:58 130] lgi        276  [session] send lgi request  
+[2016/06/12 21:11:58 130] transport  1071 ns_enable =  0  
+[2016/06/12 21:11:58 130] lgi        243  lver:  nil  
+[2016/06/12 21:11:58 130] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:11:58 132] transport  155  [dns] [0] response 59.107.24.7  
+[2016/06/12 21:11:58 132] transport  163  59  107  24  7  
+[2016/06/12 21:11:58 132] transport  192  iplist not avail  
+[2016/06/12 21:11:58 133] transport  251  no iplist now  
+[2016/06/12 21:11:58 133] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.7  
+[2016/06/12 21:11:58 133] transport  1138 [soc] connect   59.107.24.7  80  
+[2016/06/12 21:11:58 133] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:11:58 139] transport  461  [soc] [0] connected  
+[2016/06/12 21:11:58 139] transport  1191 build http request.  
+[2016/06/12 21:11:58 139] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:11:58 140] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:12:04 535] transport  495  [soc] [0] readable  
+[2016/06/12 21:12:04 535] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 13:12:00 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:12:03 924
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:12:03 971
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bc0X5cfNPe1GIDlG1ZCSp4fMRqND7ByftXQiMKxQ9BNO^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:12:04 535] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:12:04 535] transport  1419 is_update  false  
+[2016/06/12 21:12:04 536] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:12:04 537] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.7  
+[2016/06/12 21:12:04 537] transport  914  cached ip is confirmed  
+[2016/06/12 21:12:04 537] transport  1170 [soc] disconnect   
+[2016/06/12 21:12:04 537] lgi        139  lgi resp!  
+[2016/06/12 21:12:04 537] lgi        146  lgi ok!  
+[2016/06/12 21:12:04 538] lgi        155  unkown  d4651504697  
+[2016/06/12 21:12:12 208] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:12:12 677 
+============================================================
+[2016/06/12 21:12:12 677] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:12:12 679] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(a4014970) 
+[2016/06/12 21:12:12 679] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:12:12 679] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:12:12 679] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:12:12 679] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:12:12 679] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:12:12 680] lgi        467  ns_enable=  0  
+[2016/06/12 21:12:12 680] lgi        479  prot_ver=1  
+[2016/06/12 21:12:12 680] lgi        490  prot_type=tcp  
+[2016/06/12 21:12:12 680] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:12:12 689] lgi        524  LGI_MSG_START, caller =  legacyuup_13eba0  
+[2016/06/12 21:12:12 689] lgi        530  lgistat =   0  
+[2016/06/12 21:12:12 689] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:12:12 689] transport  603  paramkvsport is   0  
+[2016/06/12 21:12:12 689] transport  611  ns_enable=  0  
+[2016/06/12 21:12:12 689] transport  655  url.full=  nil  
+[2016/06/12 21:12:12 689] transport  838  net type:  standard  
+[2016/06/12 21:12:12 690] transport  839  net operator:  def  
+[2016/06/12 21:12:12 690] transport  840  use proxy:  false  
+[2016/06/12 21:12:12 690] lgi        276  [session] send lgi request  
+[2016/06/12 21:12:12 690] transport  1071 ns_enable =  0  
+[2016/06/12 21:12:12 690] lgi        243  lver:  nil  
+[2016/06/12 21:12:12 690] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:12:12 692] transport  155  [dns] [0] response 59.107.24.7  
+[2016/06/12 21:12:12 692] transport  163  59  107  24  7  
+[2016/06/12 21:12:12 692] transport  192  iplist not avail  
+[2016/06/12 21:12:12 694] transport  251  no iplist now  
+[2016/06/12 21:12:12 694] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.7  
+[2016/06/12 21:12:12 695] transport  1138 [soc] connect   59.107.24.7  80  
+[2016/06/12 21:12:12 695] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:12:12 697] transport  461  [soc] [0] connected  
+[2016/06/12 21:12:12 697] transport  1191 build http request.  
+[2016/06/12 21:12:12 698] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:12:12 698] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:12:12 915] transport  495  [soc] [0] readable  
+[2016/06/12 21:12:12 916] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 13:12:12 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:12:12 864
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:12:12 902
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bGoTfE7QL3R/dx3fqHydPTqBv/oqNdvgTfsK5HLalHhG^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:12:12 916] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:12:12 916] transport  1419 is_update  false  
+[2016/06/12 21:12:12 916] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:12:12 917] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.7  
+[2016/06/12 21:12:12 917] transport  914  cached ip is confirmed  
+[2016/06/12 21:12:12 917] transport  1170 [soc] disconnect   
+[2016/06/12 21:12:12 918] lgi        139  lgi resp!  
+[2016/06/12 21:12:12 918] lgi        146  lgi ok!  
+[2016/06/12 21:12:12 918] lgi        155  unkown  d4651504697  
+[2016/06/12 21:12:13 149] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-RVdRUTaataF5l41JwPO94  
+[2016/06/12 21:12:13 149] lgi        530  lgistat =   2  
+[2016/06/12 21:12:18 466] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:12:19 110 
+============================================================
+[2016/06/12 21:12:19 110] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:12:19 111] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(d8014890) 
+[2016/06/12 21:12:19 111] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:12:19 111] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:12:19 112] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:12:19 112] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:12:19 112] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:12:19 112] lgi        467  ns_enable=  0  
+[2016/06/12 21:12:19 112] lgi        479  prot_ver=1  
+[2016/06/12 21:12:19 112] lgi        490  prot_type=tcp  
+[2016/06/12 21:12:19 113] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:12:19 130] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-Rf1mMaaaHW0Hjg00F1oJ  
+[2016/06/12 21:12:19 131] lgi        530  lgistat =   0  
+[2016/06/12 21:12:19 131] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:12:19 131] transport  603  paramkvsport is   0  
+[2016/06/12 21:12:19 131] transport  611  ns_enable=  0  
+[2016/06/12 21:12:19 131] transport  655  url.full=  nil  
+[2016/06/12 21:12:19 131] transport  831  switch 80  
+[2016/06/12 21:12:19 131] transport  838  net type:  standard  
+[2016/06/12 21:12:19 131] transport  839  net operator:  def  
+[2016/06/12 21:12:19 131] transport  840  use proxy:  false  
+[2016/06/12 21:12:19 131] lgi        276  [session] send lgi request  
+[2016/06/12 21:12:19 131] transport  1071 ns_enable =  0  
+[2016/06/12 21:12:19 131] lgi        243  lver:  nil  
+[2016/06/12 21:12:19 131] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:12:19 210] transport  155  [dns] [0] response 59.107.24.5  
+[2016/06/12 21:12:19 211] transport  163  59  107  24  5  
+[2016/06/12 21:12:19 211] transport  192  iplist not avail  
+[2016/06/12 21:12:19 211] transport  251  no iplist now  
+[2016/06/12 21:12:19 211] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.5  
+[2016/06/12 21:12:19 213] transport  1138 [soc] connect   59.107.24.5  80  
+[2016/06/12 21:12:19 213] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:12:19 223] transport  461  [soc] [0] connected  
+[2016/06/12 21:12:19 224] transport  1191 build http request.  
+[2016/06/12 21:12:19 224] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:12:19 252] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:12:19 436] transport  495  [soc] [0] readable  
+[2016/06/12 21:12:19 437] transport  1563 HTTP/1.0 200 OK
+Date: Sun, 12 Jun 2016 13:12:19 GMT
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:12:19 388
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:12:19 418
+X-Cache: MISS from ustlnx16b.ust.hk
+X-Cache-Lookup: MISS from ustlnx16b.ust.hk:8081
+Via: 1.0 ustlnx16b.ust.hk (squid/3.1.20-20120626-r10456)
+Connection: keep-alive
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bY0Kzcm9Hsu6VUAxiJzPzduZ2zbCQF07hIagp4NPDqza^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:12:19 437] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:12:19 437] transport  1419 is_update  false  
+[2016/06/12 21:12:19 437] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:12:19 438] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.5  
+[2016/06/12 21:12:19 438] transport  905  iplist not avail  
+[2016/06/12 21:12:19 439] transport  1170 [soc] disconnect   
+[2016/06/12 21:12:19 439] lgi        139  lgi resp!  
+[2016/06/12 21:12:19 439] lgi        146  lgi ok!  
+[2016/06/12 21:12:19 439] lgi        155  unkown  d4651504697  
+[2016/06/12 21:12:25 600] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:13:21 740 
+============================================================
+[2016/06/12 21:13:21 740] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:13:21 742] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(b8014890) 
+[2016/06/12 21:13:21 742] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:13:21 742] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:13:21 742] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:13:21 742] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:13:21 742] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:13:21 742] lgi        467  ns_enable=  0  
+[2016/06/12 21:13:21 742] lgi        479  prot_ver=1  
+[2016/06/12 21:13:21 742] lgi        490  prot_type=tcp  
+[2016/06/12 21:13:21 742] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:13:21 753] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyy-6315IOaaPwWWpn5R8BGV  
+[2016/06/12 21:13:21 753] lgi        530  lgistat =   0  
+[2016/06/12 21:13:21 753] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:13:21 753] transport  603  paramkvsport is   0  
+[2016/06/12 21:13:21 753] transport  611  ns_enable=  0  
+[2016/06/12 21:13:21 754] transport  655  url.full=  nil  
+[2016/06/12 21:13:21 754] transport  831  switch 80  
+[2016/06/12 21:13:21 754] transport  838  net type:  standard  
+[2016/06/12 21:13:21 754] transport  839  net operator:  def  
+[2016/06/12 21:13:21 754] transport  840  use proxy:  false  
+[2016/06/12 21:13:21 754] lgi        276  [session] send lgi request  
+[2016/06/12 21:13:21 754] transport  1071 ns_enable =  0  
+[2016/06/12 21:13:21 754] lgi        243  lver:  nil  
+[2016/06/12 21:13:21 754] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:13:21 974] transport  155  [dns] [0] response 59.107.24.11  
+[2016/06/12 21:13:21 974] transport  163  59  107  24  11  
+[2016/06/12 21:13:21 974] transport  192  iplist not avail  
+[2016/06/12 21:13:21 974] transport  251  no iplist now  
+[2016/06/12 21:13:21 974] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 21:13:21 975] transport  1138 [soc] connect   59.107.24.11  80  
+[2016/06/12 21:13:21 975] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:13:21 999] transport  461  [soc] [0] connected  
+[2016/06/12 21:13:21 999] transport  1191 build http request.  
+[2016/06/12 21:13:22 000] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:13:22 002] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:13:22 083] transport  495  [soc] [0] readable  
+[2016/06/12 21:13:22 084] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:13:22 56
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:13:22 115
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bF5rZJw^gxbqdkYjUXFsUPJSWsSBUYPEmSEIN4GWJ^TO^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:13:22 084] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:13:22 084] transport  1419 is_update  false  
+[2016/06/12 21:13:22 084] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:13:22 085] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 21:13:22 085] transport  914  cached ip is confirmed  
+[2016/06/12 21:13:22 085] transport  1170 [soc] disconnect   
+[2016/06/12 21:13:22 085] lgi        139  lgi resp!  
+[2016/06/12 21:13:22 085] lgi        146  lgi ok!  
+[2016/06/12 21:13:22 086] lgi        155  unkown  d4651504697  
+[2016/06/12 21:13:37 135] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:13:47 481 
+============================================================
+[2016/06/12 21:13:47 481] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:13:47 484] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(14014970) 
+[2016/06/12 21:13:47 484] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:13:47 484] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:13:47 484] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:13:47 484] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:13:47 485] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:13:47 485] lgi        467  ns_enable=  0  
+[2016/06/12 21:13:47 485] lgi        479  prot_ver=1  
+[2016/06/12 21:13:47 485] lgi        490  prot_type=tcp  
+[2016/06/12 21:13:47 486] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:13:47 500] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybmC1-88aalmMB27WuXHb6  
+[2016/06/12 21:13:47 500] lgi        530  lgistat =   0  
+[2016/06/12 21:13:47 500] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:13:47 500] transport  603  paramkvsport is   0  
+[2016/06/12 21:13:47 501] transport  611  ns_enable=  0  
+[2016/06/12 21:13:47 501] transport  655  url.full=  nil  
+[2016/06/12 21:13:47 501] transport  831  switch 80  
+[2016/06/12 21:13:47 501] transport  838  net type:  standard  
+[2016/06/12 21:13:47 501] transport  839  net operator:  def  
+[2016/06/12 21:13:47 501] transport  840  use proxy:  false  
+[2016/06/12 21:13:47 501] lgi        276  [session] send lgi request  
+[2016/06/12 21:13:47 501] transport  1071 ns_enable =  0  
+[2016/06/12 21:13:47 501] lgi        243  lver:  nil  
+[2016/06/12 21:13:47 501] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:13:47 506] transport  155  [dns] [0] response 59.107.24.11  
+[2016/06/12 21:13:47 506] transport  163  59  107  24  11  
+[2016/06/12 21:13:47 506] transport  192  iplist not avail  
+[2016/06/12 21:13:47 506] transport  251  no iplist now  
+[2016/06/12 21:13:47 506] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 21:13:47 507] transport  1138 [soc] connect   59.107.24.11  80  
+[2016/06/12 21:13:47 507] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:13:47 538] transport  461  [soc] [0] connected  
+[2016/06/12 21:13:47 538] transport  1191 build http request.  
+[2016/06/12 21:13:47 539] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:13:47 539] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:13:47 835] transport  495  [soc] [0] readable  
+[2016/06/12 21:13:47 836] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:13:47 791
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:13:47 857
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bcfFwVb2jurx9Y1cx0QHLAYOKpwrZONx7eBhodfJT35^^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:13:47 836] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:13:47 836] transport  1419 is_update  false  
+[2016/06/12 21:13:47 836] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:13:47 837] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 21:13:47 837] transport  905  iplist not avail  
+[2016/06/12 21:13:47 837] transport  1170 [soc] disconnect   
+[2016/06/12 21:13:47 838] lgi        139  lgi resp!  
+[2016/06/12 21:13:47 838] lgi        146  lgi ok!  
+[2016/06/12 21:13:47 838] lgi        155  unkown  d4651504697  
+[2016/06/12 21:14:02 828] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:14:34 940 
+============================================================
+[2016/06/12 21:14:34 940] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:14:34 941] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(bc014920) 
+[2016/06/12 21:14:34 941] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:14:34 941] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:14:34 941] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:14:34 941] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:14:34 941] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:14:34 941] lgi        467  ns_enable=  0  
+[2016/06/12 21:14:34 941] lgi        479  prot_ver=1  
+[2016/06/12 21:14:34 941] lgi        490  prot_type=tcp  
+[2016/06/12 21:14:34 941] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:14:34 953] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybmz1Jjbaamc61xhdabt0s  
+[2016/06/12 21:14:34 953] lgi        530  lgistat =   0  
+[2016/06/12 21:14:34 953] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:14:34 953] transport  603  paramkvsport is   0  
+[2016/06/12 21:14:34 953] transport  611  ns_enable=  0  
+[2016/06/12 21:14:34 954] transport  655  url.full=  nil  
+[2016/06/12 21:14:34 954] transport  831  switch 80  
+[2016/06/12 21:14:34 954] transport  838  net type:  standard  
+[2016/06/12 21:14:34 954] transport  839  net operator:  def  
+[2016/06/12 21:14:34 954] transport  840  use proxy:  false  
+[2016/06/12 21:14:34 954] lgi        276  [session] send lgi request  
+[2016/06/12 21:14:34 954] transport  1071 ns_enable =  0  
+[2016/06/12 21:14:34 956] lgi        243  lver:  nil  
+[2016/06/12 21:14:34 956] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:14:35 001] transport  155  [dns] [0] response 59.107.24.7  
+[2016/06/12 21:14:35 001] transport  163  59  107  24  7  
+[2016/06/12 21:14:35 001] transport  192  iplist not avail  
+[2016/06/12 21:14:35 001] transport  251  no iplist now  
+[2016/06/12 21:14:35 001] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.7  
+[2016/06/12 21:14:35 002] transport  1138 [soc] connect   59.107.24.7  80  
+[2016/06/12 21:14:35 002] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:14:35 030] transport  461  [soc] [0] connected  
+[2016/06/12 21:14:35 030] transport  1191 build http request.  
+[2016/06/12 21:14:35 030] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:14:35 031] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:14:35 137] transport  495  [soc] [0] readable  
+[2016/06/12 21:14:35 137] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:14:35 58
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:14:35 136
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0b6D3FBGeMMdq5vI9hCTt4FBrRR2N86a3kCa7rNWvUyI^^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:14:35 137] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:14:35 137] transport  1419 is_update  false  
+[2016/06/12 21:14:35 137] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:14:35 138] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.7  
+[2016/06/12 21:14:35 138] transport  905  iplist not avail  
+[2016/06/12 21:14:35 138] transport  1170 [soc] disconnect   
+[2016/06/12 21:14:35 138] lgi        139  lgi resp!  
+[2016/06/12 21:14:35 138] lgi        146  lgi ok!  
+[2016/06/12 21:14:35 138] lgi        155  unkown  d4651504697  
+[2016/06/12 21:14:50 274] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:15:05 332 
+============================================================
+[2016/06/12 21:15:05 332] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:15:05 333] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(84014890) 
+[2016/06/12 21:15:05 333] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:15:05 333] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:15:05 333] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:15:05 333] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:15:05 333] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:15:05 333] lgi        467  ns_enable=  0  
+[2016/06/12 21:15:05 333] lgi        479  prot_ver=1  
+[2016/06/12 21:15:05 333] lgi        490  prot_type=tcp  
+[2016/06/12 21:15:05 333] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:15:05 343] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybHe1YLuaam9Xm7B5WMmrh  
+[2016/06/12 21:15:05 343] lgi        530  lgistat =   0  
+[2016/06/12 21:15:05 343] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:15:05 344] transport  603  paramkvsport is   0  
+[2016/06/12 21:15:05 344] transport  611  ns_enable=  0  
+[2016/06/12 21:15:05 344] transport  655  url.full=  nil  
+[2016/06/12 21:15:05 344] transport  831  switch 80  
+[2016/06/12 21:15:05 344] transport  838  net type:  standard  
+[2016/06/12 21:15:05 344] transport  839  net operator:  def  
+[2016/06/12 21:15:05 344] transport  840  use proxy:  false  
+[2016/06/12 21:15:05 344] lgi        276  [session] send lgi request  
+[2016/06/12 21:15:05 344] transport  1071 ns_enable =  0  
+[2016/06/12 21:15:05 345] lgi        243  lver:  nil  
+[2016/06/12 21:15:05 345] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:15:05 393] transport  155  [dns] [0] response 59.107.24.3  
+[2016/06/12 21:15:05 393] transport  163  59  107  24  3  
+[2016/06/12 21:15:05 393] transport  192  iplist not avail  
+[2016/06/12 21:15:05 393] transport  251  no iplist now  
+[2016/06/12 21:15:05 393] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.3  
+[2016/06/12 21:15:05 394] transport  1138 [soc] connect   59.107.24.3  80  
+[2016/06/12 21:15:05 394] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:15:05 425] transport  461  [soc] [0] connected  
+[2016/06/12 21:15:05 425] transport  1191 build http request.  
+[2016/06/12 21:15:05 425] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:15:05 426] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:15:05 498] transport  495  [soc] [0] readable  
+[2016/06/12 21:15:05 498] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:15:05 457
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:15:05 496
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bPPbYl2u3DwETrL9N8T6i2nmcA7ezLCP3pHORKzHFKuW^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:15:05 498] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:15:05 498] transport  1419 is_update  false  
+[2016/06/12 21:15:05 498] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:15:05 499] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.3  
+[2016/06/12 21:15:05 499] transport  914  cached ip is confirmed  
+[2016/06/12 21:15:05 499] transport  1170 [soc] disconnect   
+[2016/06/12 21:15:05 499] lgi        139  lgi resp!  
+[2016/06/12 21:15:05 499] lgi        146  lgi ok!  
+[2016/06/12 21:15:05 499] lgi        155  unkown  d4651504697  
+[2016/06/12 21:15:20 518] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:15:37 914 
+============================================================
+[2016/06/12 21:15:37 914] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:15:37 917] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(70014920) 
+[2016/06/12 21:15:37 917] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:15:37 917] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:15:37 917] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:15:37 918] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:15:37 918] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:15:37 918] lgi        467  ns_enable=  0  
+[2016/06/12 21:15:37 918] lgi        479  prot_ver=1  
+[2016/06/12 21:15:37 918] lgi        490  prot_type=tcp  
+[2016/06/12 21:15:37 919] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:15:37 941] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybHg1iUyaal33kj1B+1CBv  
+[2016/06/12 21:15:37 941] lgi        530  lgistat =   0  
+[2016/06/12 21:15:37 942] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:15:37 942] transport  603  paramkvsport is   0  
+[2016/06/12 21:15:37 942] transport  611  ns_enable=  0  
+[2016/06/12 21:15:37 942] transport  655  url.full=  nil  
+[2016/06/12 21:15:37 942] transport  831  switch 80  
+[2016/06/12 21:15:37 942] transport  838  net type:  standard  
+[2016/06/12 21:15:37 943] transport  839  net operator:  def  
+[2016/06/12 21:15:37 943] transport  840  use proxy:  false  
+[2016/06/12 21:15:37 943] lgi        276  [session] send lgi request  
+[2016/06/12 21:15:37 943] transport  1071 ns_enable =  0  
+[2016/06/12 21:15:37 943] lgi        243  lver:  nil  
+[2016/06/12 21:15:37 943] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:15:37 994] transport  155  [dns] [0] response 59.107.24.11  
+[2016/06/12 21:15:37 995] transport  163  59  107  24  11  
+[2016/06/12 21:15:37 995] transport  192  iplist not avail  
+[2016/06/12 21:15:37 995] transport  251  no iplist now  
+[2016/06/12 21:15:37 995] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 21:15:37 996] transport  1138 [soc] connect   59.107.24.11  80  
+[2016/06/12 21:15:37 996] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:15:38 041] transport  461  [soc] [0] connected  
+[2016/06/12 21:15:38 041] transport  1191 build http request.  
+[2016/06/12 21:15:38 042] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:15:38 043] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:15:38 152] transport  495  [soc] [0] readable  
+[2016/06/12 21:15:38 152] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:15:38 70
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:15:38 120
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bB5QYSgT4YnnlPblSot6rrWkMfje1jenRx6z6R20LqCC^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:15:38 152] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:15:38 152] transport  1419 is_update  false  
+[2016/06/12 21:15:38 152] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:15:38 154] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 21:15:38 154] transport  914  cached ip is confirmed  
+[2016/06/12 21:15:38 156] transport  1170 [soc] disconnect   
+[2016/06/12 21:15:38 156] lgi        139  lgi resp!  
+[2016/06/12 21:15:38 156] lgi        146  lgi ok!  
+[2016/06/12 21:15:38 156] lgi        155  unkown  d4651504697  
+[2016/06/12 21:15:53 303] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:16:05 137 
+============================================================
+[2016/06/12 21:16:05 137] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:16:05 139] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(74014920) 
+[2016/06/12 21:16:05 139] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:16:05 139] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:16:05 140] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:16:05 140] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:16:05 140] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:16:05 140] lgi        467  ns_enable=  0  
+[2016/06/12 21:16:05 140] lgi        479  prot_ver=1  
+[2016/06/12 21:16:05 140] lgi        490  prot_type=tcp  
+[2016/06/12 21:16:05 141] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:16:05 155] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyyba-18xVaakE25VzuMw0W4  
+[2016/06/12 21:16:05 155] lgi        530  lgistat =   0  
+[2016/06/12 21:16:05 155] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:16:05 155] transport  603  paramkvsport is   0  
+[2016/06/12 21:16:05 155] transport  611  ns_enable=  0  
+[2016/06/12 21:16:05 155] transport  655  url.full=  nil  
+[2016/06/12 21:16:05 155] transport  831  switch 80  
+[2016/06/12 21:16:05 155] transport  838  net type:  standard  
+[2016/06/12 21:16:05 155] transport  839  net operator:  def  
+[2016/06/12 21:16:05 155] transport  840  use proxy:  false  
+[2016/06/12 21:16:05 155] lgi        276  [session] send lgi request  
+[2016/06/12 21:16:05 156] transport  1071 ns_enable =  0  
+[2016/06/12 21:16:05 156] lgi        243  lver:  nil  
+[2016/06/12 21:16:05 156] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:16:08 156] transport  306  [dns] [0] timeout!   
+[2016/06/12 21:16:08 158] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  nil  
+[2016/06/12 21:16:08 159] network    84   ipfromenv ,  ipcfg  dev.voicecloud.cn  def  nil  
+[2016/06/12 21:16:08 160] transport  1138 [soc] connect   116.213.69.195  80  
+[2016/06/12 21:16:08 160] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:16:08 213] transport  461  [soc] [0] connected  
+[2016/06/12 21:16:08 213] transport  1191 build http request.  
+[2016/06/12 21:16:08 214] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:16:08 215] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:16:08 385] transport  495  [soc] [0] readable  
+[2016/06/12 21:16:08 385] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:16:08 229
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:16:08 346
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bB3jer1FL5DOQKPTehu8cfHuRjIf^kcegsXvGyEwouW^^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:16:08 385] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:16:08 385] transport  1419 is_update  false  
+[2016/06/12 21:16:08 385] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:16:08 386] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  nil  
+[2016/06/12 21:16:08 386] transport  905  iplist not avail  
+[2016/06/12 21:16:08 387] transport  1170 [soc] disconnect   
+[2016/06/12 21:16:08 387] lgi        139  lgi resp!  
+[2016/06/12 21:16:08 387] lgi        146  lgi ok!  
+[2016/06/12 21:16:08 387] lgi        155  unkown  d4651504697  
+[2016/06/12 21:16:23 388] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:16:40 349 
+============================================================
+[2016/06/12 21:16:40 349] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:16:40 351] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(4014970) 
+[2016/06/12 21:16:40 351] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:16:40 351] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:16:40 351] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:16:40 351] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:16:40 351] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:16:40 351] lgi        467  ns_enable=  0  
+[2016/06/12 21:16:40 351] lgi        479  prot_ver=1  
+[2016/06/12 21:16:40 351] lgi        490  prot_type=tcp  
+[2016/06/12 21:16:40 353] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:16:40 368] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybaLPmdLaa168Ht6BSdaGz  
+[2016/06/12 21:16:40 368] lgi        530  lgistat =   0  
+[2016/06/12 21:16:40 368] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:16:40 369] transport  603  paramkvsport is   0  
+[2016/06/12 21:16:40 369] transport  611  ns_enable=  0  
+[2016/06/12 21:16:40 369] transport  655  url.full=  nil  
+[2016/06/12 21:16:40 369] transport  831  switch 80  
+[2016/06/12 21:16:40 369] transport  838  net type:  standard  
+[2016/06/12 21:16:40 369] transport  839  net operator:  def  
+[2016/06/12 21:16:40 369] transport  840  use proxy:  false  
+[2016/06/12 21:16:40 369] lgi        276  [session] send lgi request  
+[2016/06/12 21:16:40 370] transport  1071 ns_enable =  0  
+[2016/06/12 21:16:40 371] lgi        243  lver:  nil  
+[2016/06/12 21:16:40 371] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:16:40 375] transport  155  [dns] [0] response 117.121.21.146  
+[2016/06/12 21:16:40 375] transport  163  117  121  21  146  
+[2016/06/12 21:16:40 375] transport  192  iplist not avail  
+[2016/06/12 21:16:40 376] transport  251  no iplist now  
+[2016/06/12 21:16:40 376] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.146  
+[2016/06/12 21:16:40 377] transport  1138 [soc] connect   117.121.21.146  80  
+[2016/06/12 21:16:40 377] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:16:40 430] transport  461  [soc] [0] connected  
+[2016/06/12 21:16:40 430] transport  1191 build http request.  
+[2016/06/12 21:16:40 430] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:16:40 431] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:16:40 523] transport  495  [soc] [0] readable  
+[2016/06/12 21:16:40 524] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:16:40 438
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:16:40 484
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bYmwGPJnHDvsvUzjiTpHHjWrPMAKJ7VSQ772TkZhow1K^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:16:40 524] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:16:40 526] transport  1419 is_update  false  
+[2016/06/12 21:16:40 526] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:16:40 528] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.146  
+[2016/06/12 21:16:40 528] transport  905  iplist not avail  
+[2016/06/12 21:16:40 528] transport  1170 [soc] disconnect   
+[2016/06/12 21:16:40 529] lgi        139  lgi resp!  
+[2016/06/12 21:16:40 529] lgi        146  lgi ok!  
+[2016/06/12 21:16:40 529] lgi        155  unkown  d4651504697  
+[2016/06/12 21:16:55 513] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:16:57 352 
+============================================================
+[2016/06/12 21:16:57 352] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:16:57 355] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(e0014970) 
+[2016/06/12 21:16:57 355] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:16:57 355] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:16:57 355] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:16:57 355] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:16:57 356] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:16:57 356] lgi        467  ns_enable=  0  
+[2016/06/12 21:16:57 356] lgi        479  prot_ver=1  
+[2016/06/12 21:16:57 356] lgi        490  prot_type=tcp  
+[2016/06/12 21:16:57 357] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:16:57 372] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybwWPdkIaaBquHpY1Ac0cy  
+[2016/06/12 21:16:57 372] lgi        530  lgistat =   0  
+[2016/06/12 21:16:57 373] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:16:57 373] transport  603  paramkvsport is   0  
+[2016/06/12 21:16:57 373] transport  611  ns_enable=  0  
+[2016/06/12 21:16:57 373] transport  655  url.full=  nil  
+[2016/06/12 21:16:57 373] transport  831  switch 80  
+[2016/06/12 21:16:57 373] transport  838  net type:  standard  
+[2016/06/12 21:16:57 373] transport  839  net operator:  def  
+[2016/06/12 21:16:57 373] transport  840  use proxy:  false  
+[2016/06/12 21:16:57 373] lgi        276  [session] send lgi request  
+[2016/06/12 21:16:57 373] transport  1071 ns_enable =  0  
+[2016/06/12 21:16:57 373] lgi        243  lver:  nil  
+[2016/06/12 21:16:57 373] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:16:57 425] transport  155  [dns] [0] response 117.121.21.147  
+[2016/06/12 21:16:57 425] transport  163  117  121  21  147  
+[2016/06/12 21:16:57 425] transport  192  iplist not avail  
+[2016/06/12 21:16:57 426] transport  251  no iplist now  
+[2016/06/12 21:16:57 426] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:16:57 426] transport  1138 [soc] connect   117.121.21.147  80  
+[2016/06/12 21:16:57 426] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:16:57 477] transport  461  [soc] [0] connected  
+[2016/06/12 21:16:57 477] transport  1191 build http request.  
+[2016/06/12 21:16:57 477] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:16:57 478] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:16:57 598] transport  495  [soc] [0] readable  
+[2016/06/12 21:16:57 598] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:16:57 488
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:16:57 554
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bEurnlArAsDSB8zM4bOhqNvhxon^/Bp08Au3ER8pGeGC^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:16:57 598] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:16:57 598] transport  1419 is_update  false  
+[2016/06/12 21:16:57 599] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:16:57 599] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:16:57 600] transport  914  cached ip is confirmed  
+[2016/06/12 21:16:57 600] transport  1170 [soc] disconnect   
+[2016/06/12 21:16:57 600] lgi        139  lgi resp!  
+[2016/06/12 21:16:57 600] lgi        146  lgi ok!  
+[2016/06/12 21:16:57 600] lgi        155  unkown  d4651504697  
+[2016/06/12 21:17:11 964] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:17:46 073 
+============================================================
+[2016/06/12 21:17:46 073] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:17:46 075] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(90014920) 
+[2016/06/12 21:17:46 075] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:17:46 075] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:17:46 075] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:17:46 075] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:17:46 076] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:17:46 076] lgi        467  ns_enable=  0  
+[2016/06/12 21:17:46 076] lgi        479  prot_ver=1  
+[2016/06/12 21:17:46 076] lgi        490  prot_type=tcp  
+[2016/06/12 21:17:46 077] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:17:46 098] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybwzPEtUaawCpCyed6Nl3R  
+[2016/06/12 21:17:46 098] lgi        530  lgistat =   0  
+[2016/06/12 21:17:46 098] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:17:46 098] transport  603  paramkvsport is   0  
+[2016/06/12 21:17:46 098] transport  611  ns_enable=  0  
+[2016/06/12 21:17:46 099] transport  655  url.full=  nil  
+[2016/06/12 21:17:46 099] transport  831  switch 80  
+[2016/06/12 21:17:46 099] transport  838  net type:  standard  
+[2016/06/12 21:17:46 099] transport  839  net operator:  def  
+[2016/06/12 21:17:46 099] transport  840  use proxy:  false  
+[2016/06/12 21:17:46 099] lgi        276  [session] send lgi request  
+[2016/06/12 21:17:46 099] transport  1071 ns_enable =  0  
+[2016/06/12 21:17:46 100] lgi        243  lver:  nil  
+[2016/06/12 21:17:46 100] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:17:46 154] transport  155  [dns] [0] response 116.213.69.200  
+[2016/06/12 21:17:46 154] transport  163  116  213  69  200  
+[2016/06/12 21:17:46 154] transport  192  iplist not avail  
+[2016/06/12 21:17:46 155] transport  251  no iplist now  
+[2016/06/12 21:17:46 155] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  116.213.69.200  
+[2016/06/12 21:17:46 156] transport  1138 [soc] connect   116.213.69.200  80  
+[2016/06/12 21:17:46 156] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:17:46 208] transport  461  [soc] [0] connected  
+[2016/06/12 21:17:46 208] transport  1191 build http request.  
+[2016/06/12 21:17:46 209] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:17:46 211] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:17:46 333] transport  495  [soc] [0] readable  
+[2016/06/12 21:17:46 333] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:17:46 221
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:17:46 287
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bcDaCjJjKOSjhZyrMXk9qhyJJRGqA/UfqEIoQUf1rgYS^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:17:46 333] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:17:46 333] transport  1419 is_update  false  
+[2016/06/12 21:17:46 333] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:17:46 335] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.56.8  
+[2016/06/12 21:17:46 335] transport  905  iplist not avail  
+[2016/06/12 21:17:46 335] transport  1170 [soc] disconnect   
+[2016/06/12 21:17:46 335] lgi        139  lgi resp!  
+[2016/06/12 21:17:46 335] lgi        146  lgi ok!  
+[2016/06/12 21:17:46 335] lgi        155  unkown  d4651504697  
+[2016/06/12 21:18:01 346] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:18:21 822 
+============================================================
+[2016/06/12 21:18:21 822] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:18:21 824] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(50014890) 
+[2016/06/12 21:18:21 824] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:18:21 825] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:18:21 825] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:18:21 825] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:18:21 825] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:18:21 825] lgi        467  ns_enable=  0  
+[2016/06/12 21:18:21 825] lgi        479  prot_ver=1  
+[2016/06/12 21:18:21 825] lgi        490  prot_type=tcp  
+[2016/06/12 21:18:21 826] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:18:21 850] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybdjPN9caaP5fax7usgk2W  
+[2016/06/12 21:18:21 850] lgi        530  lgistat =   0  
+[2016/06/12 21:18:21 850] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:18:21 850] transport  603  paramkvsport is   0  
+[2016/06/12 21:18:21 851] transport  611  ns_enable=  0  
+[2016/06/12 21:18:21 851] transport  655  url.full=  nil  
+[2016/06/12 21:18:21 851] transport  831  switch 80  
+[2016/06/12 21:18:21 851] transport  838  net type:  standard  
+[2016/06/12 21:18:21 851] transport  839  net operator:  def  
+[2016/06/12 21:18:21 851] transport  840  use proxy:  false  
+[2016/06/12 21:18:21 851] lgi        276  [session] send lgi request  
+[2016/06/12 21:18:21 851] transport  1071 ns_enable =  0  
+[2016/06/12 21:18:21 852] lgi        243  lver:  nil  
+[2016/06/12 21:18:21 852] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:18:21 901] transport  155  [dns] [0] response 59.107.24.11  
+[2016/06/12 21:18:21 901] transport  163  59  107  24  11  
+[2016/06/12 21:18:21 901] transport  192  iplist not avail  
+[2016/06/12 21:18:21 902] transport  251  no iplist now  
+[2016/06/12 21:18:21 902] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 21:18:21 903] transport  1138 [soc] connect   59.107.24.11  80  
+[2016/06/12 21:18:21 903] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:18:21 917] transport  461  [soc] [0] connected  
+[2016/06/12 21:18:21 917] transport  1191 build http request.  
+[2016/06/12 21:18:21 918] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:18:21 919] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:18:21 990] transport  495  [soc] [0] readable  
+[2016/06/12 21:18:21 990] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:18:21 947
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:18:22 5
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bU4yZvTZFg6k0eqZJDHIKXitevDwQi2Nuvx^3nYTkslK^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:18:21 990] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:18:21 990] transport  1419 is_update  false  
+[2016/06/12 21:18:21 990] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:18:21 991] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 21:18:21 991] transport  905  iplist not avail  
+[2016/06/12 21:18:21 991] transport  1170 [soc] disconnect   
+[2016/06/12 21:18:21 991] lgi        139  lgi resp!  
+[2016/06/12 21:18:21 991] lgi        146  lgi ok!  
+[2016/06/12 21:18:21 991] lgi        155  unkown  d4651504697  
+[2016/06/12 21:18:33 503] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:18:34 909 
+============================================================
+[2016/06/12 21:18:34 909] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:18:34 911] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(bc014920) 
+[2016/06/12 21:18:34 912] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:18:34 912] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:18:34 912] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:18:34 912] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:18:34 912] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:18:34 912] lgi        467  ns_enable=  0  
+[2016/06/12 21:18:34 913] lgi        479  prot_ver=1  
+[2016/06/12 21:18:34 913] lgi        490  prot_type=tcp  
+[2016/06/12 21:18:34 913] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:18:34 935] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybd2PTazaaHRGtkXtvfuGU  
+[2016/06/12 21:18:34 935] lgi        530  lgistat =   0  
+[2016/06/12 21:18:34 935] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:18:34 936] transport  603  paramkvsport is   0  
+[2016/06/12 21:18:34 936] transport  611  ns_enable=  0  
+[2016/06/12 21:18:34 936] transport  655  url.full=  nil  
+[2016/06/12 21:18:34 936] transport  831  switch 80  
+[2016/06/12 21:18:34 937] transport  838  net type:  standard  
+[2016/06/12 21:18:34 937] transport  839  net operator:  def  
+[2016/06/12 21:18:34 937] transport  840  use proxy:  false  
+[2016/06/12 21:18:34 937] lgi        276  [session] send lgi request  
+[2016/06/12 21:18:34 937] transport  1071 ns_enable =  0  
+[2016/06/12 21:18:34 937] lgi        243  lver:  nil  
+[2016/06/12 21:18:34 937] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:18:34 943] transport  155  [dns] [0] response 59.107.24.11  
+[2016/06/12 21:18:34 943] transport  163  59  107  24  11  
+[2016/06/12 21:18:34 943] transport  192  iplist not avail  
+[2016/06/12 21:18:34 944] transport  251  no iplist now  
+[2016/06/12 21:18:34 944] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.11  
+[2016/06/12 21:18:34 945] transport  1138 [soc] connect   59.107.24.11  80  
+[2016/06/12 21:18:34 945] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:18:34 975] transport  461  [soc] [0] connected  
+[2016/06/12 21:18:34 975] transport  1191 build http request.  
+[2016/06/12 21:18:34 976] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:18:34 978] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:18:35 042] transport  495  [soc] [0] readable  
+[2016/06/12 21:18:35 042] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:18:35 7
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:18:35 55
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0b0GGModMifrcpauH50nu2LzYMMx9UsYmZ01n2vt0DXI2^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:18:35 042] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:18:35 042] transport  1419 is_update  false  
+[2016/06/12 21:18:35 042] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:18:35 044] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  59.107.24.5  
+[2016/06/12 21:18:35 044] transport  914  cached ip is confirmed  
+[2016/06/12 21:18:35 044] transport  1170 [soc] disconnect   
+[2016/06/12 21:18:35 044] lgi        139  lgi resp!  
+[2016/06/12 21:18:35 044] lgi        146  lgi ok!  
+[2016/06/12 21:18:35 044] lgi        155  unkown  d4651504697  
+[2016/06/12 21:18:50 520] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:21:37 206 
+============================================================
+[2016/06/12 21:21:37 206] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:21:37 209] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(d8014970) 
+[2016/06/12 21:21:37 210] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:21:37 210] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:21:37 210] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:21:37 210] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:21:37 210] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:21:37 210] lgi        467  ns_enable=  0  
+[2016/06/12 21:21:37 211] lgi        479  prot_ver=1  
+[2016/06/12 21:21:37 211] lgi        490  prot_type=tcp  
+[2016/06/12 21:21:37 211] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:21:37 232] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybtJtloraamLX5HSCt3CbB  
+[2016/06/12 21:21:37 232] lgi        530  lgistat =   0  
+[2016/06/12 21:21:37 232] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:21:37 232] transport  603  paramkvsport is   0  
+[2016/06/12 21:21:37 232] transport  611  ns_enable=  0  
+[2016/06/12 21:21:37 232] transport  655  url.full=  nil  
+[2016/06/12 21:21:37 232] transport  831  switch 80  
+[2016/06/12 21:21:37 232] transport  838  net type:  standard  
+[2016/06/12 21:21:37 233] transport  839  net operator:  def  
+[2016/06/12 21:21:37 233] transport  840  use proxy:  false  
+[2016/06/12 21:21:37 233] lgi        276  [session] send lgi request  
+[2016/06/12 21:21:37 233] transport  1071 ns_enable =  0  
+[2016/06/12 21:21:37 234] lgi        243  lver:  nil  
+[2016/06/12 21:21:37 234] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:21:40 234] transport  306  [dns] [0] timeout!   
+[2016/06/12 21:21:40 236] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  nil  
+[2016/06/12 21:21:40 238] network    84   ipfromenv ,  ipcfg  dev.voicecloud.cn  def  nil  
+[2016/06/12 21:21:40 238] transport  1138 [soc] connect   116.213.69.195  80  
+[2016/06/12 21:21:40 238] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:21:40 303] transport  461  [soc] [0] connected  
+[2016/06/12 21:21:40 303] transport  1191 build http request.  
+[2016/06/12 21:21:40 304] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:21:40 305] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:21:40 446] transport  495  [soc] [0] readable  
+[2016/06/12 21:21:40 446] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:21:40 322
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:21:40 400
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bV8wuxwx1^mJPHlWX^qw4kFOzDmvTYShx^PzQwclpG52^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:21:40 447] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:21:40 447] transport  1419 is_update  false  
+[2016/06/12 21:21:40 447] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:21:40 448] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  nil  
+[2016/06/12 21:21:40 448] transport  905  iplist not avail  
+[2016/06/12 21:21:40 449] transport  1170 [soc] disconnect   
+[2016/06/12 21:21:40 449] lgi        139  lgi resp!  
+[2016/06/12 21:21:40 449] lgi        146  lgi ok!  
+[2016/06/12 21:21:40 449] lgi        155  unkown  d4651504697  
+[2016/06/12 21:21:49 576] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:21:51 420 
+============================================================
+[2016/06/12 21:21:51 420] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:21:51 422] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(c8014920) 
+[2016/06/12 21:21:51 423] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:21:51 423] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:21:51 423] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:21:51 423] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:21:51 423] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:21:51 423] lgi        467  ns_enable=  0  
+[2016/06/12 21:21:51 423] lgi        479  prot_ver=1  
+[2016/06/12 21:21:51 423] lgi        490  prot_type=tcp  
+[2016/06/12 21:21:51 424] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:21:51 439] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybtQtBHNaaC8ZdMsaiZCcF  
+[2016/06/12 21:21:51 439] lgi        530  lgistat =   0  
+[2016/06/12 21:21:51 439] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:21:51 439] transport  603  paramkvsport is   0  
+[2016/06/12 21:21:51 439] transport  611  ns_enable=  0  
+[2016/06/12 21:21:51 439] transport  655  url.full=  nil  
+[2016/06/12 21:21:51 439] transport  831  switch 80  
+[2016/06/12 21:21:51 439] transport  838  net type:  standard  
+[2016/06/12 21:21:51 439] transport  839  net operator:  def  
+[2016/06/12 21:21:51 439] transport  840  use proxy:  false  
+[2016/06/12 21:21:51 439] lgi        276  [session] send lgi request  
+[2016/06/12 21:21:51 439] transport  1071 ns_enable =  0  
+[2016/06/12 21:21:51 440] lgi        243  lver:  nil  
+[2016/06/12 21:21:51 440] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:21:51 445] transport  155  [dns] [0] response 117.121.21.147  
+[2016/06/12 21:21:51 445] transport  163  117  121  21  147  
+[2016/06/12 21:21:51 445] transport  192  iplist not avail  
+[2016/06/12 21:21:51 446] transport  251  no iplist now  
+[2016/06/12 21:21:51 446] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:21:51 446] transport  1138 [soc] connect   117.121.21.147  80  
+[2016/06/12 21:21:51 446] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:21:51 498] transport  461  [soc] [0] connected  
+[2016/06/12 21:21:51 498] transport  1191 build http request.  
+[2016/06/12 21:21:51 498] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:21:51 499] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:21:51 686] transport  495  [soc] [0] readable  
+[2016/06/12 21:21:51 687] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:21:51 515
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:21:51 650
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bEurnlArAsDQQKRzLcXVMC2sagi3iV70jvv7k2/mgmY6^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:21:51 687] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:21:51 687] transport  1419 is_update  false  
+[2016/06/12 21:21:51 687] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:21:51 688] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.147  
+[2016/06/12 21:21:51 689] transport  914  cached ip is confirmed  
+[2016/06/12 21:21:51 689] transport  1170 [soc] disconnect   
+[2016/06/12 21:21:51 689] lgi        139  lgi resp!  
+[2016/06/12 21:21:51 689] lgi        146  lgi ok!  
+[2016/06/12 21:21:51 689] lgi        155  unkown  d4651504697  
+[2016/06/12 21:22:06 679] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:40:52 413 
+============================================================
+[2016/06/12 21:40:52 413] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:40:52 415] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(94014920) 
+[2016/06/12 21:40:52 415] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:40:52 415] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:40:52 416] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:40:52 416] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:40:52 416] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:40:52 416] lgi        467  ns_enable=  0  
+[2016/06/12 21:40:52 416] lgi        479  prot_ver=1  
+[2016/06/12 21:40:52 416] lgi        490  prot_type=tcp  
+[2016/06/12 21:40:52 417] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:40:52 431] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybevC4IeaaC1pd5FPfuBJV  
+[2016/06/12 21:40:52 431] lgi        530  lgistat =   0  
+[2016/06/12 21:40:52 432] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:40:52 432] transport  603  paramkvsport is   0  
+[2016/06/12 21:40:52 432] transport  611  ns_enable=  0  
+[2016/06/12 21:40:52 432] transport  655  url.full=  nil  
+[2016/06/12 21:40:52 432] transport  831  switch 80  
+[2016/06/12 21:40:52 432] transport  838  net type:  standard  
+[2016/06/12 21:40:52 432] transport  839  net operator:  def  
+[2016/06/12 21:40:52 432] transport  840  use proxy:  false  
+[2016/06/12 21:40:52 432] lgi        276  [session] send lgi request  
+[2016/06/12 21:40:52 432] transport  1071 ns_enable =  0  
+[2016/06/12 21:40:52 432] lgi        243  lver:  nil  
+[2016/06/12 21:40:52 432] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:40:52 482] transport  155  [dns] [0] response 117.121.21.146  
+[2016/06/12 21:40:52 482] transport  163  117  121  21  146  
+[2016/06/12 21:40:52 482] transport  192  iplist not avail  
+[2016/06/12 21:40:52 482] transport  251  no iplist now  
+[2016/06/12 21:40:52 482] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.146  
+[2016/06/12 21:40:52 484] transport  1138 [soc] connect   117.121.21.146  80  
+[2016/06/12 21:40:52 484] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:40:52 536] transport  461  [soc] [0] connected  
+[2016/06/12 21:40:52 536] transport  1191 build http request.  
+[2016/06/12 21:40:52 536] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:40:52 537] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:40:52 618] transport  495  [soc] [0] readable  
+[2016/06/12 21:40:52 618] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:40:52 574
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:40:52 606
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0bd/wovhDTz2^hAuFTxhakoqyFQpL6n9IIlOvxPZpIIAC^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:40:52 619] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:40:52 619] transport  1419 is_update  false  
+[2016/06/12 21:40:52 619] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:40:52 620] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.146  
+[2016/06/12 21:40:52 620] transport  905  iplist not avail  
+[2016/06/12 21:40:52 620] transport  1170 [soc] disconnect   
+[2016/06/12 21:40:52 621] lgi        139  lgi resp!  
+[2016/06/12 21:40:52 621] lgi        146  lgi ok!  
+[2016/06/12 21:40:52 621] lgi        155  unkown  d4651504697  
+[2016/06/12 21:41:01 710] lgi        615  SYS_MSG_SHUTDOWN  
+============================================================
+Time  2016/06/12 21:43:35 924 
+============================================================
+[2016/06/12 21:43:35 924] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:43:35 926] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(58014970) 
+[2016/06/12 21:43:35 926] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:43:35 926] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:43:35 927] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:43:35 927] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:43:35 927] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:43:35 927] lgi        467  ns_enable=  0  
+[2016/06/12 21:43:35 927] lgi        479  prot_ver=1  
+[2016/06/12 21:43:35 927] lgi        490  prot_type=tcp  
+[2016/06/12 21:43:35 928] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:43:35 945] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybTtB0AEaamz1tk703Daxx  
+[2016/06/12 21:43:35 945] lgi        530  lgistat =   0  
+[2016/06/12 21:43:35 945] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:43:35 945] transport  603  paramkvsport is   0  
+[2016/06/12 21:43:35 945] transport  611  ns_enable=  0  
+[2016/06/12 21:43:35 945] transport  655  url.full=  nil  
+[2016/06/12 21:43:35 945] transport  831  switch 80  
+[2016/06/12 21:43:35 945] transport  838  net type:  standard  
+[2016/06/12 21:43:35 945] transport  839  net operator:  def  
+[2016/06/12 21:43:35 945] transport  840  use proxy:  false  
+[2016/06/12 21:43:35 945] lgi        276  [session] send lgi request  
+[2016/06/12 21:43:35 945] transport  1071 ns_enable =  0  
+[2016/06/12 21:43:35 945] lgi        243  lver:  nil  
+[2016/06/12 21:43:35 946] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:43:35 994] transport  155  [dns] [0] response 116.213.69.200  
+[2016/06/12 21:43:35 994] transport  163  116  213  69  200  
+[2016/06/12 21:43:35 995] transport  192  iplist not avail  
+[2016/06/12 21:43:35 995] transport  251  no iplist now  
+[2016/06/12 21:43:35 995] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  116.213.69.200  
+[2016/06/12 21:43:35 995] transport  1138 [soc] connect   116.213.69.200  80  
+[2016/06/12 21:43:35 995] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:43:36 045] transport  461  [soc] [0] connected  
+[2016/06/12 21:43:36 045] transport  1191 build http request.  
+[2016/06/12 21:43:36 045] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:43:36 045] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:43:36 149] transport  495  [soc] [0] readable  
+[2016/06/12 21:43:36 150] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:43:36 85
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:43:36 133
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0biYmn^it^Tx9WztkVL9oS/x3fglawGFYFMw47F3i/FGG^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:43:36 150] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:43:36 150] transport  1419 is_update  false  
+[2016/06/12 21:43:36 150] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:43:36 151] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  117.121.21.146  
+[2016/06/12 21:43:36 151] transport  905  iplist not avail  
+[2016/06/12 21:43:36 151] transport  1170 [soc] disconnect   
+[2016/06/12 21:43:36 151] lgi        139  lgi resp!  
+[2016/06/12 21:43:36 151] lgi        146  lgi ok!  
+[2016/06/12 21:43:36 152] lgi        155  unkown  d4651504697  
+[2016/06/12 21:43:51 166] lgi        103  lgi_delaydie_timeout  
+============================================================
+Time  2016/06/12 21:43:53 992 
+============================================================
+[2016/06/12 21:43:53 992] lgi        602  SYS_MSG_LOAD  
+[2016/06/12 21:43:53 994] lgi        624  SYS_MSG_REGCB  msp_status_cb  func(a0014970) 
+[2016/06/12 21:43:53 994] lgi        297  LGI_MSG_INIT  
+[2016/06/12 21:43:53 994] lgi        306  lgi  lgi_  268436457  1442971558  
+[2016/06/12 21:43:53 995] lgi        325  lgi params:  appid = 575c26c4, work_dir = .  
+[2016/06/12 21:43:53 995] lgi        350  auth_appid=  575c26c4  
+[2016/06/12 21:43:53 995] lgi        424  msc cver : 5.0.16.1109  
+[2016/06/12 21:43:53 995] lgi        467  ns_enable=  0  
+[2016/06/12 21:43:53 995] lgi        479  prot_ver=1  
+[2016/06/12 21:43:53 995] lgi        490  prot_type=tcp  
+[2016/06/12 21:43:53 996] lgi        611  SYS_MSG_UNLOAD  go bg!  
+[2016/06/12 21:43:54 017] lgi        524  LGI_MSG_START, caller =  cloud_cisr1PdHHBHyybTeBkzvaa0BMdgxWP5usk  
+[2016/06/12 21:43:54 017] lgi        530  lgistat =   0  
+[2016/06/12 21:43:54 017] lgi        553  lgi_auth_id =  nil  
+[2016/06/12 21:43:54 017] transport  603  paramkvsport is   0  
+[2016/06/12 21:43:54 017] transport  611  ns_enable=  0  
+[2016/06/12 21:43:54 017] transport  655  url.full=  nil  
+[2016/06/12 21:43:54 018] transport  831  switch 80  
+[2016/06/12 21:43:54 018] transport  838  net type:  standard  
+[2016/06/12 21:43:54 018] transport  839  net operator:  def  
+[2016/06/12 21:43:54 018] transport  840  use proxy:  false  
+[2016/06/12 21:43:54 018] lgi        276  [session] send lgi request  
+[2016/06/12 21:43:54 018] transport  1071 ns_enable =  0  
+[2016/06/12 21:43:54 019] lgi        243  lver:  nil  
+[2016/06/12 21:43:54 019] lgi        248  cfg_ver:  nil  
+[2016/06/12 21:43:54 027] transport  155  [dns] [0] response 116.213.69.200  
+[2016/06/12 21:43:54 027] transport  163  116  213  69  200  
+[2016/06/12 21:43:54 027] transport  192  iplist not avail  
+[2016/06/12 21:43:54 028] transport  251  no iplist now  
+[2016/06/12 21:43:54 028] network    89   iptoenv ,  ipcache  dev.voicecloud.cn  def  116.213.69.200  
+[2016/06/12 21:43:54 029] transport  1138 [soc] connect   116.213.69.200  80  
+[2016/06/12 21:43:54 029] transport  1155 mspsoc.open,prot_type=  tcp  
+[2016/06/12 21:43:54 073] transport  461  [soc] [0] connected  
+[2016/06/12 21:43:54 073] transport  1191 build http request.  
+[2016/06/12 21:43:54 074] transport  1291 POST /msp.do HTTP/1.1
+Host: dev.voicecloud.cn
+Content-Type: multipart/mixed;boundary=--
+Content-Length: 372
+User-Agent: iFLYCloud
+Cache-Control: no-cache
+Accept: */*
+
+----
+CL:73
+CT:text/plain
+
+ver=MSSP+0%2E9&sub=auth&cmd=lgi&cver=5%2E0%2E16%2E1109&key=08Z2XIQ/PGpL4=
+----
+CL:56
+CT:text/appinfo
+CE:gzip,encrypt/0.2
+
+ö:Îöóö˜xy{|{y…yy|y|}{x~‡}~65în>b  
+[2016/06/12 21:43:54 075] transport  483  [soc] [0] send ok  547  
+[2016/06/12 21:43:54 443] transport  495  [soc] [0] readable  
+[2016/06/12 21:43:54 443] transport  1563 HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 162
+X-Req-Date: 2016/06/12 21:43:54 116
+Cache-Control: no-cache
+CL: 162
+X-Res-Date: 2016/06/12 21:43:54 417
+
+ver=MSSP+0%2E9&ret=0&cver=5%2E0%2E16%2E1109&uid=d4651504697&key=0blIkeXZV1auyP1DuvCNtTSmfmjdYOJULs9yEOZ0juhQS^^GHVr44O7OMKpug4csMdkKGG0eHG5G6NL1HFhpCo^40vUcWGkKj7  
+[2016/06/12 21:43:54 443] transport  1310 a_complete_httpmessage  200  
+[2016/06/12 21:43:54 443] transport  1419 is_update  false  
+[2016/06/12 21:43:54 444] lgi        108  [trans] [id = lgi_] readable  
+[2016/06/12 21:43:54 445] network    84   ipfromenv ,  ipcache  dev.voicecloud.cn  def  116.213.69.200  
+[2016/06/12 21:43:54 445] transport  914  cached ip is confirmed  
+[2016/06/12 21:43:54 445] transport  1170 [soc] disconnect   
+[2016/06/12 21:43:54 445] lgi        139  lgi resp!  
+[2016/06/12 21:43:54 445] lgi        146  lgi ok!  
+[2016/06/12 21:43:54 445] lgi        155  unkown  d4651504697  
+[2016/06/12 21:44:02 182] lgi        615  SYS_MSG_SHUTDOWN  
