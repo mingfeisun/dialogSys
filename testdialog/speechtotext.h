@@ -5,23 +5,23 @@
 
 using std::string;
 
-class speechtotext
+class speechToText
 {
 public:
-  char rec_result[];
+  char* rec_result;
 
-  speechtotext();
-  ~speechtotext();
+  speechToText();
+  ~speechToText();
   bool startRecog();
-  void setFileName(const char* newFileName);
+  void setFileName(char* newFileName);
 
 private:
-  int rec;
-  const char* fileName;
+  int ret;
+  char* fileName;
   const char* session_begin_params;
   const char* login_params;
 
-  bool run_iat(const char* audio_file, const char* session_begin_params);
+  bool run_iat(char* audio_file, const char* session_begin_params);
 };
 
 #endif // SPEECHTOTEXT_H

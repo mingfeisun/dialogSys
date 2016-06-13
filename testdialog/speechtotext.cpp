@@ -1,27 +1,27 @@
-#include <iostream>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 #include "speechtotext.h"
-#include "qisr.h"
-#include "msp_cmn.h"
-#include "msp_errors.h"
+#include <iflytek/qisr.h>
+#include <iflytek/msp_cmn.h>
+#include <iflytek/msp_errors.h>
 
 #define	BUFFER_SIZE	4096
 #define FRAME_LEN	640
 #define HINTS_SIZE  100
+#define FILENAME_SIZE  100
 #define LOGIN_PARAMS "appid = 575c26c4, work_dir = ."
 #define SESSION_PARAMS "sub = iat, domain = iat, language = zh_ch, accent = mandarin, \
 sample_rate = 16000, result_type = plain, result_encoding = utf8"
 
-speechtotext::speechtotext()
-    :ret(MSP_SUCCESS),fileName(NULL),
-login_params(LOGIN_PARAMS),session_begin_params(SESSION_PARAMS)
-
+speechToText::speechToText()
+    :login_params(LOGIN_PARAMS),session_begin_params(SESSION_PARAMS)
 {
-    rec_result[BUFFER_SIZE] = {NULL};
+    ret = MSP_SUCCESS;
+    rec_result = (char*)malloc(sizeof(char)*BUFFER_SIZE);
+    fileName = (char*)malloc(sizeof(char)*FILENAME_SIZE);
     ret = MSPLogin(NULL, NULL, login_params);
     if (MSP_SUCCESS != ret)
     {
@@ -30,12 +30,12 @@ login_params(LOGIN_PARAMS),session_begin_params(SESSION_PARAMS)
     }
 }
 
-speechtotext::~speechtotext()
+speechToText::~speechToText()
 {
     MSPLogout();
 }
 
-bool speechtotext::startRecog()
+bool speechToText::startRecog()
 {
     if(fileName == NULL){
         return false;
@@ -43,12 +43,12 @@ bool speechtotext::startRecog()
     return run_iat(fileName, session_begin_params);
 }
 
-void speechtotext::setFileName(const char *newFileName)
+void speechToText::setFileName(char *newFileName)
 {
     strcpy(fileName, newFileName);
 }
 
-bool speechtotext::run_iat(const char *audio_file, const char *session_begin_params)
+bool speechToText::run_iat(char *audio_file, const char *session_begin_params)
 {
     bool flag = true;
 

@@ -1,0 +1,3 @@
+<toolchain>
+  <package directory="." name="libmsc" />
+</toolchain>

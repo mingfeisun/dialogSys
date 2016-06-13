@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "texttospeech.h"
+#include "speechtotext.h"
 
 using std::string;
 using std::cin;
