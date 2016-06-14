@@ -1,27 +1,56 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <cunistd>
 
 #include "speechtotext.h"
 #include <iflytek/qisr.h>
 #include <iflytek/msp_cmn.h>
 #include <iflytek/msp_errors.h>
 
+#include <alproxies/almemoryproxy.h>
+#include <alproxies/alaudiorecorderproxy.h>
+#include <alproxies/alsounddetectionproxy.h>
+#include <qi/os.hpp>
+
 #define	BUFFER_SIZE	4096
 #define FRAME_LEN	640
 #define HINTS_SIZE  100
 #define FILENAME_SIZE  100
-#define LOGIN_PARAMS "appid = 575c26c4, work_dir = ."
-#define SESSION_PARAMS "sub = iat, domain = iat, language = zh_ch, accent = mandarin, \
-sample_rate = 16000, result_type = plain, result_encoding = utf8"
+#define WAV_NAME "/home/nao/audio/test.wav"
 
-speechToText::speechToText()
-    :login_params(LOGIN_PARAMS),session_begin_params(SESSION_PARAMS)
+speechToText::speechToText(boost::shared_ptr<AL::ALBroker> broker, const string& name)
+    :AL::ALModule(broker, name)
 {
+    setModuleDescription("");
+    functionName("recoding", getName(), "");
+    BIND_METHOD(speechToText::recording);
+}
+
+speechToText::~speechToText()
+{
+    MSPLogout();
+}
+
+void speechToText::init()
+{
+    rec_now = false;
+    recogInit();
+    proxyInit();
+    memory_pro->declareEvent("SpeechDetected", "speechToText");
+    memory_pro->subscribeToEvent("SpeechDetected", "speechToText", "startRecog");
+}
+
+void speechToText::recogInit()
+{
+    login_params("appid = 575c26c4, work_dir = .");
+    session_begin_params("sub = iat, domain = iat, language = zh_ch, accent = mandarin, "
+                         "sample_rate = 16000, result_type = plain, result_encoding = utf8");
     ret = MSP_SUCCESS;
     rec_result = (char*)malloc(sizeof(char)*BUFFER_SIZE);
     fileName = (char*)malloc(sizeof(char)*FILENAME_SIZE);
+    setFileName(WAV_NAME);
+
     ret = MSPLogin(NULL, NULL, login_params);
     if (MSP_SUCCESS != ret)
     {
@@ -30,17 +59,51 @@ speechToText::speechToText()
     }
 }
 
-speechToText::~speechToText()
+void speechToText::proxyInit()
 {
-    MSPLogout();
+    memory_pro = new AL::ALProxy(getParentBroker(), "ALMemory");
+    //sound_det_pro = new AL::ALProxy(getParentBroker(), "ALSoundDetection");
+    audio_rec_pro = new AL::ALProxy(getParentBroker(), "ALAudioDevice");
+    audio_dev_pro->enableEnergyComputation();
 }
 
-bool speechToText::startRecog()
+void speechToText::speechDetecting()
 {
-    if(fileName == NULL){
-        return false;
+    const float ENERGY_TH = 10000; // [0, 32768]
+    float energy_level = audio_dev_pro->getFrontMicEnergy();
+    if(energy_level > ENERGY_TH && !rec_now){
+        memory_pro->raiseEvent("SpeechDetected", 1);
     }
-    return run_iat(fileName, session_begin_params);
+    if(energy_level < ENERGY_TH && rec_now){
+        memory_pro->raiseEvent("SpeechDetected", 0);
+    }
+}
+
+void speechToText::recording(bool stop)
+{
+    if(stop){
+      audio_rec_pro->stopMicrophonesRecording();
+    }
+    else{
+      AL::ALValue channels;
+      channels->arrayPush(0); //left
+      channels->arrayPush(0); //right
+      channels->arrayPush(1); //front
+      channels->arrayPush(0); //reat
+      audio_rec_pro->startMicrophonesRecording(WAV_NAME, "wav", 16000, channels);
+    }
+}
+
+bool speechToText::startRecog(const string &key, const AL::ALValue &val, const AL::ALValue &msg)
+{
+    if(1 == val){
+      recording(false);
+      return false;
+    }
+    else{
+      recording(true);
+      return run_iat(fileName, session_begin_params);
+    }
 }
 
 void speechToText::setFileName(char *newFileName)
