@@ -22,7 +22,6 @@ int main()
   AL::ALBrokerManager::getInstance()->addBroker(broker);
 
   speechToText stt(broker, "test");
-  stt.speechDetecting();
 
   textToSpeech tts(ip, port);
   tts.say(testStr);

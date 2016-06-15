@@ -8,10 +8,11 @@
 #include <iflytek/msp_cmn.h>
 #include <iflytek/msp_errors.h>
 
+#include <qi/os.hpp>
+#include <qi/log.hpp>
 #include <alproxies/almemoryproxy.h>
 #include <alproxies/alaudiodeviceproxy.h>
 #include <alproxies/alaudiorecorderproxy.h>
-#include <qi/os.hpp>
 
 #define	BUFFER_SIZE	4096
 #define FRAME_LEN	640
