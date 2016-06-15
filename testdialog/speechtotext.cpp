@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <cstring>
 #include <cstdlib>
-#include <cunistd>
+#include <unistd.h>
 
 #include "speechtotext.h"
 #include <iflytek/qisr.h>
@@ -9,8 +9,8 @@
 #include <iflytek/msp_errors.h>
 
 #include <alproxies/almemoryproxy.h>
+#include <alproxies/alaudiodeviceproxy.h>
 #include <alproxies/alaudiorecorderproxy.h>
-#include <alproxies/alsounddetectionproxy.h>
 #include <qi/os.hpp>
 
 #define	BUFFER_SIZE	4096
@@ -18,6 +18,8 @@
 #define HINTS_SIZE  100
 #define FILENAME_SIZE  100
 #define WAV_NAME "/home/nao/audio/test.wav"
+
+using namespace AL;
 
 speechToText::speechToText(boost::shared_ptr<AL::ALBroker> broker, const string& name)
     :AL::ALModule(broker, name)
@@ -43,9 +45,9 @@ void speechToText::init()
 
 void speechToText::recogInit()
 {
-    login_params("appid = 575c26c4, work_dir = .");
-    session_begin_params("sub = iat, domain = iat, language = zh_ch, accent = mandarin, "
-                         "sample_rate = 16000, result_type = plain, result_encoding = utf8");
+    login_params = "appid = 575c26c4, work_dir = .";
+    session_begin_params = "sub = iat, domain = iat, language = zh_ch, accent = mandarin, "
+                         "sample_rate = 16000, result_type = plain, result_encoding = utf8";
     ret = MSP_SUCCESS;
     rec_result = (char*)malloc(sizeof(char)*BUFFER_SIZE);
     fileName = (char*)malloc(sizeof(char)*FILENAME_SIZE);
@@ -61,9 +63,8 @@ void speechToText::recogInit()
 
 void speechToText::proxyInit()
 {
-    memory_pro = new AL::ALProxy(getParentBroker(), "ALMemory");
-    //sound_det_pro = new AL::ALProxy(getParentBroker(), "ALSoundDetection");
-    audio_rec_pro = new AL::ALProxy(getParentBroker(), "ALAudioDevice");
+    memory_pro = new AL::ALMemoryProxy(getParentBroker());
+    audio_dev_pro = new AL::ALAudioDeviceProxy(getParentBroker());
     audio_dev_pro->enableEnergyComputation();
 }
 
@@ -86,17 +87,17 @@ void speechToText::recording(bool stop)
     }
     else{
       AL::ALValue channels;
-      channels->arrayPush(0); //left
-      channels->arrayPush(0); //right
-      channels->arrayPush(1); //front
-      channels->arrayPush(0); //reat
+      channels.arrayPush(0); //left
+      channels.arrayPush(0); //right
+      channels.arrayPush(1); //front
+      channels.arrayPush(0); //reat
       audio_rec_pro->startMicrophonesRecording(WAV_NAME, "wav", 16000, channels);
     }
 }
 
 bool speechToText::startRecog(const string &key, const AL::ALValue &val, const AL::ALValue &msg)
 {
-    if(1 == val){
+    if(1 == (int)val){
       recording(false);
       return false;
     }

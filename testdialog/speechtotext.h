@@ -6,6 +6,7 @@
 #include <alcommon/almodule.h>
 #include <boost/shared_ptr.hpp>
 #include <alproxies/almemoryproxy.h>
+#include <alproxies/alaudiodeviceproxy.h>
 #include <alproxies/alaudiorecorderproxy.h>
 #include <alproxies/alsounddetectionproxy.h>
 #include <qi/os.hpp>
@@ -35,11 +36,11 @@ private:
   int ret;
   bool rec_now;
   char* fileName;
-  const char* session_begin_params;
-  const char* login_params;
-  boost::shared_ptr<AL::ALProxy> memory_pro;
-  //boost::shared_ptr<AL::ALProxy> sound_det_pro;
-  boost::shared_ptr<AL::ALProxy> audio_dev_pro;
+  char* session_begin_params;
+  char* login_params;
+  AL::ALMemoryProxy* memory_pro;
+  AL::ALAudioDeviceProxy* audio_dev_pro;
+  AL::ALAudioRecorderProxy* audio_rec_pro;
 
   bool run_iat(char* audio_file, const char* session_begin_params);
 };

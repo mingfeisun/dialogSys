@@ -10,5 +10,5 @@ set(_srcs
     main.cpp)
 
 qi_create_bin(test_dialog ${_srcs})
-qi_use_lib(test_dialog ALCOMMON ALPROXIES)
+qi_use_lib(test_dialog ALCOMMON ALPROXIES msc)
 

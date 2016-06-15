@@ -1,0 +1,4 @@
+<!--- in /iflytek/package.xml -->
+<package name="msc" version="0.1" target="linux64">
+  <license>BSD</license>
+</package>
