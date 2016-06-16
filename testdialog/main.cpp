@@ -1,7 +1,7 @@
+#include <cstring>
 #include <iostream>
 #include <string>
-#include "texttospeech.h"
-#include "speechtotext.h"
+#include "converter.h"
 
 #include <alcommon/albroker.h>
 #include <alcommon/almodule.h>
@@ -15,21 +15,17 @@ int main()
 {
   const string ip = "192.168.1.102";
   const int port = 9559;
-  //string testStr = "你好，大家好";
 
   boost::shared_ptr<AL::ALBroker> broker = AL::ALBroker::createBroker("test", "", 0, ip, port);
   AL::ALBrokerManager::setInstance(broker->fBrokerManager.lock());
   AL::ALBrokerManager::getInstance()->addBroker(broker);
-  //AL::ALModule::createModule<speechToText>(broker, "speechToText");
 
-  speechToText stt(broker, "test");
-  //stt.init();
-  //std::cout<<stt.isPCalled()<<std::endl;
-  stt.test();
-
-  std::cout<<stt.rec_result<<std::endl;
-  textToSpeech tts(broker);
-  tts.say(stt.rec_result);
-
+  Converter conv(broker, "test");
+  while(1){
+    conv.speechDetecting();
+    std::cout<<conv.rec_result<<std::endl;
+    conv.sayThis(string(conv.rec_result));
+    strcpy(conv.rec_result, "");
+  }
   return 0;
 }
