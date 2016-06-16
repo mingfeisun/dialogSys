@@ -3,8 +3,8 @@
 #include <alerror/alerror.h>
 #include <alproxies/altexttospeechproxy.h>
 
-textToSpeech::textToSpeech(std::string ip, int port)
-    :tts(new AL::ALTextToSpeechProxy(ip, port))
+textToSpeech::textToSpeech(boost::shared_ptr<AL::ALBroker> broker )
+    :tts(new AL::ALTextToSpeechProxy(broker))
 {
     tts->setLanguage("Chinese");
 }

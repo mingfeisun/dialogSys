@@ -9,7 +9,7 @@ using std::string;
 
 class textToSpeech{
 public:
-    textToSpeech(string ip, int port);
+    textToSpeech(boost::shared_ptr<AL::ALBroker> broker );
 
     virtual ~textToSpeech();
     bool say(const string str);

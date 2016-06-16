@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 
+#include <alcommon/albroker.h>
 #include <alcommon/almodule.h>
 #include <boost/shared_ptr.hpp>
 #include <alproxies/almemoryproxy.h>
@@ -26,23 +27,23 @@ public:
   virtual ~speechToText();
   virtual void init();
   void recogInit();
-  void proxyInit();
+  void proxyInit(boost::shared_ptr<AL::ALBroker> broker);
   void speechDetecting();
   void recording(bool stop);
   bool startRecog(const string& key, const AL::ALValue& val, const AL::ALValue& msg);
-  void setFileName(char* newFileName);
+  void test();
 
 private:
   int ret;
   bool rec_now;
-  char* fileName;
   char* session_begin_params;
   char* login_params;
   AL::ALMemoryProxy* memory_pro;
+  AL::ALMemoryProxy* speech_process_pro;
   AL::ALAudioDeviceProxy* audio_dev_pro;
   AL::ALAudioRecorderProxy* audio_rec_pro;
 
-  bool run_iat(char* audio_file, const char* session_begin_params);
+  bool run_iat(const char* audio_file, const char* session_begin_params);
 };
 
 #endif // SPEECHTOTEXT_H

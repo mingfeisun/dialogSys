@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <unistd.h>
 
+#include <iostream>
+
 #include "speechtotext.h"
 #include <iflytek/qisr.h>
 #include <iflytek/msp_cmn.h>
@@ -10,6 +12,8 @@
 
 #include <qi/os.hpp>
 #include <qi/log.hpp>
+#include <alcommon/albroker.h>
+#include <alcommon/almodule.h>
 #include <alproxies/almemoryproxy.h>
 #include <alproxies/alaudiodeviceproxy.h>
 #include <alproxies/alaudiorecorderproxy.h>
@@ -18,16 +22,31 @@
 #define FRAME_LEN	640
 #define HINTS_SIZE  100
 #define FILENAME_SIZE  100
-#define WAV_NAME "/home/nao/audio/test.wav"
+
+const char* WAV_NAME_LOCAL = "/home/nao/audio/test.wav";
+const char* WAV_NAME_REMOTE = "/home/mingfeisun/Desktop/test.wav";
 
 using namespace AL;
 
 speechToText::speechToText(boost::shared_ptr<AL::ALBroker> broker, const string& name)
     :AL::ALModule(broker, name)
 {
+    rec_result = (char*)malloc(sizeof(char)*BUFFER_SIZE);
+    //strcpy(rec_result, "no result");
+
     setModuleDescription("");
-    functionName("recoding", getName(), "");
-    BIND_METHOD(speechToText::recording);
+    functionName("startRecog", getName(), "");
+    BIND_METHOD(speechToText::startRecog);
+
+    //bool speechToText::run_iat(const char *audio_file, const char *session_begin_params)
+    functionName("run_iat", getName(), "");
+    addParam("audio_file", "audioFile");
+    addParam("session_begin_params", "params");
+    setReturn("bool", "result boolean value");
+    BIND_METHOD(speechToText::run_iat);
+
+    recogInit();
+    proxyInit(broker);
 }
 
 speechToText::~speechToText()
@@ -38,9 +57,8 @@ speechToText::~speechToText()
 void speechToText::init()
 {
     rec_now = false;
-    recogInit();
-    proxyInit();
     memory_pro->declareEvent("SpeechDetected", "speechToText");
+    speech_process_pro->declareEvent("speechProcessed", "speechToText");
     memory_pro->subscribeToEvent("SpeechDetected", "speechToText", "startRecog");
 }
 
@@ -50,9 +68,6 @@ void speechToText::recogInit()
     session_begin_params = "sub = iat, domain = iat, language = zh_ch, accent = mandarin, "
                          "sample_rate = 16000, result_type = plain, result_encoding = utf8";
     ret = MSP_SUCCESS;
-    rec_result = (char*)malloc(sizeof(char)*BUFFER_SIZE);
-    fileName = (char*)malloc(sizeof(char)*FILENAME_SIZE);
-    setFileName(WAV_NAME);
 
     ret = MSPLogin(NULL, NULL, login_params);
     if (MSP_SUCCESS != ret)
@@ -62,16 +77,18 @@ void speechToText::recogInit()
     }
 }
 
-void speechToText::proxyInit()
+void speechToText::proxyInit(boost::shared_ptr<AL::ALBroker> broker)
 {
-    memory_pro = new AL::ALMemoryProxy(getParentBroker());
-    audio_dev_pro = new AL::ALAudioDeviceProxy(getParentBroker());
+    memory_pro = new AL::ALMemoryProxy(broker);
+    speech_process_pro = new AL::ALMemoryProxy(broker);
+    audio_rec_pro = new AL::ALAudioRecorderProxy(broker);
+    audio_dev_pro = new AL::ALAudioDeviceProxy(broker);
     audio_dev_pro->enableEnergyComputation();
 }
 
 void speechToText::speechDetecting()
 {
-    const float ENERGY_TH = 10000; // [0, 32768]
+    const float ENERGY_TH = 5000; // [0, 32768]
     float energy_level = audio_dev_pro->getFrontMicEnergy();
     if(energy_level > ENERGY_TH && !rec_now){
         memory_pro->raiseEvent("SpeechDetected", 1);
@@ -85,6 +102,7 @@ void speechToText::recording(bool stop)
 {
     if(stop){
       audio_rec_pro->stopMicrophonesRecording();
+      system("scp nao@192.168.1.102:~/audio/test.wav /home/mingfeisun/Desktop/test.wav ");
     }
     else{
       AL::ALValue channels;
@@ -92,7 +110,7 @@ void speechToText::recording(bool stop)
       channels.arrayPush(0); //right
       channels.arrayPush(1); //front
       channels.arrayPush(0); //reat
-      audio_rec_pro->startMicrophonesRecording(WAV_NAME, "wav", 16000, channels);
+      audio_rec_pro->startMicrophonesRecording(WAV_NAME_LOCAL, "wav", 16000, channels);
     }
 }
 
@@ -100,20 +118,27 @@ bool speechToText::startRecog(const string &key, const AL::ALValue &val, const A
 {
     if(1 == (int)val){
       recording(false);
-      return false;
     }
     else{
       recording(true);
-      return run_iat(fileName, session_begin_params);
+      if(run_iat(WAV_NAME_REMOTE, session_begin_params)){
+          speech_process_pro->raiseEvent("speechProcessed", true);
+          return true;
+      }
     }
+    return false;
 }
 
-void speechToText::setFileName(char *newFileName)
+void speechToText::test()
 {
-    strcpy(fileName, newFileName);
+    //recording(false);
+    //qi::os::sleep(3);
+    //recording(true);
+    //std::cout<<"Local:"<<getThis()->isLocal()<<std::endl;
+    run_iat(WAV_NAME_REMOTE, session_begin_params);
 }
 
-bool speechToText::run_iat(char *audio_file, const char *session_begin_params)
+bool speechToText::run_iat(const char *audio_file, const char *session_begin_params)
 {
     bool flag = true;
 

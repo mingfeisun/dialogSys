@@ -15,16 +15,21 @@ int main()
 {
   const string ip = "192.168.1.102";
   const int port = 9559;
-  string testStr;
+  //string testStr = "你好，大家好";
 
   boost::shared_ptr<AL::ALBroker> broker = AL::ALBroker::createBroker("test", "", 0, ip, port);
   AL::ALBrokerManager::setInstance(broker->fBrokerManager.lock());
   AL::ALBrokerManager::getInstance()->addBroker(broker);
+  //AL::ALModule::createModule<speechToText>(broker, "speechToText");
 
   speechToText stt(broker, "test");
+  //stt.init();
+  //std::cout<<stt.isPCalled()<<std::endl;
+  stt.test();
 
-  textToSpeech tts(ip, port);
-  tts.say(testStr);
+  std::cout<<stt.rec_result<<std::endl;
+  textToSpeech tts(broker);
+  tts.say(stt.rec_result);
 
   return 0;
 }
