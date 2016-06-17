@@ -21,20 +21,21 @@ namespace AL {
 class Converter : public AL::ALModule
 {
 public:
-  char* rec_result;
-
-  Converter(boost::shared_ptr<AL::ALBroker> broker, const string& name);
+  Converter(boost::shared_ptr<AL::ALBroker> broker, const std::string &name);
   virtual ~Converter();
   virtual void init();
   void recogInit();
-  void proxyInit(boost::shared_ptr<AL::ALBroker> broker);
+  void proxyInit();
   void sayThis(string tosay);
   void speechDetecting();
   void recordingStop(bool stop);
+  void flushResult();
+  string getResult();
 
 private:
   int ret;
   bool rec_now;
+  char* rec_result;
   char* session_begin_params;
   char* login_params;
   AL::ALTextToSpeechProxy* tts;

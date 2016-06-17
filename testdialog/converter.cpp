@@ -12,7 +12,6 @@
 
 #include <qi/os.hpp>
 #include <qi/log.hpp>
-#include <alcommon/albroker.h>
 #include <alcommon/almodule.h>
 #include <alproxies/alaudiodeviceproxy.h>
 #include <alproxies/altexttospeechproxy.h>
@@ -28,24 +27,32 @@ const char* WAV_NAME_REMOTE = "/home/mingfeisun/Desktop/test.wav";
 
 using namespace AL;
 
-Converter::Converter(boost::shared_ptr<AL::ALBroker> broker, const string& name)
+Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name)
     :AL::ALModule(broker, name), tts(new AL::ALTextToSpeechProxy(broker))
 
 {
     rec_result = (char*)malloc(sizeof(char)*BUFFER_SIZE);
-    strcpy(rec_result, "hello");
+    flushResult();
 
     rec_now = false;
     tts->setLanguage("Chinese");
 
-    functionName("run_iat", getName(), "");
-    addParam("audio_file", "audioFile");
-    addParam("session_begin_params", "params");
-    setReturn("bool", "result boolean value");
-    BIND_METHOD(Converter::run_iat);
+    functionName("getResult", getName(), "");
+    setReturn("string", "string");
+    BIND_METHOD(Converter::getResult);
+
+    functionName("flushResult", getName(), "");
+    BIND_METHOD(Converter::flushResult);
+
+    functionName("speechDetecting", getName(), "");
+    BIND_METHOD(Converter::speechDetecting);
+
+    functionName("sayThis", getName(), "");
+    addParam("tosay", "tosay");
+    BIND_METHOD(Converter::sayThis);
 
     recogInit();
-    proxyInit(broker);
+    proxyInit();
 }
 
 Converter::~Converter()
@@ -72,10 +79,10 @@ void Converter::recogInit()
     }
 }
 
-void Converter::proxyInit(boost::shared_ptr<AL::ALBroker> broker)
+void Converter::proxyInit()
 {
-    audio_rec_pro = new AL::ALAudioRecorderProxy(broker);
-    audio_dev_pro = new AL::ALAudioDeviceProxy(broker);
+    audio_rec_pro = new AL::ALAudioRecorderProxy(getParentBroker());
+    audio_dev_pro = new AL::ALAudioDeviceProxy(getParentBroker());
     audio_dev_pro->enableEnergyComputation();
 }
 
@@ -90,7 +97,7 @@ void Converter::speechDetecting()
 {
     const float ENERGY_TH = 800; // [0, 32768]
     float energy_level = audio_dev_pro->getFrontMicEnergy();
-    printf("speech energy: %f\n", energy_level);
+    //printf("speech energy: %f\n", energy_level);
     if(energy_level > ENERGY_TH && !rec_now){
         recordingStop(false);
     }
@@ -120,9 +127,21 @@ void Converter::recordingStop(bool stop)
       channels.arrayPush(1); //front
       channels.arrayPush(0); //reat
       audio_rec_pro->startMicrophonesRecording(WAV_NAME_LOCAL, "wav", 16000, channels);
+      printf("recording...");
       qi::os::sleep(1);
       rec_now = true;
-    }
+        }
+}
+
+void Converter::flushResult()
+{
+    strcpy(rec_result, "");
+}
+
+string Converter::getResult()
+{
+    return std::string(rec_result);
+
 }
 
 bool Converter::run_iat(const char *audio_file, const char *session_begin_params)
@@ -199,7 +218,6 @@ bool Converter::run_iat(const char *audio_file, const char *session_begin_params
             aud_stat = MSP_AUDIO_SAMPLE_FIRST;
 
         ret = QISRAudioWrite(session_id, (const void *)&p_pcm[pcm_count], len, aud_stat, &ep_stat, &rec_stat);
-        printf(">");
         if (MSP_SUCCESS != ret)
         {
             printf("\nQISRAudioWrite failed! error code:%d\n", ret);

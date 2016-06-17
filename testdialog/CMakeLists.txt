@@ -5,6 +5,8 @@ find_package(qibuild)
 set(_srcs
     converter.cpp
     converter.h
+    wakeup.cpp
+    wakeup.h
     main.cpp)
 
 qi_create_bin(test_dialog ${_srcs})

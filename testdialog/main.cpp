@@ -2,7 +2,9 @@
 #include <iostream>
 #include <string>
 #include "converter.h"
+#include "wakeup.h"
 
+#include <boost/shared_ptr.hpp>
 #include <alcommon/albroker.h>
 #include <alcommon/almodule.h>
 #include <alcommon/albrokermanager.h>
@@ -19,13 +21,27 @@ int main()
   boost::shared_ptr<AL::ALBroker> broker = AL::ALBroker::createBroker("test", "", 0, ip, port);
   AL::ALBrokerManager::setInstance(broker->fBrokerManager.lock());
   AL::ALBrokerManager::getInstance()->addBroker(broker);
+  AL::ALModule::createModule<Converter>(broker, "Converter");
+  AL::ALModule::createModule<wakeUp>(broker, "wakeUp");
 
-  Converter conv(broker, "test");
+  boost::shared_ptr<AL::ALProxy> conv = broker->getProxy("Converter");
+  boost::shared_ptr<AL::ALProxy> wakeup = broker->getProxy("wakeUp");
+
   while(1){
-    conv.speechDetecting();
-    std::cout<<conv.rec_result<<std::endl;
-    conv.sayThis(string(conv.rec_result));
-    strcpy(conv.rec_result, "");
+    wakeup->callVoid("standUp");
+    if(wakeup->call<bool>("getStatus")){
+      wakeup->callVoid("stopStandUp");
+      conv->callVoid("sayThis", "Hey, 你好");
+      while(1){
+        conv->callVoid("speechDetecting");
+        string result = conv->call<string>("getResult");
+        if( result != ""){
+            std::cout<<result<<std::endl;
+        }
+        conv->callVoid("sayThis", result);
+        conv->callVoid("flushResult");
+      }
+    }
   }
   return 0;
 }
