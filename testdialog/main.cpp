@@ -28,20 +28,19 @@ int main()
   boost::shared_ptr<AL::ALProxy> wakeup = broker->getProxy("wakeUp");
 
   while(1){
-    wakeup->callVoid("standUp");
-    if(wakeup->call<bool>("getStatus")){
-      wakeup->callVoid("stopStandUp");
-      conv->callVoid("sayThis", "Hey, 你好");
-      while(1){
-        conv->callVoid("speechDetecting");
-        string result = conv->call<string>("getResult");
-        if( result != ""){
-            std::cout<<result<<std::endl;
-        }
-        conv->callVoid("sayThis", result);
-        conv->callVoid("flushResult");
+      if(wakeup->call<bool>("getStatus")){
+          wakeup->callVoid("stopStandUp");
+          conv->callVoid("sayThis", "Hey, 你好，请问有什么需要帮助您的么？");
+          while(1){
+              conv->callVoid("speechDetecting");
+              string result = conv->call<string>("getResult");
+              if( result != ""){
+                  std::cout<<result<<std::endl;
+              }
+              conv->callVoid("sayThis", result);
+              conv->callVoid("flushResult");
+          }
       }
-    }
   }
   return 0;
 }
