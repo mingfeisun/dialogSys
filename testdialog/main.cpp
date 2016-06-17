@@ -30,17 +30,20 @@ int main()
   while(1){
       if(wakeup->call<bool>("getStatus")){
           wakeup->callVoid("stopStandUp");
-          conv->callVoid("sayThis", "Hey, 你好，请问有什么需要帮助您的么？");
+          conv->callVoid("sayThis", "Hey, 你好，请问有什么可以帮助您的么？");
           while(1){
               conv->callVoid("speechDetecting");
               string result = conv->call<string>("getResult");
               if( result != ""){
                   std::cout<<result<<std::endl;
               }
+              if( result == "谢谢！"){
+                  goto ext;
+              }
               conv->callVoid("sayThis", result);
               conv->callVoid("flushResult");
           }
       }
   }
-  return 0;
+ext:return 0;
 }

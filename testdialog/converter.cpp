@@ -57,7 +57,6 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
 
 Converter::~Converter()
 {
-    MSPLogout();
 }
 
 void Converter::init()
@@ -70,13 +69,6 @@ void Converter::recogInit()
     session_begin_params = "sub = iat, domain = iat, language = zh_ch, accent = mandarin, "
                          "sample_rate = 16000, result_type = plain, result_encoding = utf8";
     ret = MSP_SUCCESS;
-
-    ret = MSPLogin(NULL, NULL, login_params);
-    if (MSP_SUCCESS != ret)
-    {
-        printf("MSPLogin failed , Error code %d.\n",ret);
-        MSPLogout();
-    }
 }
 
 void Converter::proxyInit()
@@ -95,7 +87,7 @@ void Converter::sayThis(string tosay)
 
 void Converter::speechDetecting()
 {
-    const float ENERGY_TH = 800; // [0, 32768]
+    const float ENERGY_TH = 1000; // [0, 32768]
     float energy_level = audio_dev_pro->getFrontMicEnergy();
     //printf("speech energy: %f\n", energy_level);
     if(energy_level > ENERGY_TH && !rec_now){
@@ -108,7 +100,16 @@ void Converter::speechDetecting()
         qi::os::sleep(1);
         if(energy_level < ENERGY_TH && rec_now){
             recordingStop(true);
+            ret = MSPLogin(NULL, NULL, login_params);
+            if (MSP_SUCCESS != ret)
+            {
+                printf("MSPLogin failed , Error code %d.\n",ret);
+                MSPLogout();
+            }
+            std::cout<<"login"<<std::endl;
             run_iat(WAV_NAME_REMOTE, session_begin_params);
+            MSPLogout();
+            std::cout<<"logout"<<std::endl;
         }
     }
 }
@@ -126,11 +127,15 @@ void Converter::recordingStop(bool stop)
       channels.arrayPush(0); //right
       channels.arrayPush(1); //front
       channels.arrayPush(0); //reat
-      audio_rec_pro->startMicrophonesRecording(WAV_NAME_LOCAL, "wav", 16000, channels);
-      printf("recording...");
+      try{
+        audio_rec_pro->startMicrophonesRecording(WAV_NAME_LOCAL, "wav", 16000, channels);
+      }
+      catch(AL::ALError& e){
+          std::cout<<e.what()<<std::endl;
+      }
       qi::os::sleep(1);
       rec_now = true;
-        }
+    }
 }
 
 void Converter::flushResult()
@@ -253,7 +258,7 @@ bool Converter::run_iat(const char *audio_file, const char *session_begin_params
 
         if (MSP_EP_AFTER_SPEECH == ep_stat)
             break;
-        //usleep(1*1000);
+        usleep(50*1000);
     }
     errcode = QISRAudioWrite(session_id, NULL, 0, MSP_AUDIO_SAMPLE_LAST, &ep_stat, &rec_stat);
     if (MSP_SUCCESS != errcode)
@@ -284,7 +289,7 @@ bool Converter::run_iat(const char *audio_file, const char *session_begin_params
             }
             strncat(rec_result, rslt, rslt_len);
         }
-        //usleep(150*1000);
+        usleep(150*1000);
     }
 
 iat_exit:
