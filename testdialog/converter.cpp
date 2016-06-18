@@ -337,12 +337,17 @@ bool Converter::witAI()
             result += buffer;
     }
     pclose(pipe);
+    std::cout<<result<<std::endl;
     std::string loc = "\"_text\"";
     int ind_e = result.find(loc);
     while(result[ind_e] != ':'){
         ind_e++;
     }
     while(result[ind_e] != '"'){
+        if(result[ind_e] == ','){
+            strcpy(rec_result, "");
+            return true;
+        }
         ind_e++;
     }
     int ind_s = ++ind_e;
@@ -351,4 +356,5 @@ bool Converter::witAI()
     }
     result = result.substr(ind_s, ind_e-ind_s);
     strcpy(rec_result, result.c_str());
+    return true;
 }
