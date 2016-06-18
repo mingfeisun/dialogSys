@@ -2,6 +2,9 @@
 #include <cstring>
 #include <cstdlib>
 #include <unistd.h>
+#include <memory>
+#include <stdexcept>
+#include <string>
 
 #include <iostream>
 
@@ -47,6 +50,9 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     functionName("speechDetecting", getName(), "");
     BIND_METHOD(Converter::speechDetecting);
 
+    functionName("test", getName(), "");
+    BIND_METHOD(Converter::test);
+
     functionName("sayThis", getName(), "");
     addParam("tosay", "tosay");
     BIND_METHOD(Converter::sayThis);
@@ -87,9 +93,8 @@ void Converter::sayThis(string tosay)
 
 void Converter::speechDetecting()
 {
-    const float ENERGY_TH = 1000; // [0, 32768]
+    const float ENERGY_TH = 1200; // [0, 32768]
     float energy_level = audio_dev_pro->getFrontMicEnergy();
-    //printf("speech energy: %f\n", energy_level);
     if(energy_level > ENERGY_TH && !rec_now){
         recordingStop(false);
     }
@@ -100,16 +105,8 @@ void Converter::speechDetecting()
         qi::os::sleep(1);
         if(energy_level < ENERGY_TH && rec_now){
             recordingStop(true);
-            ret = MSPLogin(NULL, NULL, login_params);
-            if (MSP_SUCCESS != ret)
-            {
-                printf("MSPLogin failed , Error code %d.\n",ret);
-                MSPLogout();
-            }
-            std::cout<<"login"<<std::endl;
-            run_iat(WAV_NAME_REMOTE, session_begin_params);
-            MSPLogout();
-            std::cout<<"logout"<<std::endl;
+            //run_iat(WAV_NAME_REMOTE, session_begin_params);
+            witAI();
         }
     }
 }
@@ -128,7 +125,7 @@ void Converter::recordingStop(bool stop)
       channels.arrayPush(1); //front
       channels.arrayPush(0); //reat
       try{
-        audio_rec_pro->startMicrophonesRecording(WAV_NAME_LOCAL, "wav", 16000, channels);
+          audio_rec_pro->startMicrophonesRecording(WAV_NAME_LOCAL, "wav", 16000, channels);
       }
       catch(AL::ALError& e){
           std::cout<<e.what()<<std::endl;
@@ -149,8 +146,21 @@ string Converter::getResult()
 
 }
 
+void Converter::test()
+{
+    run_iat(WAV_NAME_REMOTE, session_begin_params);
+}
+
 bool Converter::run_iat(const char *audio_file, const char *session_begin_params)
 {
+    ret = MSPLogin(NULL, NULL, login_params);
+    if (MSP_SUCCESS != ret)
+    {
+        printf("MSPLogin failed , Error code %d.\n",ret);
+        MSPLogout();
+    }
+    std::cout<<"login"<<std::endl;
+
     bool flag = true;
 
     const char*		session_id					=	NULL;
@@ -289,7 +299,7 @@ bool Converter::run_iat(const char *audio_file, const char *session_begin_params
             }
             strncat(rec_result, rslt, rslt_len);
         }
-        usleep(150*1000);
+        usleep(60*1000);
     }
 
 iat_exit:
@@ -304,5 +314,41 @@ iat_exit:
     }
 
     QISRSessionEnd(session_id, hints);
+
+    MSPLogout();
+    std::cout<<"logout"<<std::endl;
     return flag;
+}
+
+bool Converter::witAI()
+{
+    char* cmd = "curl -XPOST 'https://api.wit.ai/speech?v=20160526' \
+            -i -L \
+            -H \"Authorization: Bearer W36NPJ4UZ2RFE2Q5UUQQNWJL62BRITGA\" \
+            -H \"Content-Type: audio/wav\" \
+            --data-binary \"@/home/mingfeisun/Desktop/test.wav\" ";
+
+    char buffer[128];
+    std::string result ="";
+    FILE* pipe = popen(cmd, "r");
+    if(!pipe) throw std::runtime_error("popen() failed!");
+    while(!feof(pipe)){
+        if(fgets(buffer, 128, pipe) != NULL )
+            result += buffer;
+    }
+    pclose(pipe);
+    std::string loc = "\"_text\"";
+    int ind_e = result.find(loc);
+    while(result[ind_e] != ':'){
+        ind_e++;
+    }
+    while(result[ind_e] != '"'){
+        ind_e++;
+    }
+    int ind_s = ++ind_e;
+    while(result[ind_e] != '"'){
+        ind_e++;
+    }
+    result = result.substr(ind_s, ind_e-ind_s);
+    strcpy(rec_result, result.c_str());
 }

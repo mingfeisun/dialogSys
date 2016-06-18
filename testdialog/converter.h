@@ -31,6 +31,7 @@ public:
   void recordingStop(bool stop);
   void flushResult();
   string getResult();
+  void test();
 
 private:
   int ret;
@@ -43,6 +44,7 @@ private:
   AL::ALAudioRecorderProxy* audio_rec_pro;
 
   bool run_iat(const char* audio_file, const char* session_begin_params);
+  bool witAI();
 };
 
 #endif

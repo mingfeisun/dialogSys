@@ -42,8 +42,10 @@ void wakeUp::init()
     try{
         speech_recog = getParentBroker()->getProxy("ALSpeechRecognition");
         speech_recog->callVoid("setLanguage", string("English"));
-        speech_recog->callVoid("setAudioExpression", true);
-        speech_recog->callVoid("setVisualExpression", true);
+        //speech_recog->callVoid("setAudioExpression", true);
+        //speech_recog->callVoid("setVisualExpression", true);
+        speech_recog->callVoid("setAudioExpression", false);
+        speech_recog->callVoid("setVisualExpression", false);
 
         vector<string> command_list;
         command_list.push_back(wake_up_command);
