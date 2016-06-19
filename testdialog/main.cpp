@@ -21,28 +21,34 @@ int main()
   boost::shared_ptr<AL::ALBroker> broker = AL::ALBroker::createBroker("test", "", 0, ip, port);
   AL::ALBrokerManager::setInstance(broker->fBrokerManager.lock());
   AL::ALBrokerManager::getInstance()->addBroker(broker);
-  AL::ALModule::createModule<Converter>(broker, "Converter");
   AL::ALModule::createModule<wakeUp>(broker, "wakeUp");
 
-  boost::shared_ptr<AL::ALProxy> conv = broker->getProxy("Converter");
   boost::shared_ptr<AL::ALProxy> wakeup = broker->getProxy("wakeUp");
+
+  //AL::ALModule::createModule<Converter>(broker, "Converter");
+  //boost::shared_ptr<AL::ALProxy> conv = broker->getProxy("Converter");
+  //conv->callVoid("test");
 
   while(1){
       if(wakeup->call<bool>("getStatus")){
           wakeup->callVoid("stopStandUp");
-          conv->callVoid("sayThis", "Hey, 你好，请问有什么可以帮助您的么？");
+          AL::ALModule::createModule<Converter>(broker, "Converter");
+          boost::shared_ptr<AL::ALProxy> conv = broker->getProxy("Converter");
+          conv->callVoid("sayThis", "你好，请问有什么可以帮助您的么？");
+          conv->callVoid("start");
           while(1){
-              conv->callVoid("speechDetecting");
-              //conv->callVoid("test");
-              string result = conv->call<string>("getResult");
-              if( result != ""){
-                  std::cout<<result<<std::endl;
+              if(conv->call<bool>("getReady")){
+                  string result = conv->call<string>("getResult");
+                  if( result != ""){
+                      std::cout<<result<<std::endl;
+                      conv->callVoid("sayThis", result);
+                      conv->callVoid("flushResult");
+                      if( result == "谢谢"){
+                          goto ext;
+                      }
+                  }
+                  conv->callVoid("start");
               }
-              if( result == "谢谢"){
-                  goto ext;
-              }
-              conv->callVoid("sayThis", result);
-              conv->callVoid("flushResult");
           }
       }
   }

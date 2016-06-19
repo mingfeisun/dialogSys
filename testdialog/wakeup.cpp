@@ -1,6 +1,7 @@
 #include "wakeup.h"
 #include <iostream>
 
+#include <boost/shared_ptr.hpp>
 #include <alvalue/alvalue.h>
 #include <alcommon/almodule.h>
 #include <alcommon/albroker.h>
@@ -39,11 +40,10 @@ wakeUp::~wakeUp()
 void wakeUp::init()
 {
     mem = getParentBroker()->getMemoryProxy();
+    speech_recog = getParentBroker()->getProxy("ALSpeechRecognition");
+
     try{
-        speech_recog = getParentBroker()->getProxy("ALSpeechRecognition");
         speech_recog->callVoid("setLanguage", string("English"));
-        //speech_recog->callVoid("setAudioExpression", true);
-        //speech_recog->callVoid("setVisualExpression", true);
         speech_recog->callVoid("setAudioExpression", false);
         speech_recog->callVoid("setVisualExpression", false);
 
@@ -52,7 +52,16 @@ void wakeUp::init()
         speech_recog->callVoid("setVocabulary", command_list, false);
     }
     catch(const AL::ALError& e ){
-        cout<<e.what()<<endl;
+        //cout<<e.what()<<endl;
+        speech_recog->callVoid("pause", true);
+        speech_recog->callVoid("setLanguage", string("English"));
+        speech_recog->callVoid("setAudioExpression", false);
+        speech_recog->callVoid("setVisualExpression", false);
+
+        vector<string> command_list;
+        command_list.push_back(wake_up_command);
+        speech_recog->callVoid("setVocabulary", command_list, false);
+        speech_recog->callVoid("pause", false);
     }
     mem->subscribeToEvent("WordRecognized", getName(), "onWakeUp");
 }
@@ -64,6 +73,7 @@ void wakeUp::standUp()
 void wakeUp::stopStandUp()
 {
     mem->unsubscribeToEvent("WordRecognized", getName());
+    speech_recog->callVoid("pause", true);
 }
 
 void wakeUp::onWakeUp(const string &name, const AL::ALValue &val, const string &myName)
