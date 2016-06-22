@@ -3,6 +3,8 @@
 #include <string>
 #include "converter.h"
 #include "wakeup.h"
+#include "dialogtext.h"
+//#include "exec_shell.h"
 
 #include <boost/shared_ptr.hpp>
 #include <alcommon/albroker.h>
@@ -25,13 +27,11 @@ int main()
 
   boost::shared_ptr<AL::ALProxy> wakeup = broker->getProxy("wakeUp");
 
-  //AL::ALModule::createModule<Converter>(broker, "Converter");
-  //boost::shared_ptr<AL::ALProxy> conv = broker->getProxy("Converter");
-  //conv->callVoid("test");
-
   while(1){
       if(wakeup->call<bool>("getStatus")){
           wakeup->callVoid("stopStandUp");
+          dialogText testDialog;
+          testDialog.init();
           AL::ALModule::createModule<Converter>(broker, "Converter");
           boost::shared_ptr<AL::ALProxy> conv = broker->getProxy("Converter");
           conv->callVoid("sayThis", "你好，请问有什么可以帮助您的么？");
@@ -41,9 +41,12 @@ int main()
                   string result = conv->call<string>("getResult");
                   if( result != ""){
                       std::cout<<result<<std::endl;
-                      conv->callVoid("sayThis", result);
+                      string temp = testDialog.getResponse(result);
+                      std::cout<<temp<<std::endl;
+                      conv->callVoid("sayThis", temp);
                       conv->callVoid("flushResult");
                       if( result == "谢谢"){
+                          conv->callVoid("sayThis", "希望下次为您提供帮助，再见！");
                           goto ext;
                       }
                   }

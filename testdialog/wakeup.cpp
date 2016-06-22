@@ -79,7 +79,7 @@ void wakeUp::stopStandUp()
 void wakeUp::onWakeUp(const string &name, const AL::ALValue &val, const string &myName)
 {
     cout<<">";
-    if((string)val[0] == wake_up_command && (float)val[1] >= 0.10){
+    if((string)val[0] == wake_up_command && (float)val[1] >= 0.30){
         setStatus(true);
     }
     else{

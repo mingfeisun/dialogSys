@@ -3,12 +3,12 @@
 #include <cstdlib>
 #include <unistd.h>
 #include <memory>
-#include <stdexcept>
 #include <string>
 
 #include <iostream>
 
 #include "converter.h"
+#include "exec_shell.h"
 
 #include <qi/os.hpp>
 #include <qi/log.hpp>
@@ -162,15 +162,18 @@ bool Converter::witAI()
 {
     char* cmd = "ssh nao@192.168.1.102 'bash -s' < upload.sh";
 
-    char buffer[128];
-    std::string result ="";
-    FILE* pipe = popen(cmd, "r");
-    if(!pipe) throw std::runtime_error("popen() failed!");
-    while(!feof(pipe)){
-        if(fgets(buffer, 128, pipe) != NULL )
-            result += buffer;
-    }
-    pclose(pipe);
+    std::string result = exec_shell(cmd);
+
+//    char buffer[128];
+//    std::string result ="";
+//    FILE* pipe = popen(cmd, "r");
+//    if(!pipe) throw std::runtime_error("popen() failed!");
+//    while(!feof(pipe)){
+//        if(fgets(buffer, 128, pipe) != NULL )
+//            result += buffer;
+//    }
+//    pclose(pipe);
+
     std::cout<<result<<std::endl;
     std::string loc = "\"_text\"";
     int ind_e = result.find(loc);
