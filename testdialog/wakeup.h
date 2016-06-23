@@ -8,6 +8,7 @@
 #include <alcommon/almodule.h>
 #include <alcommon/albroker.h>
 #include <alproxies/almemoryproxy.h>
+#include <alproxies/altexttospeechproxy.h>
 
 using std::string;
 
@@ -31,6 +32,7 @@ private:
   string wake_up_command;
   boost::shared_ptr<AL::ALMemoryProxy> mem;
   boost::shared_ptr<AL::ALProxy> speech_recog;
+  boost::shared_ptr<AL::ALProxy> speak_out;
 
   void setStatus(bool val);
 };

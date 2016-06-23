@@ -1,10 +1,12 @@
 #include <cstdio>
 #include <cstring>
 #include <cstdlib>
+#include <ctime>
 #include <unistd.h>
 #include <memory>
 #include <string>
-
+#include <vector>
+#include <fstream>
 #include <iostream>
 
 #include "converter.h"
@@ -15,20 +17,25 @@
 #include <alcommon/almodule.h>
 #include <alproxies/almemoryproxy.h>
 #include <alproxies/altexttospeechproxy.h>
+#include <alproxies/alanimatedspeechproxy.h>
 #include <alproxies/alaudiorecorderproxy.h>
 #include <alproxies/alspeechrecognitionproxy.h>
 
-const char* WAV_NAME_LOCAL = "/home/nao/audio/test.wav";
+#define UPLOAD_SPEECH 1
+#define CONFIRM_TEXT 2
 
+const char* WAV_NAME_LOCAL = "/home/nao/audio/test.wav";
 using namespace AL;
 
 Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name)
-    :AL::ALModule(broker, name), tts(new AL::ALTextToSpeechProxy(broker))
+    :AL::ALModule(broker, name), tts(new AL::ALAnimatedSpeechProxy(broker)),
+      tts_lang(new AL::ALTextToSpeechProxy(broker))
+
 
 {
     flushResult();
 
-    tts->setLanguage("Chinese");
+    tts_lang->setLanguage("Chinese");
 
     functionName("getResult", getName(), "");
     setReturn("string", "string");
@@ -40,6 +47,9 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     functionName("speechDetecting", getName(), "");
     BIND_METHOD(Converter::speechDetecting);
 
+    functionName("thanksRecognized", getName(), "");
+    BIND_METHOD(Converter::thanksRecognized);
+
     functionName("start", getName(), "");
     BIND_METHOD(Converter::start);
 
@@ -49,11 +59,15 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     functionName("test", getName(), "");
     BIND_METHOD(Converter::test);
 
+    functionName("getExit", getName(), "");
+    BIND_METHOD(Converter::getExit);
+
     functionName("sayThis", getName(), "");
     addParam("tosay", "tosay");
     BIND_METHOD(Converter::sayThis);
 
     ready = true;
+    exit_val = false;
 }
 
 Converter::~Converter()
@@ -69,6 +83,7 @@ void Converter::init()
 void Converter::proxyInit()
 {
     mem_pro = new AL::ALMemoryProxy(getParentBroker());
+    mem_pro_s = new AL::ALMemoryProxy(getParentBroker());
     audio_rec_pro = new AL::ALAudioRecorderProxy(getParentBroker());
     speech_recog_pro = new AL::ALSpeechRecognitionProxy(getParentBroker());
 
@@ -104,8 +119,25 @@ void Converter::speechDetecting(std::string eventName, AL::ALValue status, std::
         stopRecording();
         mem_pro->unsubscribeToEvent("ALSpeechRecognition/Status", getName());
         speech_recog_pro->pause(true);
-        tts->say("好的，您稍等，我确认下。");
+        transition(UPLOAD_SPEECH);
         witAI();
+        }
+}
+
+void Converter::thanksRecognized(std::string eventName, AL::ALValue val, std::string subId)
+{
+    if((string)val[0] == "谢谢" && (float)val[1] >= 0.10){
+        mem_pro->unsubscribeToEvent("ALSpeechRecognition/Status", getName());
+        mem_pro_s->unsubscribeToEvent("WordRecognized", getName());
+        try{
+            audio_rec_pro->stopMicrophonesRecording();
+            speech_recog_pro->pause(true);
+        }
+        catch(AL::ALError& e){
+            std::cout<<e.what()<<std::endl;
+        }
+        tts->post.say("希望下次为您提供帮助，^startTag(bow)再见！");
+        exit_val = true;
     }
 }
 
@@ -132,6 +164,35 @@ void Converter::stopRecording()
     rec_now = false;
 }
 
+void Converter::transition(int type)
+{
+    static int index = 0;
+    std::string fileName;
+    std::vector<string> trans;
+    std::ifstream inContents;
+
+    switch (type) {
+        case UPLOAD_SPEECH:
+            fileName = "speechTran.dat";
+            break;
+        case CONFIRM_TEXT:
+            fileName = "confirmTran.dat";
+            break;
+    }
+    inContents.open(fileName.c_str(), std::ios::in);
+
+    if(!inContents){
+        std::cerr<<fileName<<" open error"<<std::endl;
+        std::exit(1);
+    }
+    std::string temp;
+    while(inContents>>temp){
+        trans.push_back(temp);
+    }
+    tts->post.say(trans[index%trans.size()]);
+    index++;
+}
+
 void Converter::flushResult()
 {
     rec_result = "";
@@ -140,6 +201,7 @@ void Converter::flushResult()
 void Converter::start()
 {
     mem_pro->subscribeToEvent("ALSpeechRecognition/Status", getName(), "speechDetecting");
+    //mem_pro_s->subscribeToEvent("WordRecognized", getName(), "thanksRecognized");
     speech_recog_pro->pause(false);
     ready = false;
 }
@@ -147,6 +209,11 @@ void Converter::start()
 bool Converter::getReady()
 {
     return ready;
+}
+
+bool Converter::getExit()
+{
+    return exit_val;
 }
 
 string Converter::getResult()
@@ -184,6 +251,11 @@ bool Converter::witAI()
         ind_e++;
     }
     rec_result = result.substr(ind_s, ind_e-ind_s);
+
+    if(rec_result == "谢谢"){
+        tts->post.say("希望下次继续为您服务，再见^runTag(bow)！");
+        exit_val = true;
+    }
 
     ready = true;
 

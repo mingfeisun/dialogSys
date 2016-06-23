@@ -9,6 +9,7 @@
 #include <boost/shared_ptr.hpp>
 #include <alproxies/almemoryproxy.h>
 #include <alproxies/altexttospeechproxy.h>
+#include <alproxies/alanimatedspeechproxy.h>
 #include <alproxies/alaudiorecorderproxy.h>
 #include <alproxies/alspeechrecognitionproxy.h>
 
@@ -28,6 +29,7 @@ public:
   void flushResult();
   void start();
   bool getReady();
+  bool getExit();
   string getResult();
   void test();
 
@@ -35,9 +37,12 @@ private:
   int ret;
   bool ready;
   bool rec_now;
+  bool exit_val;
   string rec_result;
   AL::ALMemoryProxy* mem_pro;
-  AL::ALTextToSpeechProxy* tts;
+  AL::ALMemoryProxy* mem_pro_s;
+  AL::ALTextToSpeechProxy* tts_lang;
+  AL::ALAnimatedSpeechProxy* tts;
   AL::ALAudioRecorderProxy* audio_rec_pro;
   AL::ALSpeechRecognitionProxy* speech_recog_pro;
 
@@ -45,7 +50,9 @@ private:
   void proxyInit();
   void startRecording();
   void stopRecording();
+  void transition(int type);
   void speechDetecting(std::string eventName, AL::ALValue status, std::string subId);
+  void thanksRecognized(std::string eventName, AL::ALValue val, std::string subId);
 };
 
 #endif

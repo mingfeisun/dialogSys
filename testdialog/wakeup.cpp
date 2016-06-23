@@ -5,6 +5,7 @@
 #include <alvalue/alvalue.h>
 #include <alcommon/almodule.h>
 #include <alcommon/albroker.h>
+#include <alproxies/altexttospeechproxy.h>
 
 #define COMMAND "Hey, Nao robot"
 
@@ -41,11 +42,14 @@ void wakeUp::init()
 {
     mem = getParentBroker()->getMemoryProxy();
     speech_recog = getParentBroker()->getProxy("ALSpeechRecognition");
+    speak_out = getParentBroker()->getProxy("ALTextToSpeech");
 
     try{
         speech_recog->callVoid("setLanguage", string("English"));
         speech_recog->callVoid("setAudioExpression", false);
         speech_recog->callVoid("setVisualExpression", false);
+
+        speak_out->callVoid("setLanguage", string("Chinese"));
 
         vector<string> command_list;
         command_list.push_back(wake_up_command);
@@ -81,6 +85,7 @@ void wakeUp::onWakeUp(const string &name, const AL::ALValue &val, const string &
     cout<<">";
     if((string)val[0] == wake_up_command && (float)val[1] >= 0.30){
         setStatus(true);
+        speak_out->callVoid("say", "你好，请问有什么可以帮助您的么？");
     }
     else{
         setStatus(false);
