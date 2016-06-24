@@ -15,6 +15,7 @@
 #include <qi/os.hpp>
 #include <qi/log.hpp>
 #include <alcommon/almodule.h>
+#include <alproxies/almotionproxy.h>
 #include <alproxies/almemoryproxy.h>
 #include <alproxies/altexttospeechproxy.h>
 #include <alproxies/alanimatedspeechproxy.h>
@@ -84,6 +85,7 @@ void Converter::proxyInit()
 {
     mem_pro = new AL::ALMemoryProxy(getParentBroker());
     mem_pro_s = new AL::ALMemoryProxy(getParentBroker());
+    motion_pro = new AL::ALMotionProxy(getParentBroker());
     audio_rec_pro = new AL::ALAudioRecorderProxy(getParentBroker());
     speech_recog_pro = new AL::ALSpeechRecognitionProxy(getParentBroker());
 
@@ -95,6 +97,9 @@ void Converter::proxyInit()
         speech_recog_pro->setAudioExpression(true);
         speech_recog_pro->setVisualExpression(true);
         speech_recog_pro->setVocabulary(wordList, false);
+
+        motion_pro->setAngles("HeadYaw", 0.0f, 0.1f);
+        motion_pro->setStiffnesses("HeadYaw", 0.0f);
     }
     catch(AL::ALError& e){
         //std::cout<<e.what()<<std::endl;
@@ -112,6 +117,7 @@ void Converter::sayThis(string tosay)
 void Converter::speechDetecting(std::string eventName, AL::ALValue status, std::string subId)
 {
     std::cout<<(string)status<<"  ";
+    motion_pro->setAngles("HeadYaw", 0.0f, 0.3f);
     if(std::string(status) == "ListenOn" && !rec_now ){
         startRecording();
     }
@@ -155,6 +161,7 @@ void Converter::startRecording()
         std::cout<<e.what()<<std::endl;
     }
 
+    motion_pro->setAngles("HeadYaw", 0.0f, 0.3f);
     rec_now = true;
 }
 
@@ -242,6 +249,8 @@ bool Converter::witAI()
     while(result[ind_e] != '"'){
         if(result[ind_e] == ','){
             rec_result = "";
+            ready = true;
+
             return true;
         }
         ind_e++;

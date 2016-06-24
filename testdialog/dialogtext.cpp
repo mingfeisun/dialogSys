@@ -16,6 +16,9 @@ void dialogText::init()
 string dialogText::getResponse(string text)
 {
     static int index=0;
+    if(text == ""){
+        return string("不好意思，我没有听清楚你说的话^startTag(not know)，您可以再说一遍么？");
+    }
     string cmd = "curl http://qycpu6.cse.ust.hk:8080/home/dialogue_";
     string text_res = exec_shell(cmd+text+"/");
 

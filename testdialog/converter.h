@@ -7,6 +7,7 @@
 #include <alcommon/albroker.h>
 #include <alcommon/almodule.h>
 #include <boost/shared_ptr.hpp>
+#include <alproxies/almotionproxy.h>
 #include <alproxies/almemoryproxy.h>
 #include <alproxies/altexttospeechproxy.h>
 #include <alproxies/alanimatedspeechproxy.h>
@@ -28,6 +29,7 @@ public:
   void sayThis(string tosay);
   void flushResult();
   void start();
+  void hintSayAgain();
   bool getReady();
   bool getExit();
   string getResult();
@@ -41,6 +43,7 @@ private:
   string rec_result;
   AL::ALMemoryProxy* mem_pro;
   AL::ALMemoryProxy* mem_pro_s;
+  AL::ALMotionProxy* motion_pro;
   AL::ALTextToSpeechProxy* tts_lang;
   AL::ALAnimatedSpeechProxy* tts;
   AL::ALAudioRecorderProxy* audio_rec_pro;

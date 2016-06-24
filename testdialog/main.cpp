@@ -41,13 +41,11 @@ int main()
                       goto ext;
                   }
                   string result = conv->call<string>("getResult");
-                  if( result != ""){
-                      std::cout<<result<<std::endl;
-                      string temp = testDialog.getResponse(result);
-                      std::cout<<temp<<std::endl;
-                      conv->callVoid("sayThis", temp);
-                      conv->callVoid("flushResult");
-                  }
+                  std::cout<<result<<std::endl;
+                  string temp = testDialog.getResponse(result);
+                  std::cout<<temp<<std::endl;
+                  conv->callVoid("sayThis", temp);
+                  conv->callVoid("flushResult");
                   conv->callVoid("start");
               }
           }
