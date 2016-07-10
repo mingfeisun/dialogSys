@@ -6,6 +6,7 @@
 #include "dialogtext.h"
 //#include "exec_shell.h"
 
+#include <qi/log.hpp>
 #include <boost/shared_ptr.hpp>
 #include <alcommon/albroker.h>
 #include <alcommon/almodule.h>
@@ -41,9 +42,10 @@ int main()
                       goto ext;
                   }
                   string result = conv->call<string>("getResult");
-                  std::cout<<result<<std::endl;
-                  string temp = testDialog.getResponse(result);
-                  std::cout<<temp<<std::endl;
+                  qiLogInfo("SPR Result Get:")<<result<<std::endl;
+                  //string temp = testDialog.getResponse(result);
+                  string temp = result;
+                  qiLogInfo("Dialog Result Get:")<<temp<<std::endl;
                   conv->callVoid("sayThis", temp);
                   conv->callVoid("flushResult");
                   conv->callVoid("start");

@@ -25,7 +25,7 @@
 #define UPLOAD_SPEECH 1
 #define CONFIRM_TEXT 2
 
-const char* WAV_NAME_LOCAL = "/home/nao/audio/test.wav";
+const char* WAV_NAME_LOCAL = "/home/nao/mingfei/dialogAudio/test.wav";
 using namespace AL;
 
 Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name)
@@ -116,7 +116,7 @@ void Converter::sayThis(string tosay)
 
 void Converter::speechDetecting(std::string eventName, AL::ALValue status, std::string subId)
 {
-    std::cout<<(string)status<<"  ";
+    qiLogInfo("Status Info:")<<(string)status<<"  ";
     motion_pro->setAngles("HeadYaw", 0.0f, 0.3f);
     if(std::string(status) == "ListenOn" && !rec_now ){
         startRecording();
@@ -140,7 +140,7 @@ void Converter::thanksRecognized(std::string eventName, AL::ALValue val, std::st
             speech_recog_pro->pause(true);
         }
         catch(AL::ALError& e){
-            std::cout<<e.what()<<std::endl;
+            qiLogError("Recognization Error:")<<e.what()<<std::endl;
         }
         tts->post.say("希望下次为您提供帮助，^startTag(bow)再见！");
         exit_val = true;
@@ -155,10 +155,11 @@ void Converter::startRecording()
     channels.arrayPush(1); //front
     channels.arrayPush(0); //reat
     try{
+        qiLogInfo("Recording Status")<<"RECORDING"<<std::endl;
         audio_rec_pro->startMicrophonesRecording(WAV_NAME_LOCAL, "wav", 16000, channels);
     }
     catch(AL::ALError& e){
-        std::cout<<e.what()<<std::endl;
+        qiLogError("Recording Error")<<e.what()<<std::endl;
     }
 
     motion_pro->setAngles("HeadYaw", 0.0f, 0.3f);
@@ -167,6 +168,7 @@ void Converter::startRecording()
 
 void Converter::stopRecording()
 {
+    qiLogInfo("Recording Status")<<"STOP ECORDING"<<std::endl;
     audio_rec_pro->stopMicrophonesRecording();
     rec_now = false;
 }
@@ -180,7 +182,7 @@ void Converter::transition(int type)
 
     switch (type) {
         case UPLOAD_SPEECH:
-            fileName = "speechTran.dat";
+            fileName = "/home/nao/mingfei/speechTran.dat";
             break;
         case CONFIRM_TEXT:
             fileName = "confirmTran.dat";
@@ -236,11 +238,12 @@ void Converter::test()
 bool Converter::witAI()
 {
 
-    char* cmd = "ssh nao@192.168.1.102 'bash -s' < upload.sh";
+    // char* cmd = "ssh nao@192.168.1.102 'bash -s' < upload.sh";
+    char* cmd = "sh /home/nao/mingfei/curl.sh";
 
     std::string result = exec_shell(cmd);
 
-    std::cout<<result<<std::endl;
+    qiLogInfo("Raw SPR Result:")<<result<<std::endl;
     std::string loc = "\"_text\"";
     int ind_e = result.find(loc);
     while(result[ind_e] != ':'){

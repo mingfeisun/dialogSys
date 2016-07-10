@@ -14,5 +14,6 @@ set(_srcs
     main.cpp)
 
 qi_create_bin(test_dialog ${_srcs})
-qi_use_lib(test_dialog ALCOMMON ALPROXIES msc)
+set_target_properties(test_dialog PROPERTIES COMPILE_FLAGS "-m32" LINK_FLAGS "-m32")
+qi_use_lib(test_dialog ALCOMMON ALPROXIES)
 

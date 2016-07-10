@@ -1,6 +1,7 @@
 #include "wakeup.h"
 #include <iostream>
 
+#include <qi/log.hpp>
 #include <boost/shared_ptr.hpp>
 #include <alvalue/alvalue.h>
 #include <alcommon/almodule.h>
@@ -11,7 +12,6 @@
 
 using std::string;
 using std::vector;
-using std::cout;
 using std::endl;
 
 wakeUp::wakeUp(boost::shared_ptr<AL::ALBroker> broker, const string name)
@@ -56,7 +56,6 @@ void wakeUp::init()
         speech_recog->callVoid("setVocabulary", command_list, false);
     }
     catch(const AL::ALError& e ){
-        //cout<<e.what()<<endl;
         speech_recog->callVoid("pause", true);
         speech_recog->callVoid("setLanguage", string("English"));
         speech_recog->callVoid("setAudioExpression", false);
@@ -82,7 +81,7 @@ void wakeUp::stopStandUp()
 
 void wakeUp::onWakeUp(const string &name, const AL::ALValue &val, const string &myName)
 {
-    cout<<">";
+    qiLogInfo("Wake Up Callback:")<<">";
     if((string)val[0] == wake_up_command && (float)val[1] >= 0.30){
         setStatus(true);
         speak_out->callVoid("say", "你好，请问有什么可以帮助您的么？");
