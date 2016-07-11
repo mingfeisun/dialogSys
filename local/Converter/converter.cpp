@@ -34,12 +34,13 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     ,tts_lang(new AL::ALTextToSpeechProxy(broker))
 {
     // rec_result = "";
+    setModuleDescription("Converter Module");
     flushResult();
 
     tts_lang->setLanguage("Chinese");
 
     functionName("getResult", getName(), "");
-    setReturn("string", "string");
+    setReturn("string", "Speech Recognition Result");
     BIND_METHOD(Converter::getResult);
 
     functionName("flushResult", getName(), "");
@@ -55,12 +56,14 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     BIND_METHOD(Converter::start);
 
     functionName("getReady", getName(), "");
+    setReturn("boolean", "Ready Value");
     BIND_METHOD(Converter::getReady);
 
     functionName("test", getName(), "");
     BIND_METHOD(Converter::test);
 
     functionName("getExit", getName(), "");
+    setReturn("boolean", "Ready Value");
     BIND_METHOD(Converter::getExit);
 
     functionName("sayThis", getName(), "");
@@ -78,7 +81,7 @@ Converter::~Converter()
 
 void Converter::init()
 {
-    proxyInit();
+    qiLogInfo("CONVERTER INIT SUCCESS")<<"Converter module registered!!"<<std::endl;
 }
 
 void Converter::proxyInit()
@@ -207,6 +210,7 @@ void Converter::flushResult()
 
 void Converter::start()
 {
+    proxyInit();
     mem_pro->subscribeToEvent("ALSpeechRecognition/Status", getName(), "speechDetecting");
     speech_recog_pro->pause(false);
     ready = false;
