@@ -24,6 +24,7 @@ class Converter : public AL::ALModule
 {
 public:
   Converter(boost::shared_ptr<AL::ALBroker> broker, const std::string &name);
+
   virtual ~Converter();
   virtual void init();
   void sayThis(string tosay);
@@ -41,6 +42,7 @@ private:
   bool rec_now;
   bool exit_val;
   string rec_result;
+
   AL::ALMemoryProxy* mem_pro;
   AL::ALMemoryProxy* mem_pro_s;
   AL::ALMotionProxy* motion_pro;

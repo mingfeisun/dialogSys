@@ -29,11 +29,11 @@ const char* WAV_NAME_LOCAL = "/home/nao/audio/test.wav";
 using namespace AL;
 
 Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name)
-    :AL::ALModule(broker, name), tts(new AL::ALAnimatedSpeechProxy(broker)),
-      tts_lang(new AL::ALTextToSpeechProxy(broker))
-
-
+    :AL::ALModule(broker, name)
+    ,tts(new AL::ALAnimatedSpeechProxy(broker))
+    ,tts_lang(new AL::ALTextToSpeechProxy(broker))
 {
+    // rec_result = "";
     flushResult();
 
     tts_lang->setLanguage("Chinese");
@@ -67,7 +67,7 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     addParam("tosay", "tosay");
     BIND_METHOD(Converter::sayThis);
 
-    ready = true;
+    ready    = true;
     exit_val = false;
 }
 
@@ -83,10 +83,10 @@ void Converter::init()
 
 void Converter::proxyInit()
 {
-    mem_pro = new AL::ALMemoryProxy(getParentBroker());
-    mem_pro_s = new AL::ALMemoryProxy(getParentBroker());
-    motion_pro = new AL::ALMotionProxy(getParentBroker());
-    audio_rec_pro = new AL::ALAudioRecorderProxy(getParentBroker());
+    mem_pro          = new AL::ALMemoryProxy(getParentBroker());
+    mem_pro_s        = new AL::ALMemoryProxy(getParentBroker());
+    motion_pro       = new AL::ALMotionProxy(getParentBroker());
+    audio_rec_pro    = new AL::ALAudioRecorderProxy(getParentBroker());
     speech_recog_pro = new AL::ALSpeechRecognitionProxy(getParentBroker());
 
     std::vector<std::string> wordList;
@@ -208,7 +208,6 @@ void Converter::flushResult()
 void Converter::start()
 {
     mem_pro->subscribeToEvent("ALSpeechRecognition/Status", getName(), "speechDetecting");
-    //mem_pro_s->subscribeToEvent("WordRecognized", getName(), "thanksRecognized");
     speech_recog_pro->pause(false);
     ready = false;
 }
@@ -236,7 +235,8 @@ void Converter::test()
 bool Converter::witAI()
 {
 
-    char* cmd = "ssh nao@192.168.1.102 'bash -s' < upload.sh";
+    // char* cmd = "ssh nao@192.168.1.102 'bash -s' < upload.sh";
+    char *cmd = "sh /home/nao/mingfei/curl.sh";
 
     std::string result = exec_shell(cmd);
 
