@@ -4,6 +4,7 @@
 #include "converter.h"
 #include "wakeup.h"
 #include "dialogtext.h"
+#include "tulingmodule.h"
 //#include "exec_shell.h"
 
 #include <qi/log.hpp>
@@ -31,8 +32,12 @@ int main()
   while(1){
       if(wakeup->call<bool>("getStatus")){
           wakeup->callVoid("stopStandUp");
-          dialogText testDialog;
-          testDialog.init();
+          //dialogText testDialog;
+          //testDialog.init();
+
+          tulingModule tuLing;
+          tuLing.init();
+
           AL::ALModule::createModule<Converter>(broker, "Converter");
           boost::shared_ptr<AL::ALProxy> conv = broker->getProxy("Converter");
           conv->callVoid("start");
@@ -44,7 +49,8 @@ int main()
                   string result = conv->call<string>("getResult");
                   qiLogInfo("SPR Result Get:")<<result<<std::endl;
                   //string temp = testDialog.getResponse(result);
-                  string temp = result;
+                  string temp = tuLing.getResponse(result);
+                  //string temp = result;
                   qiLogInfo("Dialog Result Get:")<<temp<<std::endl;
                   conv->callVoid("sayThis", temp);
                   conv->callVoid("flushResult");

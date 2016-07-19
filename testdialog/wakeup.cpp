@@ -84,7 +84,7 @@ void wakeUp::onWakeUp(const string &name, const AL::ALValue &val, const string &
     qiLogInfo("Wake Up Callback:")<<">";
     if((string)val[0] == wake_up_command && (float)val[1] >= 0.30){
         setStatus(true);
-        speak_out->callVoid("say", "你好，请问有什么可以帮助您的么？");
+        speak_out->callVoid("say", "嘿，你好！");
     }
     else{
         setStatus(false);

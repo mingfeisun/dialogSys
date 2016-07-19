@@ -5,6 +5,8 @@ find_package(qibuild)
 set(_srcs
     exec_shell.h
     exec_shell.cpp
+    tulingmodule.h    
+    tulingmodule.cpp
     dialogtext.h
     dialogtext.cpp
     converter.cpp

@@ -29,10 +29,9 @@ const char* WAV_NAME_LOCAL = "/home/nao/mingfei/dialogAudio/test.wav";
 using namespace AL;
 
 Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name)
-    :AL::ALModule(broker, name), tts(new AL::ALAnimatedSpeechProxy(broker)),
-      tts_lang(new AL::ALTextToSpeechProxy(broker))
-
-
+    :AL::ALModule(broker, name)
+    ,tts(new AL::ALAnimatedSpeechProxy(broker))
+    ,tts_lang(new AL::ALTextToSpeechProxy(broker))
 {
     flushResult();
 
@@ -83,10 +82,10 @@ void Converter::init()
 
 void Converter::proxyInit()
 {
-    mem_pro = new AL::ALMemoryProxy(getParentBroker());
-    mem_pro_s = new AL::ALMemoryProxy(getParentBroker());
-    motion_pro = new AL::ALMotionProxy(getParentBroker());
-    audio_rec_pro = new AL::ALAudioRecorderProxy(getParentBroker());
+    mem_pro          = new AL::ALMemoryProxy(getParentBroker());
+    mem_pro_s        = new AL::ALMemoryProxy(getParentBroker());
+    motion_pro       = new AL::ALMotionProxy(getParentBroker());
+    audio_rec_pro    = new AL::ALAudioRecorderProxy(getParentBroker());
     speech_recog_pro = new AL::ALSpeechRecognitionProxy(getParentBroker());
 
     std::vector<std::string> wordList;
@@ -125,7 +124,7 @@ void Converter::speechDetecting(std::string eventName, AL::ALValue status, std::
         stopRecording();
         mem_pro->unsubscribeToEvent("ALSpeechRecognition/Status", getName());
         speech_recog_pro->pause(true);
-        transition(UPLOAD_SPEECH);
+        //transition(UPLOAD_SPEECH);
         witAI();
         }
 }
@@ -142,7 +141,7 @@ void Converter::thanksRecognized(std::string eventName, AL::ALValue val, std::st
         catch(AL::ALError& e){
             qiLogError("Recognization Error:")<<e.what()<<std::endl;
         }
-        tts->post.say("希望下次为您提供帮助，^startTag(bow)再见！");
+        tts->post.say("不客气哦，^startTag(bow)再见！");
         exit_val = true;
     }
 }
@@ -168,7 +167,7 @@ void Converter::startRecording()
 
 void Converter::stopRecording()
 {
-    qiLogInfo("Recording Status")<<"STOP ECORDING"<<std::endl;
+    qiLogInfo("Recording Status")<<"STOP RECORDING"<<std::endl;
     audio_rec_pro->stopMicrophonesRecording();
     rec_now = false;
 }
@@ -182,7 +181,7 @@ void Converter::transition(int type)
 
     switch (type) {
         case UPLOAD_SPEECH:
-            fileName = "/home/nao/mingfei/speechTran.dat";
+            fileName = "speechTran.dat";
             break;
         case CONFIRM_TEXT:
             fileName = "confirmTran.dat";
@@ -238,8 +237,8 @@ void Converter::test()
 bool Converter::witAI()
 {
 
-    // char* cmd = "ssh nao@192.168.1.102 'bash -s' < upload.sh";
-    char* cmd = "sh /home/nao/mingfei/curl.sh";
+    char* cmd = "ssh nao@192.168.1.102 'bash -s' < upload.sh";
+    // char* cmd = "sh /home/nao/mingfei/curl.sh";
 
     std::string result = exec_shell(cmd);
 
