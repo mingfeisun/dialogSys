@@ -24,6 +24,7 @@
 
 #define UPLOAD_SPEECH 1
 #define CONFIRM_TEXT 2
+#define UPLOAD_HUM 3
 
 const char* WAV_NAME_LOCAL = "/home/nao/mingfei/dialogAudio/test.wav";
 using namespace AL;
@@ -124,7 +125,7 @@ void Converter::speechDetecting(std::string eventName, AL::ALValue status, std::
         stopRecording();
         mem_pro->unsubscribeToEvent("ALSpeechRecognition/Status", getName());
         speech_recog_pro->pause(true);
-        //transition(UPLOAD_SPEECH);
+        transition(UPLOAD_HUM);
         witAI();
         }
 }
@@ -186,11 +187,14 @@ void Converter::transition(int type)
         case CONFIRM_TEXT:
             fileName = "confirmTran.dat";
             break;
+        case UPLOAD_HUM:
+            fileName = "speechHum.dat";
+            break;
     }
     inContents.open(fileName.c_str(), std::ios::in);
 
     if(!inContents){
-        std::cerr<<fileName<<" open error"<<std::endl;
+        std::cerr<<fileName<<"open error"<<std::endl;
         std::exit(1);
     }
     std::string temp;

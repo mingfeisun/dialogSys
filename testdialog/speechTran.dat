@@ -1,4 +1,4 @@
-^start(animations/Stand/BodyTalk/BodyTalk_1)^startTag(bow)请您稍等。
+^start(animations/Stand/BodyTalk/BodyTalk_2)^startTag(bow)请您稍等。
 ^start(animations/Stand/BodyTalk/BodyTalk_2)请您稍候，我很快就好^runTag(bow)
 ^start(animations/Stand/BodyTalk/BodyTalk_3)您稍等一下^startTag(please)，亲
 ^start(animations/Stand/BodyTalk/BodyTalk_4)好的^startTag(bow)，稍等一下，亲。
@@ -10,4 +10,3 @@
 ^start(animations/Stand/BodyTalk/BodyTalk_10)好的，包您满意^startTag(happy)，亲！
 ^start(animations/Stand/BodyTalk/BodyTalk_12)很高兴能为您效劳^startTag(bow)，您请稍等，亲！
 ^start(animations/Stand/BodyTalk/BodyTalk_11)我确认一下，亲^runTag(affirmative)。
-
