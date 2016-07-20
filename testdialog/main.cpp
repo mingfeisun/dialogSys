@@ -9,6 +9,7 @@
 
 #include <qi/log.hpp>
 #include <boost/shared_ptr.hpp>
+#include <alproxies/almotionproxy.h>
 #include <alcommon/albroker.h>
 #include <alcommon/almodule.h>
 #include <alcommon/albrokermanager.h>
@@ -26,38 +27,54 @@ int main()
   AL::ALBrokerManager::setInstance(broker->fBrokerManager.lock());
   AL::ALBrokerManager::getInstance()->addBroker(broker);
   AL::ALModule::createModule<wakeUp>(broker, "wakeUp");
-
   boost::shared_ptr<AL::ALProxy> wakeup = broker->getProxy("wakeUp");
+
+  AL::ALMotionProxy* motion = new AL::ALMotionProxy(broker);
+
+  tulingModule tuLing;
+  dialogText testDialog;
+
+  motion->rest();
 
   while(1){
       if(wakeup->call<bool>("getStatus")){
+          testDialog.init();
           wakeup->callVoid("stopStandUp");
-          //dialogText testDialog;
-          //testDialog.init();
 
-          tulingModule tuLing;
+          static boost::shared_ptr<AL::ALModule> conMod = AL::ALModule::createModule<Converter>(broker, "Converter");
+          boost::shared_ptr<AL::ALProxy> conv = broker->getProxy("Converter");
+          conv->callVoid("proxyInit");
+
+          motion->wakeUp();
+
           tuLing.init();
 
-          AL::ALModule::createModule<Converter>(broker, "Converter");
-          boost::shared_ptr<AL::ALProxy> conv = broker->getProxy("Converter");
           conv->callVoid("start");
           while(1){
               if(conv->call<bool>("getReady")){
-                  if( conv->call<bool>("getExit") == true){
-                      goto ext;
-                  }
                   string result = conv->call<string>("getResult");
                   qiLogInfo("SPR Result Get:")<<result<<std::endl;
-                  //string temp = testDialog.getResponse(result);
-                  string temp = tuLing.getResponse(result);
-                  //string temp = result;
+                  string temp;
+                  if(conv->call<bool>("getCafe")){
+                      temp = testDialog.getResponse(result);
+                  }
+                  else{
+                      temp = tuLing.getResponse(result);
+                  }
                   qiLogInfo("Dialog Result Get:")<<temp<<std::endl;
                   conv->callVoid("sayThis", temp);
+                  if( conv->call<bool>("getExit") == true){
+                      wakeup->callVoid("standUp");
+                      conv->callVoid("offCafe");
+                      conMod->exit();
+                      break;
+                  }
                   conv->callVoid("flushResult");
                   conv->callVoid("start");
               }
           }
       }
+      motion->post.rest();
   }
-ext:return 0;
+  return 0;
 }

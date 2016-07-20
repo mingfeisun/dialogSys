@@ -48,11 +48,11 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     functionName("speechDetecting", getName(), "");
     BIND_METHOD(Converter::speechDetecting);
 
-    functionName("thanksRecognized", getName(), "");
-    BIND_METHOD(Converter::thanksRecognized);
-
     functionName("start", getName(), "");
     BIND_METHOD(Converter::start);
+
+    functionName("proxyInit", getName(), "");
+    BIND_METHOD(Converter::proxyInit);
 
     functionName("getReady", getName(), "");
     BIND_METHOD(Converter::getReady);
@@ -63,12 +63,19 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     functionName("getExit", getName(), "");
     BIND_METHOD(Converter::getExit);
 
+    functionName("getCafe", getName(), "");
+    BIND_METHOD(Converter::getCafe);
+
+    functionName("offCafe", getName(), "");
+    BIND_METHOD(Converter::offCafe);
+
     functionName("sayThis", getName(), "");
     addParam("tosay", "tosay");
     BIND_METHOD(Converter::sayThis);
 
     ready = true;
     exit_val = false;
+    cafe = false;
 }
 
 Converter::~Converter()
@@ -78,7 +85,11 @@ Converter::~Converter()
 
 void Converter::init()
 {
-    proxyInit();
+}
+
+void Converter::exit()
+{
+
 }
 
 void Converter::proxyInit()
@@ -127,23 +138,6 @@ void Converter::speechDetecting(std::string eventName, AL::ALValue status, std::
         speech_recog_pro->pause(true);
         transition(UPLOAD_HUM);
         witAI();
-        }
-}
-
-void Converter::thanksRecognized(std::string eventName, AL::ALValue val, std::string subId)
-{
-    if((string)val[0] == "谢谢" && (float)val[1] >= 0.10){
-        mem_pro->unsubscribeToEvent("ALSpeechRecognition/Status", getName());
-        mem_pro_s->unsubscribeToEvent("WordRecognized", getName());
-        try{
-            audio_rec_pro->stopMicrophonesRecording();
-            speech_recog_pro->pause(true);
-        }
-        catch(AL::ALError& e){
-            qiLogError("Recognization Error:")<<e.what()<<std::endl;
-        }
-        tts->post.say("不客气哦，^startTag(bow)再见！");
-        exit_val = true;
     }
 }
 
@@ -153,7 +147,7 @@ void Converter::startRecording()
     channels.arrayPush(0); //left
     channels.arrayPush(0); //right
     channels.arrayPush(1); //front
-    channels.arrayPush(0); //reat
+    channels.arrayPush(0); //rear
     try{
         qiLogInfo("Recording Status")<<"RECORDING"<<std::endl;
         audio_rec_pro->startMicrophonesRecording(WAV_NAME_LOCAL, "wav", 16000, channels);
@@ -213,9 +207,9 @@ void Converter::flushResult()
 void Converter::start()
 {
     mem_pro->subscribeToEvent("ALSpeechRecognition/Status", getName(), "speechDetecting");
-    //mem_pro_s->subscribeToEvent("WordRecognized", getName(), "thanksRecognized");
     speech_recog_pro->pause(false);
     ready = false;
+    exit_val = false;
 }
 
 bool Converter::getReady()
@@ -226,6 +220,16 @@ bool Converter::getReady()
 bool Converter::getExit()
 {
     return exit_val;
+}
+
+bool Converter::getCafe()
+{
+    return cafe;
+}
+
+void Converter::offCafe()
+{
+    cafe = false;
 }
 
 string Converter::getResult()
@@ -268,8 +272,12 @@ bool Converter::witAI()
     rec_result = result.substr(ind_s, ind_e-ind_s);
 
     if(rec_result == "谢谢"){
-        tts->post.say("希望下次继续为您服务，再见^runTag(bow)！");
         exit_val = true;
+    }
+
+    loc = "咖啡";
+    if(rec_result.find(loc) != -1){
+        cafe = true;
     }
 
     ready = true;

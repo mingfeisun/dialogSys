@@ -46,8 +46,6 @@ void wakeUp::init()
 
     try{
         speech_recog->callVoid("setLanguage", string("English"));
-        speech_recog->callVoid("setAudioExpression", false);
-        speech_recog->callVoid("setVisualExpression", false);
 
         speak_out->callVoid("setLanguage", string("Chinese"));
 
@@ -58,31 +56,44 @@ void wakeUp::init()
     catch(const AL::ALError& e ){
         speech_recog->callVoid("pause", true);
         speech_recog->callVoid("setLanguage", string("English"));
-        speech_recog->callVoid("setAudioExpression", false);
-        speech_recog->callVoid("setVisualExpression", false);
 
         vector<string> command_list;
         command_list.push_back(wake_up_command);
         speech_recog->callVoid("setVocabulary", command_list, false);
         speech_recog->callVoid("pause", false);
     }
-    mem->subscribeToEvent("WordRecognized", getName(), "onWakeUp");
+}
+
+void wakeUp::exit()
+{
+
 }
 
 void wakeUp::standUp()
 {
+    try{
+        speech_recog->callVoid("pause", false);
+        mem->subscribeToEvent("WordRecognized", getName(), "onWakeUp");
+    }
+    catch(const AL::ALError& e ){
+    }
 }
 
 void wakeUp::stopStandUp()
 {
-    mem->unsubscribeToEvent("WordRecognized", getName());
+    try{
+        mem->unsubscribeToEvent("WordRecognized", getName());
+    }
+    catch(const AL::ALError& e){
+    }
+    setStatus(false);
     speech_recog->callVoid("pause", true);
 }
 
 void wakeUp::onWakeUp(const string &name, const AL::ALValue &val, const string &myName)
 {
     qiLogInfo("Wake Up Callback:")<<">";
-    if((string)val[0] == wake_up_command && (float)val[1] >= 0.30){
+    if((string)val[0] == wake_up_command && (float)val[1] >= 0.40){
         setStatus(true);
         speak_out->callVoid("say", "嘿，你好！");
     }

@@ -26,18 +26,23 @@ public:
   Converter(boost::shared_ptr<AL::ALBroker> broker, const std::string &name);
   virtual ~Converter();
   virtual void init();
+  virtual void exit();
   void sayThis(string tosay);
   void flushResult();
+  void proxyInit();
   void start();
   void hintSayAgain();
   bool getReady();
   bool getExit();
+  bool getCafe();
+  void offCafe();
   string getResult();
   void test();
 
 private:
   int ret;
   bool ready;
+  bool cafe;
   bool rec_now;
   bool exit_val;
   string rec_result;
@@ -50,12 +55,10 @@ private:
   AL::ALSpeechRecognitionProxy* speech_recog_pro;
 
   bool witAI();
-  void proxyInit();
   void startRecording();
   void stopRecording();
   void transition(int type);
   void speechDetecting(std::string eventName, AL::ALValue status, std::string subId);
-  void thanksRecognized(std::string eventName, AL::ALValue val, std::string subId);
 };
 
 #endif

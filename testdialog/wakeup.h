@@ -8,6 +8,7 @@
 #include <alcommon/almodule.h>
 #include <alcommon/albroker.h>
 #include <alproxies/almemoryproxy.h>
+#include <alproxies/almotionproxy.h>
 #include <alproxies/altexttospeechproxy.h>
 
 using std::string;
@@ -22,6 +23,7 @@ public:
   wakeUp(boost::shared_ptr<AL::ALBroker> broker, const string name);
   virtual ~wakeUp();
   virtual void init();
+  virtual void exit();
   void standUp();
   void stopStandUp();
   void onWakeUp(const string& name, const AL::ALValue& val, const string& myName);
