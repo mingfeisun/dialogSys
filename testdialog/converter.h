@@ -26,16 +26,15 @@ public:
   Converter(boost::shared_ptr<AL::ALBroker> broker, const std::string &name);
   virtual ~Converter();
   virtual void init();
-  virtual void exit();
   void sayThis(string tosay);
   void flushResult();
   void proxyInit();
   void start();
+  void stop();
   void hintSayAgain();
   bool getReady();
   bool getExit();
   bool getCafe();
-  void offCafe();
   string getResult();
   void test();
 

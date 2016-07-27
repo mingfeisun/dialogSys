@@ -30,14 +30,8 @@ using namespace AL;
 
 Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name)
     :AL::ALModule(broker, name)
-    ,tts(new AL::ALAnimatedSpeechProxy(broker))
-    ,tts_lang(new AL::ALTextToSpeechProxy(broker))
 {
-    // rec_result = "";
     setModuleDescription("Converter Module");
-    flushResult();
-
-    tts_lang->setLanguage("Chinese");
 
     functionName("getResult", getName(), "");
     setReturn("string", "Speech Recognition Result");
@@ -62,6 +56,9 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     functionName("test", getName(), "");
     BIND_METHOD(Converter::test);
 
+    functionName("proxyInit", getName(), "");
+    BIND_METHOD(Converter::proxyInit);
+
     functionName("getExit", getName(), "");
     setReturn("boolean", "Ready Value");
     BIND_METHOD(Converter::getExit);
@@ -69,9 +66,6 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     functionName("sayThis", getName(), "");
     addParam("tosay", "tosay");
     BIND_METHOD(Converter::sayThis);
-
-    ready    = true;
-    exit_val = false;
 }
 
 Converter::~Converter()
@@ -86,16 +80,23 @@ void Converter::init()
 
 void Converter::proxyInit()
 {
+    ready    = true;
+    exit_val = false;
+
     mem_pro          = new AL::ALMemoryProxy(getParentBroker());
     mem_pro_s        = new AL::ALMemoryProxy(getParentBroker());
     motion_pro       = new AL::ALMotionProxy(getParentBroker());
     audio_rec_pro    = new AL::ALAudioRecorderProxy(getParentBroker());
     speech_recog_pro = new AL::ALSpeechRecognitionProxy(getParentBroker());
+    tts              = new AL::ALAnimatedSpeechProxy(getParentBroker());
+    tts_lang         = new AL::ALTextToSpeechProxy(getParentBroker());
 
     std::vector<std::string> wordList;
     wordList.push_back("谢谢");
 
     try{
+        flushResult();
+        tts_lang->setLanguage("Chinese");
         speech_recog_pro->setLanguage("Chinese");
         speech_recog_pro->setAudioExpression(true);
         speech_recog_pro->setVisualExpression(true);

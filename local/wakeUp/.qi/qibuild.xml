@@ -1,4 +1,4 @@
 <qibuild version="1">
-  <defaults config="naoqisdk" />
+  <defaults config="naoqisdk32" />
   <build />
 </qibuild>

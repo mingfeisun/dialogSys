@@ -19,8 +19,8 @@ string dialogText::getResponse(string text)
     if(text == ""){
         return string("不好意思，我没有听清楚你说的话^startTag(not know)，您可以再说一遍么？");
     }
-    string cmd = "curl http://qycpu7.cse.ust.hk:8080/home/dialogue_";
-    string text_res = exec_shell(cmd+text+'/');
+    string cmd = "sh dialog.sh ";
+    string text_res = exec_shell(cmd+text);
 
     //char* expr = "animations/Stand/BodyTalk/BodyTalk_";
     char* expr = "animations/Stand/Gestures/Explain_";

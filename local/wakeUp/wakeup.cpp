@@ -1,6 +1,7 @@
 #include "wakeup.h"
 #include <iostream>
 
+#include <qi/log.hpp>
 #include <boost/shared_ptr.hpp>
 #include <alvalue/alvalue.h>
 #include <alcommon/almodule.h>
@@ -15,9 +16,11 @@ using std::cout;
 using std::endl;
 
 wakeUp::wakeUp(boost::shared_ptr<AL::ALBroker> broker, const string name)
-    :AL::ALModule(broker, name), wake_up_command(COMMAND), status(false)
+    :AL::ALModule(broker, name)
+    ,wake_up_command(COMMAND)
+    ,status(false)
 {
-    setModuleDescription("");
+    setModuleDescription("Wake Up for Dialog System");
 
     functionName("standUp", getName(), "standUp");
     BIND_METHOD(wakeUp::standUp);
@@ -31,7 +34,6 @@ wakeUp::wakeUp(boost::shared_ptr<AL::ALBroker> broker, const string name)
 
     functionName("onWakeUp", getName(), "onWakeUp");
     BIND_METHOD(wakeUp::onWakeUp);
-
 }
 
 wakeUp::~wakeUp()
@@ -40,9 +42,14 @@ wakeUp::~wakeUp()
 
 void wakeUp::init()
 {
-    mem = getParentBroker()->getMemoryProxy();
+    qiLogInfo("Wake Up")<<"Wake Up module init"<<std::endl;
+}
+
+void wakeUp::standUp()
+{
+    mem          = getParentBroker()->getMemoryProxy();
     speech_recog = getParentBroker()->getProxy("ALSpeechRecognition");
-    speak_out = getParentBroker()->getProxy("ALTextToSpeech");
+    speak_out    = getParentBroker()->getProxy("ALTextToSpeech");
 
     try{
         speech_recog->callVoid("setLanguage", string("English"));
@@ -68,10 +75,6 @@ void wakeUp::init()
         speech_recog->callVoid("pause", false);
     }
     mem->subscribeToEvent("WordRecognized", getName(), "onWakeUp");
-}
-
-void wakeUp::standUp()
-{
 }
 
 void wakeUp::stopStandUp()

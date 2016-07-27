@@ -29,20 +29,22 @@ int main()
   AL::ALModule::createModule<wakeUp>(broker, "wakeUp");
   boost::shared_ptr<AL::ALProxy> wakeup = broker->getProxy("wakeUp");
 
+  AL::ALModule::createModule<Converter>(broker, "Converter");
+
   AL::ALMotionProxy* motion = new AL::ALMotionProxy(broker);
 
   tulingModule tuLing;
   dialogText testDialog;
 
   motion->rest();
+  wakeup->callVoid("standUp");
 
   while(1){
       if(wakeup->call<bool>("getStatus")){
+          boost::shared_ptr<AL::ALProxy> conv = broker->getProxy("Converter");
           testDialog.init();
           wakeup->callVoid("stopStandUp");
 
-          static boost::shared_ptr<AL::ALModule> conMod = AL::ALModule::createModule<Converter>(broker, "Converter");
-          boost::shared_ptr<AL::ALProxy> conv = broker->getProxy("Converter");
           conv->callVoid("proxyInit");
 
           motion->wakeUp();
@@ -54,6 +56,12 @@ int main()
               if(conv->call<bool>("getReady")){
                   string result = conv->call<string>("getResult");
                   qiLogInfo("SPR Result Get:")<<result<<std::endl;
+                  if( conv->call<bool>("getExit") == true){
+                      conv->callVoid("stop");
+                      wakeup->callVoid("standUp");
+                      motion->post.rest();
+                      break;
+                  }
                   string temp;
                   if(conv->call<bool>("getCafe")){
                       temp = testDialog.getResponse(result);
@@ -63,18 +71,11 @@ int main()
                   }
                   qiLogInfo("Dialog Result Get:")<<temp<<std::endl;
                   conv->callVoid("sayThis", temp);
-                  if( conv->call<bool>("getExit") == true){
-                      wakeup->callVoid("standUp");
-                      conv->callVoid("offCafe");
-                      conMod->exit();
-                      break;
-                  }
                   conv->callVoid("flushResult");
                   conv->callVoid("start");
               }
           }
       }
-      motion->post.rest();
   }
   return 0;
 }

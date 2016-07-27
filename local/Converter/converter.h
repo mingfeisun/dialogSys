@@ -35,6 +35,7 @@ public:
   bool getExit();
   string getResult();
   void test();
+  void proxyInit();
 
 private:
   int ret;
@@ -52,7 +53,6 @@ private:
   AL::ALSpeechRecognitionProxy* speech_recog_pro;
 
   bool witAI();
-  void proxyInit();
   void startRecording();
   void stopRecording();
   void transition(int type);

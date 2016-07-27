@@ -27,6 +27,7 @@
 #define UPLOAD_HUM 3
 
 const char* WAV_NAME_LOCAL = "/home/nao/mingfei/dialogAudio/test.wav";
+std::string finishWords = "需要时随时吩咐我";
 using namespace AL;
 
 Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name)
@@ -51,6 +52,9 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     functionName("start", getName(), "");
     BIND_METHOD(Converter::start);
 
+    functionName("stop", getName(), "");
+    BIND_METHOD(Converter::stop);
+
     functionName("proxyInit", getName(), "");
     BIND_METHOD(Converter::proxyInit);
 
@@ -65,9 +69,6 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
 
     functionName("getCafe", getName(), "");
     BIND_METHOD(Converter::getCafe);
-
-    functionName("offCafe", getName(), "");
-    BIND_METHOD(Converter::offCafe);
 
     functionName("sayThis", getName(), "");
     addParam("tosay", "tosay");
@@ -87,34 +88,12 @@ void Converter::init()
 {
 }
 
-void Converter::exit()
-{
-
-}
-
 void Converter::proxyInit()
 {
     mem_pro          = new AL::ALMemoryProxy(getParentBroker());
     mem_pro_s        = new AL::ALMemoryProxy(getParentBroker());
     motion_pro       = new AL::ALMotionProxy(getParentBroker());
     audio_rec_pro    = new AL::ALAudioRecorderProxy(getParentBroker());
-    speech_recog_pro = new AL::ALSpeechRecognitionProxy(getParentBroker());
-
-    std::vector<std::string> wordList;
-    wordList.push_back("谢谢");
-
-    try{
-        speech_recog_pro->setLanguage("Chinese");
-        speech_recog_pro->setAudioExpression(true);
-        speech_recog_pro->setVisualExpression(true);
-        speech_recog_pro->setVocabulary(wordList, false);
-
-        motion_pro->setAngles("HeadYaw", 0.0f, 0.1f);
-        motion_pro->setStiffnesses("HeadYaw", 0.0f);
-    }
-    catch(AL::ALError& e){
-        //std::cout<<e.what()<<std::endl;
-    }
 
 }
 
@@ -135,8 +114,8 @@ void Converter::speechDetecting(std::string eventName, AL::ALValue status, std::
     if((std::string(status) == "ListenOff") && rec_now ){
         stopRecording();
         mem_pro->unsubscribeToEvent("ALSpeechRecognition/Status", getName());
-        speech_recog_pro->pause(true);
         transition(UPLOAD_HUM);
+        speech_recog_pro->pause(true);
         witAI();
     }
 }
@@ -206,10 +185,41 @@ void Converter::flushResult()
 
 void Converter::start()
 {
+    speech_recog_pro = new AL::ALSpeechRecognitionProxy(getParentBroker());
+
+    std::vector<std::string> wordList;
+    wordList.push_back("谢谢");
+
+    try{
+        speech_recog_pro->setLanguage("Chinese");
+        speech_recog_pro->setAudioExpression(true);
+        speech_recog_pro->setVisualExpression(true);
+        speech_recog_pro->setVocabulary(wordList, false);
+
+        motion_pro->setAngles("HeadYaw", 0.0f, 0.1f);
+        motion_pro->setStiffnesses("HeadYaw", 0.0f);
+    }
+    catch(AL::ALError& e){
+        //std::cout<<e.what()<<std::endl;
+    }
+
     mem_pro->subscribeToEvent("ALSpeechRecognition/Status", getName(), "speechDetecting");
     speech_recog_pro->pause(false);
     ready = false;
     exit_val = false;
+}
+
+void Converter::stop()
+{
+    try{
+        mem_pro->unsubscribeToEvent("ALSpeechRecognition/Status", getName());
+        speech_recog_pro->pause(true);
+    }
+    catch(AL::ALError& e){
+        //std::cout<<e.what()<<std::endl;
+    }
+    cafe = false;
+    sayThis(finishWords);
 }
 
 bool Converter::getReady()
@@ -225,11 +235,6 @@ bool Converter::getExit()
 bool Converter::getCafe()
 {
     return cafe;
-}
-
-void Converter::offCafe()
-{
-    cafe = false;
 }
 
 string Converter::getResult()
@@ -270,8 +275,9 @@ bool Converter::witAI()
         ind_e++;
     }
     rec_result = result.substr(ind_s, ind_e-ind_s);
+    loc = "谢谢";
 
-    if(rec_result == "谢谢"){
+    if(rec_result.find(loc) != -1){
         exit_val = true;
     }
 
