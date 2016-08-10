@@ -1,16 +1,13 @@
 #ifndef GRABCAFE_H
 #define GRABCAFE_H
+#include <iostream>
+#include <string>
 #include <alproxies/almotionproxy.h>
 #include <alproxies/alrobotpostureproxy.h>
 
 
 class grabCafe
 {
-public:
-  grabCafe(string robotIP);
-  void test();
-  void action();
-
 private:
   static int current_x;
   static int current_y;
@@ -24,6 +21,12 @@ private:
   void walkBack();
   void grabIt();
   void handIn();
+
+public:
+  grabCafe(std::string robotIP);
+  void test();
+  void action();
+
 };
 
 #endif // GRABCAFE_H

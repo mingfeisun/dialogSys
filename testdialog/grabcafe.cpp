@@ -1,16 +1,18 @@
 #include "grabcafe.h"
+#include <iostream>
+#include <string>
 
 #include <alproxies/almotionproxy.h>
 #include <alproxies/alrobotpostureproxy.h>
 
-grabCafe::grabCafe(string robotIP)
-{
-    current_x = 0;
-    current_y = 0;
-    current_theta = 0;
+double grabCafe::current_theta = 0;
+int grabCafe::current_x = 0;
+int grabCafe::current_y = 0;
 
-    motion = new ALMotionProxy(robotIP);
-    posture = new ALRobotPostureProxy(robotIP);
+grabCafe::grabCafe(std::string robotIP)
+{
+    motion = new AL::ALMotionProxy(robotIP);
+    posture = new AL::ALRobotPostureProxy(robotIP);
 }
 
 void grabCafe::test()
@@ -20,6 +22,14 @@ void grabCafe::test()
     grabIt();
     walkBack();
     handIn();
+}
+
+void grabCafe::action()
+{
+    aboutFace();
+    walkForward();
+    grabIt();
+    walkBack();
 }
 
 void grabCafe::aboutFace()

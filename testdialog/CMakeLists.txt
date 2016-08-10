@@ -9,6 +9,8 @@ set(_srcs
     tulingmodule.cpp
     dialogtext.h
     dialogtext.cpp
+    grabcafe.h
+    grabcafe.cpp
     converter.cpp
     converter.h
     wakeup.cpp

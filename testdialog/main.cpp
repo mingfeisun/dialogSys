@@ -5,6 +5,7 @@
 #include "wakeup.h"
 #include "dialogtext.h"
 #include "tulingmodule.h"
+#include "grabcafe.h"
 //#include "exec_shell.h"
 
 #include <qi/log.hpp>
@@ -35,6 +36,7 @@ int main()
 
   tulingModule tuLing;
   dialogText testDialog;
+  grabCafe takeAction(ip);
 
   motion->rest();
   wakeup->callVoid("standUp");
@@ -58,6 +60,7 @@ int main()
                   qiLogInfo("SPR Result Get:")<<result<<std::endl;
                   if( conv->call<bool>("getExit") == true){
                       conv->callVoid("stop");
+                      takeAction.action();
                       wakeup->callVoid("standUp");
                       motion->post.rest();
                       break;
