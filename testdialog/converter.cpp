@@ -114,7 +114,7 @@ void Converter::speechDetecting(std::string eventName, AL::ALValue status, std::
     if((std::string(status) == "ListenOff") && rec_now ){
         stopRecording();
         mem_pro->unsubscribeToEvent("ALSpeechRecognition/Status", getName());
-        transition(UPLOAD_HUM);
+        transition(UPLOAD_SPEECH);
         speech_recog_pro->pause(true);
         witAI();
     }

@@ -60,7 +60,7 @@ int main()
                   qiLogInfo("SPR Result Get:")<<result<<std::endl;
                   if( conv->call<bool>("getExit") == true){
                       conv->callVoid("stop");
-                      takeAction.action();
+                      //takeAction.action();
                       wakeup->callVoid("standUp");
                       motion->post.rest();
                       break;
