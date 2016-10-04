@@ -1,0 +1,3 @@
+/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/rebuild_cache.dir
+/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/edit_cache.dir
+/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/main.dir

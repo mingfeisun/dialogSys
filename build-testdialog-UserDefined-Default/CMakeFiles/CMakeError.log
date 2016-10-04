@@ -1,0 +1,118 @@
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper 
+Build flags: 
+Id flags: 
+
+The output was:
+1
+lto-wrapper: environment variable COLLECT_GCC must be set
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper 
+Build flags: 
+Id flags: -c
+
+The output was:
+1
+lto-wrapper: environment variable COLLECT_GCC must be set
+
+
+Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+lto-wrapper: environment variable COLLECT_GCC must be set
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_27ebb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_27ebb.dir/build.make CMakeFiles/cmTC_27ebb.dir/build
+make[1]: Entering directory '/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_27ebb.dir/testCXXCompiler.cxx.o
+/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper      -o CMakeFiles/cmTC_27ebb.dir/testCXXCompiler.cxx.o -c /home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+lto-wrapper: environment variable COLLECT_GCC must be set
+CMakeFiles/cmTC_27ebb.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_27ebb.dir/testCXXCompiler.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_27ebb.dir/testCXXCompiler.cxx.o] Error 1
+make[1]: Leaving directory '/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_27ebb/fast' failed
+make: *** [cmTC_27ebb/fast] Error 2
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper 
+Build flags: 
+Id flags: 
+
+The output was:
+1
+lto-wrapper: environment variable COLLECT_GCC must be set
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper 
+Build flags: 
+Id flags: -c
+
+The output was:
+1
+lto-wrapper: environment variable COLLECT_GCC must be set
+
+
+Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+lto-wrapper: environment variable COLLECT_GCC must be set
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5fd18/fast"
+make[1]: Entering directory '/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_5fd18.dir/build.make CMakeFiles/cmTC_5fd18.dir/build
+make[2]: Entering directory '/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5fd18.dir/testCXXCompiler.cxx.o
+/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper      -o CMakeFiles/cmTC_5fd18.dir/testCXXCompiler.cxx.o -c /home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+lto-wrapper: environment variable COLLECT_GCC must be set
+CMakeFiles/cmTC_5fd18.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_5fd18.dir/testCXXCompiler.cxx.o' failed
+make[2]: *** [CMakeFiles/cmTC_5fd18.dir/testCXXCompiler.cxx.o] Error 1
+make[2]: Leaving directory '/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_5fd18/fast' failed
+make[1]: *** [cmTC_5fd18/fast] Error 2
+make[1]: Leaving directory '/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp'
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper 
+Build flags: 
+Id flags: 
+
+The output was:
+1
+lto-wrapper: environment variable COLLECT_GCC must be set
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper 
+Build flags: 
+Id flags: -c
+
+The output was:
+1
+lto-wrapper: environment variable COLLECT_GCC must be set
+
+
+Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+lto-wrapper: environment variable COLLECT_GCC must be set
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_edc0b/fast"
+make[1]: Entering directory '/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_edc0b.dir/build.make CMakeFiles/cmTC_edc0b.dir/build
+make[2]: Entering directory '/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_edc0b.dir/testCXXCompiler.cxx.o
+/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper      -o CMakeFiles/cmTC_edc0b.dir/testCXXCompiler.cxx.o -c /home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+lto-wrapper: environment variable COLLECT_GCC must be set
+CMakeFiles/cmTC_edc0b.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_edc0b.dir/testCXXCompiler.cxx.o' failed
+make[2]: *** [CMakeFiles/cmTC_edc0b.dir/testCXXCompiler.cxx.o] Error 1
+make[2]: Leaving directory '/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_edc0b/fast' failed
+make[1]: *** [cmTC_edc0b/fast] Error 2
+make[1]: Leaving directory '/home/mingfeisun/studyInHKUST/research/2016/projects/dialogSystem/testDialog/build-testdialog-UserDefined-Default/CMakeFiles/CMakeTmp'
+
+

@@ -8,7 +8,7 @@
 #include <alcommon/albroker.h>
 #include <alproxies/altexttospeechproxy.h>
 
-#define COMMAND "Hey, Nao robot"
+#define COMMAND "Hey, Mo Jing"
 
 using std::string;
 using std::vector;

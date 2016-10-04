@@ -45,6 +45,7 @@ private:
   bool rec_now;
   bool exit_val;
   string rec_result;
+  string IP;
   AL::ALMemoryProxy* mem_pro;
   AL::ALMemoryProxy* mem_pro_s;
   AL::ALMotionProxy* motion_pro;

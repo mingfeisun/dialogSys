@@ -27,7 +27,7 @@
 #define UPLOAD_HUM 3
 
 const char* WAV_NAME_LOCAL = "/home/nao/mingfei/dialogAudio/test.wav";
-std::string finishWords = "需要时随时吩咐我";
+std::string finishWords = "需要时随时吩咐我^runTag(bow)";
 using namespace AL;
 
 Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name)
@@ -77,6 +77,7 @@ Converter::Converter(boost::shared_ptr<ALBroker> broker, const std::string &name
     ready = true;
     exit_val = false;
     cafe = false;
+    IP = broker->getIP();
 }
 
 Converter::~Converter()
@@ -155,13 +156,13 @@ void Converter::transition(int type)
 
     switch (type) {
         case UPLOAD_SPEECH:
-            fileName = "speechTran.dat";
+            fileName = "../testdialog/speechTran.dat";
             break;
         case CONFIRM_TEXT:
-            fileName = "confirmTran.dat";
+            fileName = "../testdialog/confirmTran.dat";
             break;
         case UPLOAD_HUM:
-            fileName = "speechHum.dat";
+            fileName = "../testdialog/speechHum.dat";
             break;
     }
     inContents.open(fileName.c_str(), std::ios::in);
@@ -249,11 +250,10 @@ void Converter::test()
 
 bool Converter::witAI()
 {
-
-    char* cmd = "ssh nao@192.168.1.102 'bash -s' < upload.sh";
+    std::string cmd_str = "ssh nao@" + IP +" 'bash -s' < ../testdialog/upload.sh";
     // char* cmd = "sh /home/nao/mingfei/curl.sh";
 
-    std::string result = exec_shell(cmd);
+    std::string result = exec_shell(cmd_str);
 
     qiLogInfo("Raw SPR Result:")<<result<<std::endl;
     std::string loc = "\"_text\"";
